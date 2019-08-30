@@ -1,7 +1,7 @@
 library(raster)
 library(gdalUtils)
 library(dplyr)
-#library(stringr)
+library(stringr)
 
 # Identify the folder which contains all of the SMAP data files (both .h5 and .xml files)
 folder <- here("SMAP_Downloads")
@@ -21,14 +21,14 @@ xmlFiles <- list.files(path = here("SMAP_Downloads"), pattern = ".iso.xml$", rec
 start <- Sys.time()
 
 for(n in 1:length(h5Files)){
-  h5 <- paste0(folder,h5Files[n])
+  h5 <- paste0(folder,"/",h5Files[n])
   # Convert from H5 to GeoTiff and save it (This still won't have any spatial reference info)
-  gdal_translate(h5,paste0(outFolder,substr(h5Files[n],1,nchar(h5Files[n])-3),".tif"), of = "GTiff", sd_index = 86,verbose=TRUE, overwrite = TRUE)
+  gdal_translate(h5,paste0(outFolder,"/",substr(h5Files[n],1,nchar(h5Files[n])-3),".tif"), of = "GTiff", sd_index = 86,verbose=TRUE, overwrite = TRUE)
   # Import the GeoTIff and assign the correct projection (global cylindrical EASE-Grid 2.0 (Brodzik et al. 2012))
-  raster <- raster(paste0(outFolder,substr(h5Files[n],1,nchar(h5Files[n])-3),".tif"))
+  raster <- raster(paste0(outFolder,"/",substr(h5Files[n],1,nchar(h5Files[n])-3),".tif"))
   projection(raster) <- "+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
   # Import the xml file
-  xmlLines <- readLines(paste0(folder,xmlFiles[n]))
+  xmlLines <- readLines(paste0(folder,"/",xmlFiles[n]))
   xmlString <- toString(xmlLines)
   # Find the start of the extent coordinates
   coordsStartLoc <- str_locate(xmlString,"srsName=\"http://www.opengis.net/def/crs/EPSG/4326\">")
@@ -49,7 +49,7 @@ for(n in 1:length(h5Files)){
   wgs84 <- setExtent(wgs84,extent(xmin,xmax,ymin,ymax))%>%
     trim()
   # Write the GeoTIFF with correct spatial extent
-  writeRaster(wgs84,paste0(outFolder,substr(h5Files[n],1,nchar(h5Files[n])-3),".tif"),overwrite=TRUE)
+  writeRaster(wgs84,paste0(outFolder,"/",substr(h5Files[n],1,nchar(h5Files[n])-3),".tif"),overwrite=TRUE)
 }
 
 end <- Sys.time()

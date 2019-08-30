@@ -4,7 +4,7 @@ library(here)
 library(dplyr)
 
 # Set the date you want to mosaic in the format: 'yyyymmdd'
-date <- '20180826'
+date <- '20180921'
 
 # SMAP images overlap eachother and also have a large number of NA values
 # In many cases, NA values from one raster overlap real values in another
