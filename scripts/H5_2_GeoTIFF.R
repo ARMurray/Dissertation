@@ -2,12 +2,13 @@ library(raster)
 library(gdalUtils)
 library(dplyr)
 library(stringr)
+library(here)
 
 # Identify the folder which contains all of the SMAP data files (both .h5 and .xml files)
-folder <- here("SMAP_Downloads")
+folder <- here("Data/SMAP/SPL4SMAU")
 
 # Identify the folder you want to write the output GeoTiffs to.
-outFolder <- here("SMAP_GeoTIFFs")
+outFolder <- here("Data/SMAP/SPL4SMAU_GEOTIFF")
 
 # List the .h5 files (These are the raster without spatial extents)
 h5Files <- list.files(path = folder, pattern = ".h5$", recursive = TRUE)
