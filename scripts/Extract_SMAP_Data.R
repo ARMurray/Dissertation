@@ -37,9 +37,10 @@ for(n in 1:nrow(h5Files)){
   h5sm <- h5read(h5Files$fullPath[n],"/Analysis_Data/sm_rootzone_analysis")
   
   # Vectorize in order to join it with coordinates
-  vect <- data.frame("RootZone_SM" = as.vector(h5sm))
+  vect <- data.frame("RZ_SM" = as.vector(h5sm))%>%
+    mutate(RZ_SM = ifelse(RZ_SM == -9999, NA, RZ_SM))
   
-  colnames(vect) <- c(paste0("RootZone_SM",h5Files$Date[n]))
+  colnames(vect) <- c(paste0("RZ_SM_",h5Files$Date[n]))
   
   outDf <- cbind(outDf, vect)
   
@@ -51,10 +52,15 @@ for(n in 1:nrow(h5Files)){
 
 
 sfOut <- template%>%
-  left_join(outDf)
+  left_join(outDf)%>%
+  select(-c(x,y))
+
+# Try Plotting
+ggplot(sfOut)+
+  geom_sf(aes(color = "RZ_SM_2015-03-31 06:00:00", fill = "RZ_SM_2015-03-31 06:00:00"))
+
+
+
 
 # You can list all of the contents here:
 #h5ls(h5Files[1])
-
-
-out <- cbind(centroids, vect)
