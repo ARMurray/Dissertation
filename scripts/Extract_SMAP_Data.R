@@ -15,17 +15,17 @@ template <- st_read(here("Data/SMAP/SE_US_SMAP_Template.shp"))
 
 
 # List hdf5 files from SMAP
-h5Files <- data.frame("fullPath" = list.files(path = here("Data/SMAP/SPL4SMAU/"), pattern = ".h5$", recursive = TRUE, full.names = TRUE),
-                      "shortPath" = list.files(path = here("Data/SMAP/SPL4SMAU/"), pattern = ".h5$", recursive = TRUE, full.names = FALSE))%>%
+h5Files <- data.frame("fullPath" = list.files(path = here("Data/SMAP/SPL4SMAU"), pattern = ".h5$", recursive = TRUE, full.names = TRUE),
+                      "shortPath" = list.files(path = here("Data/SMAP/SPL4SMAU"), pattern = ".h5$", recursive = TRUE, full.names = FALSE))%>%
   mutate("Date" = lubridate::ymd_hms(substr(shortPath,16,30)))
 
 
 # Create a filter or leave commented out to include all hdf5 files
 h5Files <- h5Files%>%
-  filter(Date > lubridate::ymd_hms("2015-01-01 00:00:00"))
+  filter(Date < lubridate::ymd_hms("2016-01-01 00:00:00"))
 
 # create a list of centroids for use with data reorganization
-h5 <- H5Fopen(h5Files$fullPath[1]) # Open the h5 file
+h5 <- H5Fopen(as.character(h5Files$fullPath[1])) # Open the h5 file
 centroids <- data.frame("x" = as.vector(h5$cell_lon), "y" = as.vector(h5$cell_lat))%>%  # Extract the centroids and stack them vertically
   mutate("Cell_ID" = paste0("x",x,"y",y)) # Create a unique cell ID from the centroid coordinates
 
@@ -34,7 +34,7 @@ outDf <- centroids
 # Loop through all of the files to export to singular flat file
 for(n in 1:nrow(h5Files)){
   # Open the sub dataset (In our case root zone soil moisture)
-  h5sm <- h5read(h5Files$fullPath[n],"/Analysis_Data/sm_rootzone_analysis")
+  h5sm <- h5read(as.character(h5Files$fullPath[n]),"/Analysis_Data/sm_rootzone_analysis")
   
   # Vectorize in order to join it with coordinates
   vect <- data.frame("RZ_SM" = as.vector(h5sm))%>%
@@ -50,10 +50,15 @@ for(n in 1:nrow(h5Files)){
   
 }
 
+# Write a CSV
+write.csv(outDf, here("Data/SMAP/Extractions/SMAP_2015_All.csv"))
 
+# Write a shapefile
 sfOut <- template%>%
   left_join(outDf)%>%
   select(-c(x,y))
+
+st_write(sfOut, here("Data/SMAP/Extractions/SMAP_2015_All.shp"))
 
 # Try Plotting
 ggplot(sfOut)+
