@@ -1,6 +1,7 @@
 library(rhdf5)
 library(tidyverse)
 library(sf)
+library(USAboundaries)
 library(here)
 
 
@@ -44,6 +45,13 @@ polys$area <- st_area(polys)
 export <- polys%>%
   filter(as.numeric(area) < 100000000)%>%
   select(z)
+
+#filter to only keep cells that intersect U.S. landmasses
+se <- us_boundaries(resolution = 'low')%>%
+  filter(name %in% c("Puerto Rico","Texas","Louisiana","Mississippi","Alabama","Florida","Georgia","South Carolina","North Carolina","Virginia","Maryland","Delaware"))
+
+
+
 
 # Give better column names
 colnames(export) <- c("Cell_ID","geometry")
