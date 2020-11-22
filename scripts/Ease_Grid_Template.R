@@ -40,15 +40,25 @@ polys <-st_voronoi(st_union(pts))%>%
 # Calculate area in order to remove the border polygons
 polys$area <- st_area(polys)
 
+# Import U.S. boundaries to determine intersections
+se <- us_boundaries(resolution = 'low')%>%
+  filter(name %in% c("Puerto Rico","Texas","Louisiana",
+                     "Mississippi","Alabama","Florida",
+                     "Georgia","South Carolina","North Carolina",
+                     "Virginia","Maryland","Delaware"))%>%
+  st_union()%>%
+  st_as_sf()%>%
+  st_transform(6933)
+
+# Run an intersection between polygons and selected states
+intersects <- st_intersection(st_make_valid(polys),se)
+
 
 # Remove the border polygons
 export <- polys%>%
   filter(as.numeric(area) < 100000000)%>%
-  select(z)
-
-#filter to only keep cells that intersect U.S. landmasses
-se <- us_boundaries(resolution = 'low')%>%
-  filter(name %in% c("Puerto Rico","Texas","Louisiana","Mississippi","Alabama","Florida","Georgia","South Carolina","North Carolina","Virginia","Maryland","Delaware"))
+  select(z)%>%
+  filter(z %in% intersects$z)
 
 
 
@@ -56,6 +66,11 @@ se <- us_boundaries(resolution = 'low')%>%
 # Give better column names
 colnames(export) <- c("Cell_ID","geometry")
 
+
+# Check out the result
+ggplot()+
+  geom_sf(data = se, color = 'red')+
+  geom_sf(data = export)
 
 # Export a shapefile
 st_write(export, here("Data/SMAP/SE_US_SMAP_Template.shp"), append = FALSE)
