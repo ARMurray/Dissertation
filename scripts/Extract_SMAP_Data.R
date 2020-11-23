@@ -21,7 +21,7 @@ h5Files <- data.frame("fullPath" = list.files(path = here("Data/SMAP/SPL4SMAU"),
 
 # Check for missing files
 misiing <- h5Files%>%
-  filter(Date > lubridate::ymd("2016-08-08") & Date < lubridate::ymd("2017-06-05"))
+  filter(Date > lubridate::ymd("2016-12-01") & Date < lubridate::ymd("2017-06-05"))
 
 
 # Create a filter or leave commented out to include all hdf5 files
@@ -33,9 +33,6 @@ misiing <- h5Files%>%
 h5 <- H5Fopen(as.character(h5Files$fullPath[1])) # Open the first h5 file
 centroids <- data.frame("x" = as.vector(h5$cell_lon), "y" = as.vector(h5$cell_lat))%>%  # Extract the centroids and stack them vertically
   mutate("Cell_ID" = paste0("x",x,"y",y)) # Create a unique cell ID from the centroid coordinates
-  
-  
-  
 outDf <- centroids
 
 
@@ -46,13 +43,18 @@ storms <- read.csv(here("Data/NOAA/stormStats.csv"))%>%
   mutate(start = lubridate::ymd_hms(start),
          end = lubridate::ymd_hms(end))
 
-for(n in 1:nrow(storms)){
+for(n in nrow(storms):nrow(storms)){
   start <- storms$start[n]
   end <- storms$end[n]
   files <- h5Files%>%
     filter(Date >= start & Date <= end+1209600)
-  
   outDf <- centroids
+  
+  # Create a spatial filter for each storm to keep file size small
+  #rad <- st_read(here("Data/NOAA/officialTracks/2015/al012015_radii.shp"))%>%
+  #  st_union()%>%
+  #  st_as_sf()
+  
   # Loop through all of the files to export to singular flat file
   for(i in 1:nrow(files)){
     # Open the sub dataset (In our case root zone soil moisture)

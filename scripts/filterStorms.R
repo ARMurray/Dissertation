@@ -42,7 +42,7 @@ for(n in 1:length(pts)){
   df <- rbind(df,outDF) # Add to output data frame
 }
 
-#write.csv(df, here("Data/NOAA/stormStats.csv"))
+write.csv(df, here("Data/NOAA/stormStats.csv"))
 
 # Can use this to make it spatial
 #tst <- sf %>% 
