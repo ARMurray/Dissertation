@@ -81,23 +81,5 @@ for(n in 1:nrow(storms)){
 }
 
 
-
-# Write a CSV
-write.csv(outDf, here("Data/SMAP/Extractions/SMAP_2015_All.csv"))
-
-# Write a shapefile
-sfOut <- template%>%
-  left_join(outDf)%>%
-  select(-c(x,y))
-
-st_write(sfOut, here("Data/SMAP/Extractions/SMAP_2015_All.shp"))
-
-# Try Plotting
-ggplot(sfOut)+
-  geom_sf(aes(color = "RZ_SM_2015-03-31 06:00:00", fill = "RZ_SM_2015-03-31 06:00:00"))
-
-
-
-
 # You can list all of the contents here:
 #h5ls(h5Files[1])
