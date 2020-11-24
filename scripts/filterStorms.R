@@ -42,7 +42,39 @@ for(n in 1:length(pts)){
   df <- rbind(df,outDF) # Add to output data frame
 }
 
-write.csv(df, here("Data/NOAA/stormStats.csv"))
+
+# For storms that made landfall, when did they make landfall?
+lfalls <- df%>%
+  filter(landfall == "YES")
+
+lfallFiles <- as.data.frame(fileNames)%>% # Create data frame of filenames (short)
+  cbind(as.data.frame(pts))%>%  # Add in full file paths
+  mutate(ID = substr(fileNames,6,13))%>% # Create the ID field
+  filter(ID %in% lfalls$ID) # filter to match landfalls
+
+lFallDf <- data.frame()
+
+for(n in 1:nrow(lfallFiles)){
+  shp <- st_read(lfallFiles$pts[n])%>% # Import the storm center points
+    st_transform(4326) # match projection to land mass
+  intersection <- st_intersection(shp,se)  # filter to those points that are over land
+  
+  firstInter <- intersection[1,]
+  
+  dateTime <- lubridate::ymd_hm(paste0(firstInter$YEAR,"/",firstInter$MONTH,"/",firstInter$DAY," ",
+                                       substr(firstInter$HHMM,1,2),":",substr(firstInter$HHMM,3,4)))
+  
+  print(paste0(intersection$STORMNAME[1]," made landfall at: ",dateTime))
+  
+  outDF2 <- data.frame("ID" = lfallFiles$ID[n], "lFall_dateTime" = dateTime)
+  
+  lFallDf <- rbind(lFallDf, outDF2)
+}
+
+outdf <- df%>%
+  left_join(lFallDf)
+
+write.csv(outdf, here("Data/NOAA/stormStats.csv"))
 
 # Can use this to make it spatial
 #tst <- sf %>% 
