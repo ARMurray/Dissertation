@@ -39,7 +39,41 @@ for(n in 1:length(folders)){
   
   st_write(shpJoin, paste0(here("Data/prism"),"/",folders[n],"/",folders[n],"_ppt_GT_50mm.shp"))
   
-  print(paste0("Finsihed ",folders[n]," at: ",Sys.time()))
+  print(paste0("Finished ",folders[n]," at: ",Sys.time()))
 }
 
 
+# Make a layer with all storm ppt counts and cumulative.
+
+rasters2 <- list.files(here("Data/prism"), recursive = TRUE, pattern = ".bil$", full.names = TRUE)
+import <- stack(rasters2)
+sumAll <- sum(import)%>%
+  projectRaster(crs = "+proj=cea +lat_ts=30 +lon_0=0 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +type=crs")
+
+# Zonal Statistics to determine mean rainfall by SMAP pixel
+extract2 <- extract(sumAll, template, fun=mean, na.rm = TRUE, df = TRUE)
+
+shpJoin2 <- cbind(template,extract2)%>%
+  filter(layer > 50)%>%
+  dplyr::select(Cell_ID,layer)
+
+colnames(shpJoin2) <- c("Cell_ID","AllStormsPPT","geometry")
+
+# Join all of the storm specific data
+shps <- list.files(here("Data/prism"), pattern = "50mm.shp$", recursive = TRUE, full.names = TRUE) # Full file path
+names <- list.files(here("Data/prism"), pattern = "50mm.shp$", recursive = TRUE, full.names = FALSE) # Short file path
+
+for(n in 1:length(shps)){
+  shp <- st_read(shps[n])%>%   # import 1 shp at a time
+    st_drop_geometry()%>% # drop geometry
+    dplyr::select(Cell_ID,layer) # select only ID and value columns
+  stormID <- substr(names[n],1,8) # create storm ID
+  colnames(shp) <- c("Cell_ID",stormID) # Rename the value column based on storm ID
+  shpJoin2 <- shpJoin2%>%   # Add the new column to the existing dataset
+    left_join(shp)
+}
+
+st_write(shpJoin2, here("Data/prism/pptByStorm.shp"))
+
+ggplot(shpJoin2)+
+  geom_sf(aes(fill = layer, color = layer))
