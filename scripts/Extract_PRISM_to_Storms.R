@@ -57,7 +57,7 @@ shpJoin2 <- cbind(template,extract2)%>%
   filter(layer > 50)%>%
   dplyr::select(Cell_ID,layer)
 
-colnames(shpJoin2) <- c("Cell_ID","AllStormsPPT","geometry")
+colnames(shpJoin2) <- c("Cell_ID","AllStorms","geometry")
 
 # Join all of the storm specific data
 shps <- list.files(here("Data/prism"), pattern = "50mm.shp$", recursive = TRUE, full.names = TRUE) # Full file path
