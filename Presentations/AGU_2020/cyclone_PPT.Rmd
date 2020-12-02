@@ -1,0 +1,113 @@
+---
+title: "Cyclone Precipitation"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(crosstalk)
+library(plotly)
+library(sf)
+library(tidyverse)
+library(here)
+library(leaflet)
+library(RColorBrewer)
+
+# Load Storm Names and info
+NOAA <- read.csv(here("Data/NOAA/stormStats.csv"))%>%
+  mutate(ID = tolower(ID))
+
+# Load PPT calcs by storm
+sf <- st_read(here("Data/prism/pptByStorm.shp"))%>%
+  st_transform(4326)
+
+colnames(sf) <- tolower(colnames(sf))
+
+long <- sf%>%
+  pivot_longer(cols = starts_with("al"), names_to = "Storm", values_to = "ppt_mm")%>%
+  left_join(NOAA, by = c("Storm" = "ID"))%>%
+  mutate(Name = ifelse(Storm == "allstorms","All Storms",Name),
+         nameYear = paste0(Name," (",substr(lFall_dateTime,1,4),")"))%>%
+  filter(!is.na(ppt_mm))
+
+
+sd_sf <- SharedData$new(long, ~cell_id, group = "ppt")
+sd_df <- SharedData$new(as.data.frame(long), ~cell_id, group = "ppt")
+
+# MAPBOX token
+Sys.setenv('MAPBOX_TOKEN' = 'pk.eyJ1IjoiYXJtdXJyYXkxODkiLCJhIjoiY2tpN2V2emNmMnI5bzJ4cDV3cnhtaWNqZCJ9.fwZ79nuMzsPeljHb-j5Cbw')
+```
+
+Inputs {sidebar}
+-----------------------------------------------------------------------
+
+### Select a Storm
+
+```{r filters}
+
+filter_select("filterid",
+    "Storm",
+    sd_df,
+    ~nameYear)
+
+filter_slider(
+    id = "sliderid",
+    label = "Precipitation [mm]",
+    sharedData = sd_df,
+    column = ~ppt_mm,
+    step = 10,
+    sep = "",
+    ticks = FALSE
+  )
+```
+
+Column {data-width=750}
+-----------------------------------------------------------------------
+
+### Total Precipitation (inches)
+
+```{r map, echo=FALSE, message=FALSE}
+g <- list(
+  scope = 'arizona',
+  showland = TRUE,
+  landcolor = toRGB("gray95"),
+  subunitcolor = toRGB("gray85"),
+  countrycolor = toRGB("gray85"),
+  countrywidth = 0.5,
+  subunitwidth = 0.5
+)
+
+pal <- brewer.pal(5,"Blues") # Set color palette
+#pal[6] <- "#919191" # Set color for unknown values
+
+plot_mapbox(sd_sf,colors = brewer.pal(5,"Blues"))%>%
+  add_sf(color = ~ppt_mm,
+         hoverinfo = "text",
+         text = ~paste(Name, "<br>",
+                       "Storm Name: ",Name, "<br>",
+                       "Landfall: ", lFall_dateTime, "<br>",
+                       "Max Sustained Windspeed: ", maxIntensity, "<br>"
+         ))%>%
+  layout(title = '',
+         geo = g,
+         legend = list(x = 0.1, y = 0.1,title=list(text='<b> Precipitation [mm]<br> by storm </b>',font = list(family = "sans-serif",
+                                                                                                               size = 12,
+                                                                                                               color = "#ffffff")),
+                       orientation = 'h',
+                       bgcolor = "#4d4d4d",
+                       bordercolor = "#000000",
+                       borderwidth = 2,
+                       font = list(family = "sans-serif",
+                                   size = 12,
+                                   color = "#ffffff")),
+         mapbox = list(style = 'dark',
+                       zoom = 5.5,
+                       center = list(lat = 33.44774,lon = -111.9449))
+  )%>%
+  highlight(on = "plotly_selected", off = "plotly_deselect")
+```
+
+

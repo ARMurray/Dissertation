@@ -66,7 +66,42 @@ write.csv(df, here("Data/nlcd/nlcd_2016_se_zonal_stats.csv"))
 # Map it
 
 map <- st_read(here("Data/SMAP/SE_US_SMAP_Template.shp"))%>%
-  left_join(df)
+  left_join(df)%>%
+  mutate(Class = ifelse(Dom_LC == 11, "Open Water",
+                        ifelse(Dom_LC == 21, "Developed, Open Space",
+                               ifelse(Dom_LC == 22, "Developed, Low Intensity",
+                                      ifelse(Dom_LC == 23, "Developed, Medium Intensity",
+                                             ifelse(Dom_LC == 24, "Developed High Intensity",
+                                                    ifelse(Dom_LC == 41, "Deciduous Forest",
+                                                           ifelse(Dom_LC == 42, "Evergreen Forest",
+                                                                  ifelse(Dom_LC == 43, "Mixed Forest",
+                                                                         ifelse(Dom_LC == 52, "Shrub/Scrub",
+                                                                                ifelse(Dom_LC == 71, "Grassland/Herbaceous",
+                                                                                       ifelse(Dom_LC == 81, "Pasture/Hay",
+                                                                                              ifelse(Dom_LC == 82,"Cultivated Crops",
+                                                                                                     ifelse(Dom_LC == 90,"Woody Wetlands",
+                                                                                                            ifelse(Dom_LC == 95,"Emergent Herbaceous Wetlands",NA)))))))))))))))
+
+st_write(map, here("Data/nlcd/NLCD_2016_SE_Zonal_Stats.shp"))
+
+nlcdCols <- c("Open Water" = "#486DA2",
+              "Developed, Open Space" = "#E1CDCE",
+              "Developed, Low Intensity" = "#DC9881",
+              "Developed, Medium Intensity" = "#F10100",
+              "Developed High Intensity" = "#AB0101",
+              "Deciduous Forest" = "#6CA966",
+              "Evergreen Forest" = "#1D6533",
+              "Mixed Forest" = "#BDCC93",
+              "Shrub/Scrub" = "#D1BB82",
+              "Grassland/Herbaceous" = "#EDECCD",
+              "Pasture/Hay" = "#DDD83E",
+              "Cultivated Crops" = "#AE7229",
+              "Woody Wetlands" = "#BAD7ED",
+              "Emergent Herbaceous Wetlands" = "#71A4C1")
+
+
 
 ggplot(map)+
-  geom_sf(aes(color = Dom_LC, fill = Dom_LC))
+  geom_sf(aes(color = Class, fill = Class))+
+  scale_color_manual(values = nlcdCols)+
+  scale_fill_manual(values = nlcdCols)

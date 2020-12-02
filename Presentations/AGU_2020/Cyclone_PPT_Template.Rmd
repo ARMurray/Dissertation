@@ -1,0 +1,69 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(crosstalk)
+library(plotly)
+library(sf)
+library(tidyverse)
+library(here)
+library(leaflet)
+library(RColorBrewer)
+
+# Load Storm Names and info
+NOAA <- read.csv(here("Data/NOAA/stormStats.csv"))%>%
+  mutate(ID = tolower(ID))
+
+# Load PPT calcs by storm
+sf <- st_read(here("Data/prism/pptByStorm.shp"))%>%
+  st_transform(4326)
+
+colnames(sf) <- tolower(colnames(sf))
+
+long <- sf%>%
+  pivot_longer(cols = starts_with("al"), names_to = "Storm", values_to = "ppt_mm")%>%
+  left_join(NOAA, by = c("Storm" = "ID"))%>%
+  mutate(Name = ifelse(Storm == "allstorms","All Storms",Name),
+         nameYear = paste0(Name," (",substr(lFall_dateTime,1,4),")"))%>%
+  filter(!is.na(ppt_mm))%>%
+  st_as_sf()
+
+subgroup <- long%>%
+  filter(Storm == "All Storms")
+
+
+# MAPBOX token
+Sys.setenv('MAPBOX_TOKEN' = 'pk.eyJ1IjoiYXJtdXJyYXkxODkiLCJhIjoiY2tpN2V2emNmMnI5bzJ4cDV3cnhtaWNqZCJ9.fwZ79nuMzsPeljHb-j5Cbw')
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+plot_mapbox(subgroup)%>%
+  add_sf()
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+Sys.time()
+```
+
+### Chart C
+
+```{r}
+Sys.time()
+```
+
