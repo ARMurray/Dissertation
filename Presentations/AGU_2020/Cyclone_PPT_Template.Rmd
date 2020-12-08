@@ -11,6 +11,7 @@ library(flexdashboard)
 library(crosstalk)
 library(plotly)
 library(sf)
+library(tidyr)
 library(tidyverse)
 library(here)
 library(leaflet)
@@ -19,23 +20,42 @@ library(RColorBrewer)
 # Import track
 names <- data.frame(ID = substr(list.files(here("Data/NOAA/officialTracks/landfalls/"),recursive = TRUE,full.names = FALSE, pattern = "lin.shp$"),1,8))
 
-list <- data.frame(path = list.files(here("Data/NOAA/officialTracks/landfalls/"),recursive = TRUE,full.names = TRUE, pattern = "lin.shp$"))%>%
+linelist <- data.frame(path = list.files(here("Data/NOAA/officialTracks/landfalls/"),recursive = TRUE,full.names = TRUE, pattern = "lin.shp$"))%>%
   cbind(names)
 
-file <- list%>%
+file <- linelist%>%
   filter(ID %in% subgroup$Storm)
 
 track <- st_read(file[1,1])
 
+# Import storm points
+pnt <- st_read(paste0(here("Data/NOAA/officialTracks"),"/",substr(file[1,2],5,8),"/",file[1,2],"_pts.shp"))
+
+# Import Landcover
+lcov <- st_read(here("Data/nlcd/NLCD_2016_SE_Zonal_Stats.shp"))%>%
+  st_drop_geometry()%>%
+  filter(Cell_ID %in% subgroup$cell_id)
+colnames(lcov)[1] <- "cell_id"
+
+# Import SMAP
+smapLcov <- read.csv(paste0(here("Data/extractions"),"/",subgroup$Storm[1],"_smap_sm.csv"))%>%
+  filter(Cell_ID %in% subgroup$cell_id)%>%
+  select(!c(X,x,y))%>%
+  pivot_longer(!Cell_ID, names_to = "dateTime",values_to = "SM")%>%
+  mutate(dateTime = lubridate::ymd_hms(paste0(substr(dateTime,7,10),"/",substr(dateTime,12,13),"/",substr(dateTime,15,16)," ",substr(dateTime,18,19),"-",substr(dateTime,21,22),"-",substr(dateTime,24,25))))%>%
+  as.data.frame()%>%
+  left_join(lcov, by = c("Cell_ID" = "cell_id"))
+
 # Create shared data
 sd_sf <- SharedData$new(subgroup, ~cell_id, group = "ppt")
 sd_df <- SharedData$new(as.data.frame(subgroup), ~cell_id, group = "ppt")
+sd_SM_lcov <- SharedData$new(smapLcov, ~Cell_ID, group = "ppt")
 
 # MAPBOX token
 Sys.setenv('MAPBOX_TOKEN' = 'pk.eyJ1IjoiYXJtdXJyYXkxODkiLCJhIjoiY2tpN2V2emNmMnI5bzJ4cDV3cnhtaWNqZCJ9.fwZ79nuMzsPeljHb-j5Cbw')
 ```
 
-Column {sidebar}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Filters
@@ -52,7 +72,15 @@ filter_slider(
   )
 ```
 
-Column {}
+### Landcover
+```{r}
+plot_ly(sd_SM_lcov)%>%
+  add_lines(x = ~dateTime, y = ~SM, color = ~Class)
+  
+```
+
+
+Column {data-width=600}
 -----------------------------------------------------------------------
 
 ### `r paste0(subgroup$nameYear[1])`
@@ -65,8 +93,14 @@ plot_mapbox(sd_sf, colors = pal)%>%
                        "Storm Name: ",Name, "<br>",
                        "Landfall: ", lFall_dateTime, "<br>",
                        "Max Sustained Windspeed: ", maxIntensity, "<br>",
-                       "Total Precipitation: ", ppt_mm," [mm]"
+                       "Total Precipitation: ", round(ppt_mm)," [mm]"
          ))%>%
-  add_sf(data = track, line = list(color = 'rgba(67,67,67,1)', width = 2))
+  add_sf(data = track, line = list(color = 'rgba(67,67,67,1)', width = 2),name = "Storm Track")%>%
+  add_sf(data = pnt, marker = list(size = ~INTENSITY/3, color = "#bf170b", opacity = .5),name = "Storm Centers",
+         hoverinfo = "text",
+         text = ~paste("Date / Time (UTC): ", lubridate::ymd_hm(paste0(YEAR,"/",MONTH,"/",DAY," ",HHMM)),"<br>",
+                       "Name: ", STORMNAME,"<br>",
+                       "Storm Type: ",STORMTYPE,"<br>",
+                       "Max Sustained Winds (mph): ",INTENSITY))
 ```
 

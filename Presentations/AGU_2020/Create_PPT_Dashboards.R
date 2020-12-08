@@ -28,6 +28,11 @@ long <- sf%>%
   filter(!is.na(ppt_mm))%>%
   st_as_sf()
 
+
+# Don't run 'allstorms'
+long <- long%>%
+  filter(!Storm == "allstorms")
+
 pal <- c("#4FC3F8","#19A6D4","#1B5CB0","#8E4DC8","#FF25F5")
 
 library("rmarkdown")
