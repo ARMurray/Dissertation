@@ -43,7 +43,7 @@ storms <- read.csv(here("Data/NOAA/stormStats.csv"))%>%
   mutate(start = lubridate::ymd_hms(start),
          end = lubridate::ymd_hms(end))
 
-for(n in nrow(storms):nrow(storms)){
+for(n in 1:nrow(storms)){
   start <- storms$start[n]
   end <- storms$end[n]
   files <- h5Files%>%
@@ -64,7 +64,7 @@ for(n in nrow(storms):nrow(storms)){
     vect <- data.frame("RZ_SM" = as.vector(h5sm))%>%
       mutate(RZ_SM = ifelse(RZ_SM == -9999, NA, RZ_SM))
     
-    colnames(vect) <- c(paste0("RZ_SM_",h5Files$Date[i]))
+    colnames(vect) <- c(paste0("RZ_SM_",files$Date[i]))
     
     outDf <- cbind(outDf, vect)
     
