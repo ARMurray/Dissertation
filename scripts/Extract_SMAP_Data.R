@@ -43,13 +43,7 @@ storms <- read.csv(here("Data/NOAA/stormStats.csv"))%>%
   mutate(start = lubridate::ymd_hms(start),
          end = lubridate::ymd_hms(end))
 
-<<<<<<< HEAD
-
 for(n in 1:nrow(storms)){
-
-=======
-for(n in 1:nrow(storms)){
->>>>>>> bfd79d98a3958a0283b9c4a62ad1e899c54d8a68
   start <- storms$start[n]
   end <- storms$end[n]
   files <- h5Files%>%
