@@ -1,0 +1,260 @@
+---
+title: "Exploratory Analysis"
+author: "Andrew Murray"
+date: "12/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(plotly)
+library(sf)
+library(here)
+
+# Load storm info
+sinfo <- read.csv(here("Data/NOAA/stormStats.csv"))%>%
+  select(ID, Name, lFall_dateTime )%>%
+  mutate(ID = tolower(ID))
+
+# Load Slope Info
+slope <- read.csv(here("Data/nlcd/slope_zonal.csv"))%>%
+  select(CELL_ID, MEAN)
+colnames(slope)[2] <- "Mean_Slope"
+
+all <- read.csv(here("Data/Analysis/AllStorms_Combo.csv"))%>%
+  filter(!Class == "Open Water" & !is.na(ppt_mm))%>%
+  left_join(sinfo, by = c("storm" = "ID"))%>%
+  left_join(slope, by = c("Cell_ID" = "CELL_ID"))
+all$Class <- factor(all$Class)
+
+all$Class  <- with(all, reorder(Class, Dom_LC))
+
+all$yDay <- lubridate::yday(all$lFall_dateTime)
+
+# Create a metric for percent SM increase
+all$Pct_Inc <- 100 * (all$ant_SM/all$Peak_SM)
+
+
+```
+
+
+
+
+## Total PPT vs. Soil Moisture Increase by SMAP Cell
+
+```{r}
+nlcdCols <- c("Open Water" = "#486DA2",
+              "Developed, Open Space" = "#E1CDCE",
+              "Developed, Low Intensity" = "#DC9881",
+              "Developed, Medium Intensity" = "#F10100",
+              "Developed High Intensity" = "#AB0101",
+              "Deciduous Forest" = "#6CA966",
+              "Evergreen Forest" = "#1D6533",
+              "Mixed Forest" = "#BDCC93",
+              "Shrub/Scrub" = "#D1BB82",
+              "Grassland/Herbaceous" = "#EDECCD",
+              "Pasture/Hay" = "#DDD83E",
+              "Cultivated Crops" = "#AE7229",
+              "Woody Wetlands" = "#BAD7ED",
+              "Emergent Herbaceous Wetlands" = "#71A4C1")
+
+ggplot(all)+
+  geom_point(aes(x = ppt_mm, y = Peak_SM - ant_SM, col = Class))+
+  facet_wrap(~Class)+
+  scale_color_manual(values = nlcdCols)
+```
+
+## Antecedent Soil Moisture Varies
+
+```{r}
+ggplot(all)+
+  geom_boxplot(aes(x = Class, y = ant_SM, fill = Class), outlier.shape = 21)+
+  scale_fill_manual(values = nlcdCols)+
+  labs(title = "Antecedent Soil Moisture for all Tropical Cyclones since 2015",
+       x = "",
+       y = "Antecedent Soil Moisture")+
+  theme(axis.text.x = element_blank())+
+  guides(fill=guide_legend(title="NLCD Class"))
+
+reg1 <- lm(all$Rtrn_Lngth + all$Dom_LC ~ all$ant_SM)
+
+
+# Regressions for each Land Cover Class (Global for all storms)
+out2 <- data.frame()
+
+
+for(i in c("ant_SM","ppt_mm","yDay","Mean_Slope")){
+
+  for (var in unique(all$Class)) {
+    filt <- all%>%
+      filter(Class == var)
+  
+    lm <- lm(filt$Rtrn_Lngth ~ filt[,i])
+  
+    #print(paste0("Summary of Regression for: ",var))
+  
+    coef <- as.data.frame(summary(lm)$coefficients)
+  
+    r2 <- as.numeric(summary(lm)$r.squared)
+  
+    out <- data.frame("Ind_Var" = i , "NLCD_Class" = var, "T_Stat" = coef[2,3], "p_val" = as.numeric(coef[2,4],5), "R2" = r2, "N" = nrow(filt))
+  
+    out2 <- rbind(out2,out)
+  }
+}
+
+out2 <- out2%>%
+  filter(N > 50)
+
+write.csv(out2, here("Data/Analysis/Regressions_Global.csv"))
+
+# Make readable
+global <- out2%>%
+  mutate(R2 = round(R2,2),
+         p_val = round(p_val,6),
+         T_Stat = round(T_Stat,4))%>%
+  pivot_wider(names_from = c(Ind_Var), values_from = c(T_Stat,p_val,R2))
+
+
+# Run it for each storm
+out3 <- data.frame()
+
+storms <- data.frame(ID = unique(all$storm))%>%
+  filter(!ID %in% c("al062018","al092017","al112019","al142018","al162017","al162019","al172019"))
+
+for(n in storms$ID){
+  
+  stormfilt <- all%>%
+    filter(storm == n)
+  
+  for(i in c("ant_SM","ppt_mm","yDay","Mean_Slope")){
+
+    for (var in unique(stormfilt$Class)) {
+     filt <- stormfilt%>%
+       filter(Class == var & storm == n)
+  
+      lm <- lm(filt$Rtrn_Lngth ~ filt[,i])
+  
+      #print(paste0("Summary of Regression for: ",var))
+  
+      coef <- as.data.frame(summary(lm)$coefficients)
+  
+      r2 <- as.numeric(summary(lm)$r.squared)
+  
+      out <- data.frame("storm" = n,"Ind_Var" = i , "NLCD_Class" = var, "T_Stat" = coef[2,3], "p_val" = as.numeric(coef[2,4],5), "R2" = r2, "N" = nrow(filt))
+  
+      out3 <- rbind(out3,out)
+    }
+  }
+}
+
+outByStorm <- out3%>%
+  filter(N > 25)
+
+write.csv(outByStorm, here("Data/Analysis/regressionsByStorm.csv"))
+```
+
+## Peak Soil Moisture Varies
+
+```{r}
+p <- ggplot(all)+
+  geom_boxplot(aes(x = Class, y = Peak_SM, fill = Class), outlier.shape = 21)+
+  scale_fill_manual(values = nlcdCols)+
+  labs(title = "Peak Soil Moisture for all Tropical Cyclones since 2015",
+       x = "",
+       y = "Peak Soil Moisture")+
+  theme(axis.text.x = element_blank())+
+  guides(fill=guide_legend(title="NLCD Class"))
+
+ggplotly(p)
+```
+
+## Return time normalized by Percent Soil Moisture Increase
+
+```{r}
+p <- ggplot(all)+
+  geom_boxplot(aes(x = Class, y = Rtrn_Lngth, fill = Class), outlier.shape = 21)+
+  scale_fill_manual(values = nlcdCols)+
+  labs(title = "Peak Soil Moisture for all Tropical Cyclones since 2015",
+       x = "",
+       y = "Peak Soil Moisture")+
+  theme(axis.text.x = element_blank())+
+  guides(fill=guide_legend(title="NLCD Class"))
+
+ggplotly(p)
+```
+
+## Only consider cells where dominate land class is > 50%
+
+```{r}
+maj <- all%>%
+  filter(pctMode > 50)
+
+ggplot(maj)+
+  geom_boxplot(aes(x = Class, y = Rtrn_Lngth / Pct_Inc, fill = Class), outlier.shape = 21)+
+  scale_fill_manual(values = nlcdCols)+
+  labs(title = "Peak Soil Moisture for all Tropical Cyclones since 2015",
+       x = "",
+       y = "Time to Return to Antecedent SM [Hours]")+
+  theme(axis.text.x = element_blank())+
+  guides(fill=guide_legend(title="NLCD Class"))+
+  facet_wrap(~storm)
+```
+
+## What if we bin by Percent Increase
+
+### < 50%
+```{r}
+sub1 <- all%>%
+  filter(Pct_Inc < 50)
+
+ggplot(sub1)+
+  geom_boxplot(aes(x = Class, y = Rtrn_Lngth / Pct_Inc, fill = Class), outlier.shape = 21)+
+  scale_fill_manual(values = nlcdCols)+
+  labs(title = "Peak Soil Moisture for all Tropical Cyclones since 2015",
+       x = "",
+       y = "Time to Return to Antecedent SM [Hours]")+
+  theme(axis.text.x = element_blank())+
+  guides(fill=guide_legend(title="NLCD Class"))
+```
+
+
+### 50% - 75%
+```{r}
+sub2 <- all%>%
+  filter(Pct_Inc >= 50 & Pct_Inc <75)
+
+ggplot(sub2)+
+  geom_boxplot(aes(x = Class, y = Rtrn_Lngth / Pct_Inc, fill = Class), outlier.shape = 21)+
+  scale_fill_manual(values = nlcdCols)+
+  labs(title = "Peak Soil Moisture for all Tropical Cyclones since 2015",
+       x = "",
+       y = "Time to Return to Antecedent SM [Hours]")+
+  theme(axis.text.x = element_blank())+
+  guides(fill=guide_legend(title="NLCD Class"))
+```
+
+### > 75%
+```{r}
+sub3 <- all%>%
+  filter(Pct_Inc >= 75)
+
+ggplot(sub3)+
+  geom_boxplot(aes(x = Class, y = Rtrn_Lngth, fill = Class), outlier.shape = 21)+
+  scale_fill_manual(values = nlcdCols)+
+  labs(title = "Peak Soil Moisture for all Tropical Cyclones since 2015",
+       x = "",
+       y = "Time to Return to Antecedent SM [Hours]")+
+  theme(axis.text.x = element_blank())+
+  guides(fill=guide_legend(title="NLCD Class"))
+```
+
+### Percent Increase
+
+```{r}
+
+ggplot(all)+
+  geom_boxplot(aes(x = Class,y = Pct_Inc))
+```
+

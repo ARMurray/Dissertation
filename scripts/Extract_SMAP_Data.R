@@ -39,15 +39,17 @@ outDf <- centroids
 # Loop through storms that made landfall and extract SMAP data 
 # from their start date, through two weeks after the last storm observation
 storms <- read.csv(here("Data/NOAA/stormStats.csv"))%>%
-  filter(landfall == "YES")%>%
+  filter(landfall == "YES" & !ID == "al112016")%>%
   mutate(start = lubridate::ymd_hms(start),
          end = lubridate::ymd_hms(end))
 
-for(n in nrow(storms):nrow(storms)){
+
+for(n in 1:nrow(storms)){
+
   start <- storms$start[n]
   end <- storms$end[n]
   files <- h5Files%>%
-    filter(Date >= start & Date <= end+1209600)
+    filter(Date >= start & Date <= end+2419200)
   outDf <- centroids
   
   # Create a spatial filter for each storm to keep file size small
@@ -64,7 +66,7 @@ for(n in nrow(storms):nrow(storms)){
     vect <- data.frame("RZ_SM" = as.vector(h5sm))%>%
       mutate(RZ_SM = ifelse(RZ_SM == -9999, NA, RZ_SM))
     
-    colnames(vect) <- c(paste0("RZ_SM_",h5Files$Date[i]))
+    colnames(vect) <- c(paste0("RZ_SM_",files$Date[i]))
     
     outDf <- cbind(outDf, vect)
     

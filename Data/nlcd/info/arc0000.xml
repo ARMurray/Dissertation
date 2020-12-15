@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20201214</CreaDate><CreaTime>15474100</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Image Analyst Tools.tbx\ZonalStatisticsAsTable" Date="20201214" Time="154741">ZonalStatisticsAsTable SE_US_SMAP_Template Cell_ID Slope_500m_se.tif C:\Users\HP\Github\Dissertation\Data\nlcd\Slope_Zonal DATA All CURRENT_SLICE 90</Process></lineage></DataProperties></Esri></metadata>
