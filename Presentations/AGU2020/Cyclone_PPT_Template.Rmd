@@ -1,0 +1,170 @@
+---
+title: "Tropical Cyclone Soil Moisture Viewer"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+---
+  
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(crosstalk)
+library(plotly)
+library(sf)
+library(tidyr)
+library(tidyverse)
+library(here)
+library(leaflet)
+library(RColorBrewer)
+library(DT)
+
+# Import track
+names <- data.frame(ID = substr(list.files(here("Data/NOAA/officialTracks/landfalls/"),recursive = TRUE,full.names = FALSE, pattern = "lin.shp$"),1,8))
+
+linelist <- data.frame(path = list.files(here("Data/NOAA/officialTracks/landfalls/"),recursive = TRUE,full.names = TRUE, pattern = "lin.shp$"))%>%
+  cbind(names)
+
+file <- linelist%>%
+  filter(ID %in% subgroup$Storm)
+
+track <- st_read(file[1,1])
+
+# Import storm points
+pnt <- st_read(paste0(here("Data/NOAA/officialTracks"),"/",substr(file[1,2],5,8),"/",file[1,2],"_pts.shp"))
+
+# Import Landcover
+lcov <- st_read(here("Data/nlcd/NLCD_2016_SE_Zonal_Stats.shp"))%>%
+  st_drop_geometry()%>%
+  filter(Cell_ID %in% subgroup$cell_id)
+colnames(lcov)[1] <- "cell_id"
+
+# Import SMAP Stats
+SMAP_Stats_Files <- data.frame(Path = list.files(here("Data/SMAP/SMAP_Stats"), full.names = TRUE),
+                                ID = substr(list.files(here("Data/SMAP/SMAP_Stats"), full.names = FALSE),12, 19))%>%
+  filter(ID == subgroup$Storm[1])
+
+SMAP_Stats <- read.csv(SMAP_Stats_Files$Path[1])%>%
+  select(Cell_ID, ant_SM)
+
+# Import SMAP
+smapLcov <- read.csv(paste0(here("Data/extractions"),"/",subgroup$Storm[1],"_smap_sm.csv"))%>%
+  filter(Cell_ID %in% subgroup$cell_id)%>%
+  select(!c(X,x,y))%>%
+  pivot_longer(!Cell_ID, names_to = "dateTime",values_to = "SM")%>%
+  mutate(dateTime = lubridate::ymd_hms(paste0(substr(dateTime,7,10),"/",substr(dateTime,12,13),"/",substr(dateTime,15,16)," ",substr(dateTime,18,19),"-",substr(dateTime,21,22),"-",substr(dateTime,24,25))))%>%
+  as.data.frame()%>%
+  left_join(lcov, by = c("Cell_ID" = "cell_id"))%>%
+  left_join(SMAP_Stats)%>%
+  mutate(nrml_SM = SM / ant_SM)%>%
+  filter(dateTime > lubridate::ymd_hms(subgroup$lFall_dateTime[1]) - 21600 & dateTime < lubridate::ymd_hms(subgroup$lFall_dateTime[1]) + 1036800)%>%
+  select(Cell_ID,dateTime, nrml_SM,Class)%>%
+  filter(!is.na(Class) & !Class == "Open Water")%>%
+  left_join(nlcdCols)%>%
+  mutate(Class = as.factor(Class))
+
+# Create shared data
+sd_sf <- SharedData$new(subgroup, ~cell_id, group = "ppt")
+sd_df <- SharedData$new(as.data.frame(subgroup), ~cell_id, group = "ppt")
+sd_SM_lcov <- SharedData$new(smapLcov, ~Cell_ID, group = "ppt")
+
+# MAPBOX token
+Sys.setenv('MAPBOX_TOKEN' = 'pk.eyJ1IjoiYXJtdXJyYXkxODkiLCJhIjoiY2tpN2V2emNmMnI5bzJ4cDV3cnhtaWNqZCJ9.fwZ79nuMzsPeljHb-j5Cbw')
+```
+
+Row
+-----------------------------------------------------------------------
+### `r paste0(subgroup$nameYear[1])`
+  
+```{r}
+plot_mapbox(sd_sf, colors = pal)%>%
+  add_sf(color = ~fct_reorder(Class,ppt_mm),
+         hoverinfo = "text",
+         text = ~paste(Name, "<br>",
+                       "Storm Name: ",Name, "<br>",
+                       "Landfall: ", lFall_dateTime, "<br>",
+                       "Max Sustained Windspeed: ", maxIntensity, "<br>",
+                       "Total Precipitation: ", round(ppt_mm)," [mm]"
+         ))%>%
+  add_sf(data = track, line = list(color = 'rgba(67,67,67,1)', width = 2),name = "Storm Track")%>%
+  add_sf(data = pnt, marker = list(size = ~INTENSITY/3, color = "#bf170b", opacity = .5),name = "Storm Centers",
+         hoverinfo = "text",
+         text = ~paste("Date / Time (UTC): ", lubridate::ymd_hm(paste0(YEAR,"/",MONTH,"/",DAY," ",HHMM)),"<br>",
+                       "Name: ", STORMNAME,"<br>",
+                       "Storm Type: ",STORMTYPE,"<br>",
+                       "Max Sustained Winds (mph): ",INTENSITY))
+```
+
+
+
+Row {.tabset .tabset-fade}
+-----------------------------------------------------------------------  
+
+
+### Filters
+  
+```{r}
+filter_slider(
+  id = "sliderid",
+  label = "Precipitation [mm]",
+  sharedData = sd_df,
+  column = ~ppt_mm,
+  step = 25,
+  sep = "",
+  ticks = FALSE
+)
+
+filter_checkbox(
+  id = "NLCD",
+  label = "NLCD Class",
+  sharedData = sd_SM_lcov,
+  column = ~Class,
+  group = ~Class,
+  inline = TRUE
+)
+```
+
+### Landcover
+```{r}
+plot_ly(sd_SM_lcov, color = ~Class,colors = set_names(nlcdCols$Color,nlcdCols$Class))%>%
+  group_by(Cell_ID)%>%
+  add_lines(x = ~dateTime, y = ~nrml_SM)%>%
+  layout(title = "Soil Moisture Change by SMAP Cell", xaxis = list(title = ""), yaxis = list(title = "SM Normalized by Antecedent SM", showticklabels = FALSE))
+
+
+```
+
+### Regression Results
+
+```{r}
+bystorm <- read.csv(here("Data/Analysis/regressionsByStorm.csv"))%>%
+  filter(storm == subgroup$Storm[1])%>%
+  select(!X)%>%
+  mutate(Ind_Var = recode(Ind_Var, ant_SM = "Antecedent SM",
+                          Mean_Slope = "Mean Slope",
+                          ppt_mm = "PPT",
+                          yDay = "Day of Year"),
+         T_Stat = round(T_Stat,3),
+         p_val = round(p_val,6),
+         R2 = round(R2,3))
+
+datatable(bystorm,rownames = FALSE,
+          colnames = c('Independent Variable', 'NLCD Class', 'T Statistic', 'P - Value', 'R^2',"N"))%>%
+  formatStyle("R2", backgroundColor = styleInterval(c(.1,.2,.3,.4,.5,.6), c("#d73027","#fc8d59","#fee08b","#ffffbf","#d9ef8b","#91cf60","#1a9850")))%>%
+  formatStyle("p_val",backgroundColor = styleInterval(c(.0005,.005,.05),c("#1a9850","#91cf60","#d9ef8b","#d73027")))%>%
+  formatStyle(
+    'NLCD_Class', backgroundColor = styleEqual(c("Cultivated Crops","Deciduous Forest","Developed High Intensity",
+                                                 "Developed, Low Intensity","Developed, Medium Intensity",
+                                                 "Developed, Open Space","Emergent Herbaceous Wetlands",
+                                                 "Evergreen Forest","Grassland/Herbaceous","Mixed Forest",
+                                                 "Pasture/Hay","Shrub/Scrub","Woody Wetlands"),
+                                               c("#AE7229", "#6CA966","#AB0101",
+                                                 "#DC9881","#F10100",
+                                                 "#E1CDCE","#71A4C1",
+                                                 "#1D6533","#EDECCD","#BDCC93",
+                                                 "#DDD83E","#D1BB82","#BAD7ED"
+                                               ))
+  )
+```
+
+
+
+

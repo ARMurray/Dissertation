@@ -1,0 +1,5 @@
+"","storm","Ind_Var","NLCD_Class","T_Stat","p_val","R2","N"
+"1","al112019","ant_SM","Grassland/Herbaceous",5.39343838105827,8.44022158966468e-08,0.0254924664452714,2
+"2","al112019","ppt_mm","Grassland/Herbaceous",23.0931522309409,1.06055773336499e-96,0.324132819846434,2
+"3","al112019","yDay","Grassland/Herbaceous",NA,NA,0,2
+"4","al112019","Mean_Slope","Grassland/Herbaceous",-16.2437689653325,2.10251427646574e-53,0.191778250990339,2
