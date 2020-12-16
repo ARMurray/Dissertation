@@ -6,21 +6,12 @@
     <MDI key="Filename">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/aup/Y2015/M03/D31/SMAP_L4_SM_aup_20150331T030000_Vv4030_001.h5</MDI>
     <MDI key="History">File written by ldas2daac.x</MDI>
     <MDI key="Institution">NASA Global Modeling and Assimilation Office</MDI>
-    <MDI key="Metadata_AcquisitionInformation_platformDocument_edition"></MDI>
-    <MDI key="Metadata_AcquisitionInformation_platformDocument_publicationDate"></MDI>
-    <MDI key="Metadata_AcquisitionInformation_platformDocument_title"></MDI>
     <MDI key="Metadata_AcquisitionInformation_platform_antennaRotationRate">13 </MDI>
     <MDI key="Metadata_AcquisitionInformation_platform_description">The SMAP observatory houses an L-band radiometer that operates at 1.4 GHz and an L-band radar that operates at 1.26-1.29 GHz.  The instruments share a rotating reflector antenna with a 6 meter aperture that scans over a 1000 km swath.  The bus is a 3 axis stabilized spacecraft that provides momentum compensation for the rotating antenna.</MDI>
     <MDI key="Metadata_AcquisitionInformation_platform_identifier">SMAP</MDI>
-    <MDI key="Metadata_AcquisitionInformation_radarDocument_edition"></MDI>
-    <MDI key="Metadata_AcquisitionInformation_radarDocument_publicationDate"></MDI>
-    <MDI key="Metadata_AcquisitionInformation_radarDocument_title"></MDI>
     <MDI key="Metadata_AcquisitionInformation_radar_description">The SMAP radar instrument employs an L-band conically scanned system and SAR processing techniques to achieve moderate resolution (1 km) backscatter measurements over a very wide 1000 km swath.</MDI>
     <MDI key="Metadata_AcquisitionInformation_radar_identifier">SMAP SAR</MDI>
     <MDI key="Metadata_AcquisitionInformation_radar_type">L-band Synthetic Aperture Radar</MDI>
-    <MDI key="Metadata_AcquisitionInformation_radiometerDocument_edition"></MDI>
-    <MDI key="Metadata_AcquisitionInformation_radiometerDocument_publicationDate"></MDI>
-    <MDI key="Metadata_AcquisitionInformation_radiometerDocument_title"></MDI>
     <MDI key="Metadata_AcquisitionInformation_radiometer_description">The SMAP L-band Radiometer records V-pol, H-pol, 3rd and 4th Stokes brightness temperatures at 40 km resolution at 4.3 Megabits per second with accuracies of 1.3 Kelvin or better.</MDI>
     <MDI key="Metadata_AcquisitionInformation_radiometer_identifier">SMAP RAD</MDI>
     <MDI key="Metadata_AcquisitionInformation_radiometer_type">L-band Radiometer</MDI>
@@ -128,9 +119,6 @@
     <MDI key="Metadata_Config_L4_SM_VersionID">Vv4030</MDI>
     <MDI key="Metadata_Config_ORIGINATING_SYSTEM">SMAP_GMAO</MDI>
     <MDI key="Metadata_CRID_AUP_L4_SM_aup_identifier_product_DOI">10.5067/60HB8VIP2T8W</MDI>
-    <MDI key="Metadata_CRID_AUP_SPL1CTB_CompositeReleaseID"></MDI>
-    <MDI key="Metadata_CRID_AUP_SPL2SMAP_CompositeReleaseID"></MDI>
-    <MDI key="Metadata_CRID_AUP_SPL2SMA_CompositeReleaseID"></MDI>
     <MDI key="Metadata_CRID_changeLog_L4_SM_aup_identifier_product_DOI">Parameter was added. Value is "10.5067/60HB8VIP2T8W".</MDI>
     <MDI key="Metadata_CRID_changeLog_SPL1CTB_CompositeReleaseID">Parameter was added. Value is "".</MDI>
     <MDI key="Metadata_CRID_changeLog_SPL2SMAP_CompositeReleaseID">Parameter was added. Value is "".</MDI>
@@ -156,7 +144,6 @@
     <MDI key="Metadata_CRID_Root_L4_SM_ENSUPD_version">R009</MDI>
     <MDI key="Metadata_CRID_Root_L4_SM_METADATA_version">jardizzo-SMAP_L4_SM-meta_R003</MDI>
     <MDI key="Metadata_CRID_Root_L4_SM_SCALING_SPL1CTB_version">L4SM_v009</MDI>
-    <MDI key="Metadata_CRID_Root_L4_SM_SCALING_SPL2SMAP_version"></MDI>
     <MDI key="Metadata_CRID_Root_L4_SM_SWVersionID">reichle-LDASsa_m3-16_6_p1</MDI>
     <MDI key="Metadata_CRID_Root_VersionID">Vv4030</MDI>
     <MDI key="Metadata_DataQuality_TBH_CompletenessOmission_evaluationMethodType">directInternal</MDI>
@@ -1783,15 +1770,14 @@
     <MDI key="Metadata_SeriesIdentification_status">onGoing</MDI>
     <MDI key="Metadata_SeriesIdentification_topicCategoryCode">geoscientificInformation</MDI>
     <MDI key="Metadata_SeriesIdentification_VersionID">Vv4030</MDI>
-    <MDI key="Metadata_Source_L1C_TB_creationDate"></MDI>
     <MDI key="Metadata_Source_L1C_TB_description">The SMAP Level 1C Brightness Temperature product, which contains the assimilated SMAP radiometer brightness temperatures on 36 km EASE-Grid 2.0.</MDI>
-    <MDI key="Metadata_Source_L1C_TB_DOI"></MDI>
-    <MDI key="Metadata_Source_L1C_TB_fileName"></MDI>
     <MDI key="Metadata_Source_L1C_TB_identifier">SPL1CTB</MDI>
-    <MDI key="Metadata_Source_L1C_TB_version"></MDI>
     <MDI key="References">see SMAP L4_SM Product Specification Documentation</MDI>
     <MDI key="Source">reichle-LDASsa_m3-16_6_p1</MDI>
     <MDI key="Title">SMAP L4_SM Analysis Update (AUP) Data Granule</MDI>
+  </Metadata>
+  <Metadata domain="Esri">
+    <MDI key="PyramidResamplingType">NEAREST</MDI>
   </Metadata>
   <PAMRasterBand band="1">
     <Metadata>
