@@ -1,0 +1,1810 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="Comment">HDF-5</MDI>
+    <MDI key="Contact">http://gmao.gsfc.nasa.gov</MDI>
+    <MDI key="Conventions">CF</MDI>
+    <MDI key="Filename">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/aup/Y2015/M03/D31/SMAP_L4_SM_aup_20150331T030000_Vv4030_001.h5</MDI>
+    <MDI key="History">File written by ldas2daac.x</MDI>
+    <MDI key="Institution">NASA Global Modeling and Assimilation Office</MDI>
+    <MDI key="Metadata_AcquisitionInformation_platformDocument_edition"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_platformDocument_publicationDate"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_platformDocument_title"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_platform_antennaRotationRate">13 </MDI>
+    <MDI key="Metadata_AcquisitionInformation_platform_description">The SMAP observatory houses an L-band radiometer that operates at 1.4 GHz and an L-band radar that operates at 1.26-1.29 GHz.  The instruments share a rotating reflector antenna with a 6 meter aperture that scans over a 1000 km swath.  The bus is a 3 axis stabilized spacecraft that provides momentum compensation for the rotating antenna.</MDI>
+    <MDI key="Metadata_AcquisitionInformation_platform_identifier">SMAP</MDI>
+    <MDI key="Metadata_AcquisitionInformation_radarDocument_edition"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_radarDocument_publicationDate"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_radarDocument_title"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_radar_description">The SMAP radar instrument employs an L-band conically scanned system and SAR processing techniques to achieve moderate resolution (1 km) backscatter measurements over a very wide 1000 km swath.</MDI>
+    <MDI key="Metadata_AcquisitionInformation_radar_identifier">SMAP SAR</MDI>
+    <MDI key="Metadata_AcquisitionInformation_radar_type">L-band Synthetic Aperture Radar</MDI>
+    <MDI key="Metadata_AcquisitionInformation_radiometerDocument_edition"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_radiometerDocument_publicationDate"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_radiometerDocument_title"></MDI>
+    <MDI key="Metadata_AcquisitionInformation_radiometer_description">The SMAP L-band Radiometer records V-pol, H-pol, 3rd and 4th Stokes brightness temperatures at 40 km resolution at 4.3 Megabits per second with accuracies of 1.3 Kelvin or better.</MDI>
+    <MDI key="Metadata_AcquisitionInformation_radiometer_identifier">SMAP RAD</MDI>
+    <MDI key="Metadata_AcquisitionInformation_radiometer_type">L-band Radiometer</MDI>
+    <MDI key="Metadata_Config_BLACKLIST">/discover/nobackup/projects/gmao/smap/SMAP_L4/smap_blacklist.csv</MDI>
+    <MDI key="Metadata_Config_CompositeStreamID">fp</MDI>
+    <MDI key="Metadata_Config_ECSVersionID">004</MDI>
+    <MDI key="Metadata_Config_L4_BROWSE_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/browse</MDI>
+    <MDI key="Metadata_Config_L4_BROWSE_EXPORT_DIR">/san_extranet/collab/SMAP/browse/l4sm/Vv4030</MDI>
+    <MDI key="Metadata_Config_L4_BROWSE_EXPORT_LOGIN">scp://dao_ops@polar.gsfc.nasa.gov</MDI>
+    <MDI key="Metadata_Config_L4_OBS2HTML_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/obs2html</MDI>
+    <MDI key="Metadata_Config_L4_OBS2HTML_EXPORT_DIR">/san_extranet/collab/SMAP/monitoring/l4sm_ods/Vv4030</MDI>
+    <MDI key="Metadata_Config_L4_OBS2HTML_EXPORT_LOGIN">scp://dao_ops@polar.gsfc.nasa.gov</MDI>
+    <MDI key="Metadata_Config_L4_OPERATIONAL_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_OPERATIONAL_description">SMAP Level-4 Operational System</MDI>
+    <MDI key="Metadata_Config_L4_OPERATIONAL_version">jardizzo-SMAP_L4_OPS-R16_p1</MDI>
+    <MDI key="Metadata_Config_L4_QUADS_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/quads</MDI>
+    <MDI key="Metadata_Config_L4_QUADS_EXPORT_DIR">/san_extranet/collab/SMAP/monitoring/l4sm_quads/Vv4030</MDI>
+    <MDI key="Metadata_Config_L4_QUADS_EXPORT_LOGIN">scp://dao_ops@polar.gsfc.nasa.gov</MDI>
+    <MDI key="Metadata_Config_L4_SM_algorithmVersionID">reichle-LDASsa_m3-16_6_p1</MDI>
+    <MDI key="Metadata_Config_L4_SM_ATBDDate">2014-12-09</MDI>
+    <MDI key="Metadata_Config_L4_SM_ATBDVersion">Revision-A</MDI>
+    <MDI key="Metadata_Config_L4_SM_aup_identifier_product_DOI">10.5067/60HB8VIP2T8W</MDI>
+    <MDI key="Metadata_Config_L4_SM_BATCH_JOB_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_BATCH_JOB_description">Batch Job</MDI>
+    <MDI key="Metadata_Config_L4_SM_BATCH_JOB_directoryID">/discover/nobackup/projects/gmao/smap/Operations/SPL4SM/SPL4SM_Vv4030/runModel/rip</MDI>
+    <MDI key="Metadata_Config_L4_SM_BATCH_JOB_version">R002</MDI>
+    <MDI key="Metadata_Config_L4_SM_BCS_CLSM_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_BCS_CLSM_description">TBD</MDI>
+    <MDI key="Metadata_Config_L4_SM_BCS_CLSM_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/bcs/CLSM_params/mkCatchParam_SMAP_L4SM_v003a</MDI>
+    <MDI key="Metadata_Config_L4_SM_BCS_CLSM_version">mkCatchParam_SMAP_L4SM_v003a</MDI>
+    <MDI key="Metadata_Config_L4_SM_BCS_RTM_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_BCS_RTM_description">TBD</MDI>
+    <MDI key="Metadata_Config_L4_SM_BCS_RTM_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/bcs/RTM_params/RTMParam_SMAP_L4SM_v002b</MDI>
+    <MDI key="Metadata_Config_L4_SM_BCS_RTM_version">RTMParam_SMAP_L4SM_v002b</MDI>
+    <MDI key="Metadata_Config_L4_SM_BROWSE_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/browse</MDI>
+    <MDI key="Metadata_Config_L4_SM_CATBIAS_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_CATBIAS_description">Catchment Bias Inputs</MDI>
+    <MDI key="Metadata_Config_L4_SM_CATBIAS_directoryID">/discover/nobackup/projects/gmao/smap/Operations/SPL4SM/SPL4SM_Vv4030/runModel/rip</MDI>
+    <MDI key="Metadata_Config_L4_SM_CATBIAS_version">R001</MDI>
+    <MDI key="Metadata_Config_L4_SM_CLIM_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_CLIM_description">Pentad climatology used for percentile calculation</MDI>
+    <MDI key="Metadata_Config_L4_SM_CLIM_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/climatology/L4SM_v006</MDI>
+    <MDI key="Metadata_Config_L4_SM_CLIM_version">L4SM_v006</MDI>
+    <MDI key="Metadata_Config_L4_SM_CompositeReleaseID">Vv40300001</MDI>
+    <MDI key="Metadata_Config_L4_SM_documentation">Soil Moisture Active Passive (SMAP) Level 4 Surface and Root Zone Soil Moisture (L4_SM) Algorithm Theoretical Basis Document (ATBD)</MDI>
+    <MDI key="Metadata_Config_L4_SM_documentDate">2014-12-09</MDI>
+    <MDI key="Metadata_Config_L4_SM_documentVersion">Revision-A</MDI>
+    <MDI key="Metadata_Config_L4_SM_DRIVER_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_DRIVER_description">LDAS Main Driver Inputs</MDI>
+    <MDI key="Metadata_Config_L4_SM_DRIVER_directoryID">/discover/nobackup/projects/gmao/smap/Operations/SPL4SM/SPL4SM_Vv4030/runModel/rip</MDI>
+    <MDI key="Metadata_Config_L4_SM_DRIVER_version">R005</MDI>
+    <MDI key="Metadata_Config_L4_SM_ECSVersionID">004</MDI>
+    <MDI key="Metadata_Config_L4_SM_ENSPROP_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_ENSPROP_description">EnKF Inputs</MDI>
+    <MDI key="Metadata_Config_L4_SM_ENSPROP_directoryID">/discover/nobackup/projects/gmao/smap/Operations/SPL4SM/SPL4SM_Vv4030/runModel/rip</MDI>
+    <MDI key="Metadata_Config_L4_SM_ENSPROP_version">R004</MDI>
+    <MDI key="Metadata_Config_L4_SM_ENSUPD_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_ENSUPD_description">EnKF Inputs for Land EnKF Update</MDI>
+    <MDI key="Metadata_Config_L4_SM_ENSUPD_directoryID">/discover/nobackup/projects/gmao/smap/Operations/SPL4SM/SPL4SM_Vv4030/runModel/rip</MDI>
+    <MDI key="Metadata_Config_L4_SM_ENSUPD_version">R009</MDI>
+    <MDI key="Metadata_Config_L4_SM_gph_identifier_product_DOI">10.5067/KPJNN2GI1DQR</MDI>
+    <MDI key="Metadata_Config_L4_SM_LFO_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_LFO_description">GEOS-5 Forward Processing</MDI>
+    <MDI key="Metadata_Config_L4_SM_LFO_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/GEOS-5/FP/e5130_fp</MDI>
+    <MDI key="Metadata_Config_L4_SM_LFO_DOI">TBD</MDI>
+    <MDI key="Metadata_Config_L4_SM_LFO_version">e5130_fp</MDI>
+    <MDI key="Metadata_Config_L4_SM_lmc_identifier_product_DOI">10.5067/KGLC3UH4TMAQ</MDI>
+    <MDI key="Metadata_Config_L4_SM_maintenanceDate">2019-05-31</MDI>
+    <MDI key="Metadata_Config_L4_SM_METADATA_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_METADATA_description">SMAP Level-4 Soil Moisture Metadata Version</MDI>
+    <MDI key="Metadata_Config_L4_SM_METADATA_version">jardizzo-SMAP_L4_SM-meta_R003</MDI>
+    <MDI key="Metadata_Config_L4_SM_MET_TAG">cross_FP__precCPCUG5FPv3</MDI>
+    <MDI key="Metadata_Config_L4_SM_OBS2HTML_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/obs2html</MDI>
+    <MDI key="Metadata_Config_L4_SM_ODS_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/obs</MDI>
+    <MDI key="Metadata_Config_L4_SM_PRECIP_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_PRECIP_description">CPCU Corrected Precipitation (Version-3, LLK)</MDI>
+    <MDI key="Metadata_Config_L4_SM_PRECIP_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/PRECIP/CPCUG5FPv3/e5130_fp</MDI>
+    <MDI key="Metadata_Config_L4_SM_PRECIP_DOI">TBD</MDI>
+    <MDI key="Metadata_Config_L4_SM_PRECIP_version">CPCUG5FPv3</MDI>
+    <MDI key="Metadata_Config_L4_SM_PSDEdition">1.5</MDI>
+    <MDI key="Metadata_Config_L4_SM_PSDPublicationDate">2018-05-31</MDI>
+    <MDI key="Metadata_Config_L4_SM_QUADS_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/Vv4030/quads</MDI>
+    <MDI key="Metadata_Config_L4_SM_revisionDate">2018-05-31</MDI>
+    <MDI key="Metadata_Config_L4_SM_SCALING_SPL1CTB_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_SCALING_SPL1CTB_description">TBD</MDI>
+    <MDI key="Metadata_Config_L4_SM_SCALING_SPL1CTB_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/L4_SM/scaling/SMAP_L1C_Tb_pentad/L4SM_v009</MDI>
+    <MDI key="Metadata_Config_L4_SM_SCALING_SPL1CTB_version">L4SM_v009</MDI>
+    <MDI key="Metadata_Config_L4_SM_softwareDate">2018-07-11</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL1CTB_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL1CTB_description">SMAP L1C Brightness Temperatures</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL1CTB_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/SMAP/OPS/L1C_TB</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL1CTB_version">R16010</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL2SMAP_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL2SMAP_description">SMAP L2 Soil Moisture Active/Passive</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL2SMAP_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/SMAP/OPS/L2_SM_AP</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL2SMAP_version">R16010</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL2SMA_changeLog">Initial version</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL2SMA_description">SMAP L2 Soil Moisture Active</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL2SMA_directoryID">/discover/nobackup/projects/gmao/smap/SMAP_L4/SMAP/OPS/L2_SM_A</MDI>
+    <MDI key="Metadata_Config_L4_SM_SPL2SMA_version">R16010</MDI>
+    <MDI key="Metadata_Config_L4_SM_STREAM_description">fp</MDI>
+    <MDI key="Metadata_Config_L4_SM_STREAM_directoryID">/discover/nobackup/projects/gmao/smap/Operations/SPL4SM/SPL4SM_Vv4030</MDI>
+    <MDI key="Metadata_Config_L4_SM_STREAM_version">SPL4SM_Vv4030</MDI>
+    <MDI key="Metadata_Config_L4_SM_SWVersionID">reichle-LDASsa_m3-16_6_p1</MDI>
+    <MDI key="Metadata_Config_L4_SM_VersionID">Vv4030</MDI>
+    <MDI key="Metadata_Config_ORIGINATING_SYSTEM">SMAP_GMAO</MDI>
+    <MDI key="Metadata_CRID_AUP_L4_SM_aup_identifier_product_DOI">10.5067/60HB8VIP2T8W</MDI>
+    <MDI key="Metadata_CRID_AUP_SPL1CTB_CompositeReleaseID"></MDI>
+    <MDI key="Metadata_CRID_AUP_SPL2SMAP_CompositeReleaseID"></MDI>
+    <MDI key="Metadata_CRID_AUP_SPL2SMA_CompositeReleaseID"></MDI>
+    <MDI key="Metadata_CRID_changeLog_L4_SM_aup_identifier_product_DOI">Parameter was added. Value is "10.5067/60HB8VIP2T8W".</MDI>
+    <MDI key="Metadata_CRID_changeLog_SPL1CTB_CompositeReleaseID">Parameter was added. Value is "".</MDI>
+    <MDI key="Metadata_CRID_changeLog_SPL2SMAP_CompositeReleaseID">Parameter was added. Value is "".</MDI>
+    <MDI key="Metadata_CRID_changeLog_SPL2SMA_CompositeReleaseID">Parameter was added. Value is "".</MDI>
+    <MDI key="Metadata_CRID_Root_CompositeReleaseID">Vv40300001</MDI>
+    <MDI key="Metadata_CRID_Root_HDF5_formatVersion">Version 1.8.14</MDI>
+    <MDI key="Metadata_CRID_Root_L4_COMPILER_VERSION">intel-18.0.1.163</MDI>
+    <MDI key="Metadata_CRID_Root_L4_KERNEL_NAME">Linux</MDI>
+    <MDI key="Metadata_CRID_Root_L4_KERNEL_PROCESSOR">x86_64</MDI>
+    <MDI key="Metadata_CRID_Root_L4_KERNEL_RELEASE">3.0.101-0.47.105-default</MDI>
+    <MDI key="Metadata_CRID_Root_L4_KERNEL_VERSION">#1 SMP Thu Jun 22 17:13:58 UTC 2017 (e1c7e3b)</MDI>
+    <MDI key="Metadata_CRID_Root_L4_MATH_KERNEL_LIBRARY">mkl-18.0.1.163</MDI>
+    <MDI key="Metadata_CRID_Root_L4_MPI_VERSION">sgi-mpt-2.17</MDI>
+    <MDI key="Metadata_CRID_Root_L4_OPERATING_SYSTEM">GNU/Linux</MDI>
+    <MDI key="Metadata_CRID_Root_L4_OPERATIONAL_version">jardizzo-SMAP_L4_OPS-R16_p1</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_algorithmVersionID">reichle-LDASsa_m3-16_6_p1</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_BATCH_JOB_version">R002</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_BCS_CLSM_version">mkCatchParam_SMAP_L4SM_v003a</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_BCS_RTM_version">RTMParam_SMAP_L4SM_v002b</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_CATBIAS_version">R001</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_DRIVER_version">R005</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_ENSPROP_version">R004</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_ENSUPD_version">R009</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_METADATA_version">jardizzo-SMAP_L4_SM-meta_R003</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_SCALING_SPL1CTB_version">L4SM_v009</MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_SCALING_SPL2SMAP_version"></MDI>
+    <MDI key="Metadata_CRID_Root_L4_SM_SWVersionID">reichle-LDASsa_m3-16_6_p1</MDI>
+    <MDI key="Metadata_CRID_Root_VersionID">Vv4030</MDI>
+    <MDI key="Metadata_DataQuality_TBH_CompletenessOmission_evaluationMethodType">directInternal</MDI>
+    <MDI key="Metadata_DataQuality_TBH_CompletenessOmission_measureDescription">Percent of land grid cells (excluding inland water and permanent ice) that lack H-polarized model forecast Tb data relative to the total number of land grid cells that fall within the global domain (excluding inland water and permanent ice).  Model forecast Tb is only computed where SMAP Tb observations are ingested.</MDI>
+    <MDI key="Metadata_DataQuality_TBH_CompletenessOmission_nameOfMeasure">Percent of Missing Data</MDI>
+    <MDI key="Metadata_DataQuality_TBH_CompletenessOmission_unitOfMeasure">Percent</MDI>
+    <MDI key="Metadata_DataQuality_TBH_CompletenessOmission_value">100 </MDI>
+    <MDI key="Metadata_DataQuality_TBH_DomainConsistency_evaluationMethodType">directInternal</MDI>
+    <MDI key="Metadata_DataQuality_TBH_DomainConsistency_measureDescription">Percent of geophysical data that fall within a predefined acceptable range of measure.</MDI>
+    <MDI key="Metadata_DataQuality_TBH_DomainConsistency_nameOfMeasure">Percent of geophysical data that are within the acceptable range.</MDI>
+    <MDI key="Metadata_DataQuality_TBH_DomainConsistency_unitOfMeasure">Percent</MDI>
+    <MDI key="Metadata_DataQuality_TBH_DomainConsistency_value">100</MDI>
+    <MDI key="Metadata_DataQuality_TBH_Scope">tb_h_forecast</MDI>
+    <MDI key="Metadata_DataQuality_TBV_CompletenessOmission_evaluationMethodType">directInternal</MDI>
+    <MDI key="Metadata_DataQuality_TBV_CompletenessOmission_measureDescription">Percent of land grid cells (excluding inland water and permanent ice) that lack V-polarized model forecast Tb data relative to the total number of land grid cells that fall within the global domain (excluding inland water and permanent ice).  Model forecast Tb is only computed where SMAP Tb observations are ingested.</MDI>
+    <MDI key="Metadata_DataQuality_TBV_CompletenessOmission_nameOfMeasure">Percent of Missing Data</MDI>
+    <MDI key="Metadata_DataQuality_TBV_CompletenessOmission_unitOfMeasure">Percent</MDI>
+    <MDI key="Metadata_DataQuality_TBV_CompletenessOmission_value">100 </MDI>
+    <MDI key="Metadata_DataQuality_TBV_DomainConsistency_evaluationMethodType">directInternal</MDI>
+    <MDI key="Metadata_DataQuality_TBV_DomainConsistency_measureDescription">Percent of geophysical data that fall within a predefined acceptable range of measure.</MDI>
+    <MDI key="Metadata_DataQuality_TBV_DomainConsistency_nameOfMeasure">Percent of geophysical data that are within the acceptable range.</MDI>
+    <MDI key="Metadata_DataQuality_TBV_DomainConsistency_unitOfMeasure">Percent</MDI>
+    <MDI key="Metadata_DataQuality_TBV_DomainConsistency_value">100</MDI>
+    <MDI key="Metadata_DataQuality_TBV_Scope">tb_v_forecast</MDI>
+    <MDI key="Metadata_DatasetIdentification_abstract">The SMAP L4_SM data product provides global, 3-hourly surface and root zone soil moisture at 9 km resolution. The L4_SM data product consists of three Collections: geophysical, analysis update and land-model-constants.</MDI>
+    <MDI key="Metadata_DatasetIdentification_characterSet">utf8</MDI>
+    <MDI key="Metadata_DatasetIdentification_CompositeReleaseID">Vv40300001</MDI>
+    <MDI key="Metadata_DatasetIdentification_creationDate">2018-09-13T03:54:58.000Z</MDI>
+    <MDI key="Metadata_DatasetIdentification_credit">The software that generates the L4_SM data product and the data system that automates its production were designed and implemented at the NASA Global Modeling and Assimilation Office, Goddard Space Flight Center, Greenbelt, Maryland, USA.</MDI>
+    <MDI key="Metadata_DatasetIdentification_ECSVersionDescription">Three-character string that identifies the type of ECS data stream and reflects the major science version of the product.</MDI>
+    <MDI key="Metadata_DatasetIdentification_ECSVersionID">004</MDI>
+    <MDI key="Metadata_DatasetIdentification_fileName">SMAP_L4_SM_aup_20150331T030000_Vv4030_001.h5</MDI>
+    <MDI key="Metadata_DatasetIdentification_language">eng</MDI>
+    <MDI key="Metadata_DatasetIdentification_longName">SMAP L4 Global 3-hourly 9 km Surface and Rootzone Soil Moisture Analysis Update</MDI>
+    <MDI key="Metadata_DatasetIdentification_originatorOrganizationName">NASA Global Modeling and Assimilation Office, Goddard Space Flight Center, Greenbelt, Maryland, USA</MDI>
+    <MDI key="Metadata_DatasetIdentification_purpose">The SMAP L4_SM data product provides spatially and temporally complete surface and root zone soil moisture information for science and applications users.</MDI>
+    <MDI key="Metadata_DatasetIdentification_QAAbstract">An ASCII product that contains statistical information on data product results.  These statistics enable data producers and users to assess the quality of the data in the data product granule.</MDI>
+    <MDI key="Metadata_DatasetIdentification_QACreationDate">2018-09-13T03:54:58.000Z</MDI>
+    <MDI key="Metadata_DatasetIdentification_QAFileName">SMAP_L4_SM_aup_20150331T030000_Vv4030_001.qa</MDI>
+    <MDI key="Metadata_DatasetIdentification_shortName">SPL4SMAU</MDI>
+    <MDI key="Metadata_DatasetIdentification_SMAPShortName">L4_SM_aup</MDI>
+    <MDI key="Metadata_DatasetIdentification_status">onGoing</MDI>
+    <MDI key="Metadata_DatasetIdentification_topicCategoryCode">geoscientificInformation</MDI>
+    <MDI key="Metadata_DatasetIdentification_UUID">C85BBFAE-B708-11E8-9FD1-67B56977E630</MDI>
+    <MDI key="Metadata_DatasetIdentification_VersionID">Vv4030</MDI>
+    <MDI key="Metadata_Extent_description">Global land excluding inland water and permanent ice.</MDI>
+    <MDI key="Metadata_Extent_eastBoundLongitude">180 </MDI>
+    <MDI key="Metadata_Extent_northBoundLatitude">85.044563 </MDI>
+    <MDI key="Metadata_Extent_rangeBeginningDateTime">2015-03-31T01:30:00.000Z</MDI>
+    <MDI key="Metadata_Extent_rangeEndingDateTime">2015-03-31T04:30:00.000Z</MDI>
+    <MDI key="Metadata_Extent_southBoundLatitude">-85.044563 </MDI>
+    <MDI key="Metadata_Extent_westBoundLongitude">-180 </MDI>
+    <MDI key="Metadata_GridSpatialRepresentation_Latitude_dimensionSize">1624d </MDI>
+    <MDI key="Metadata_GridSpatialRepresentation_Latitude_resolution">9 km on average</MDI>
+    <MDI key="Metadata_GridSpatialRepresentation_Longitude_dimensionSize">3856d </MDI>
+    <MDI key="Metadata_GridSpatialRepresentation_Longitude_resolution">9 km on average</MDI>
+    <MDI key="Metadata_iso_19139_dataset_xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;gmd:DS_Series xmlns:gmi="http://www.isotc211.org/2005/gmi"
+               xmlns:gco="http://www.isotc211.org/2005/gco"
+               xmlns:gmd="http://www.isotc211.org/2005/gmd"
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:gmx="http://www.isotc211.org/2005/gmx"
+               xmlns:gss="http://www.isotc211.org/2005/gss"
+               xmlns:gsr="http://www.isotc211.org/2005/gsr"
+               xmlns:gts="http://www.isotc211.org/2005/gts"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:eos="http://earthdata.nasa.gov/schema/eos"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:srv="http://www.isotc211.org/2005/srv"
+               xsi:schemaLocation="http://www.isotc211.org/2005/gmi http://cdn.earthdata.nasa.gov/iso/schema/1.0/ISO19115-2_EOS.xsd"&gt;
+   &lt;gmd:composedOf&gt;
+      &lt;gmd:DS_DataSet&gt;
+         &lt;gmd:has&gt;
+            &lt;gmi:MI_Metadata&gt;
+               &lt;gmd:fileIdentifier&gt;
+                  &lt;gmx:FileName&gt;SMAP_L4_SM_aup_20150331T030000_Vv4030_001.h5&lt;/gmx:FileName&gt;
+               &lt;/gmd:fileIdentifier&gt;
+               &lt;gmd:language&gt;
+                  &lt;gco:CharacterString&gt;eng&lt;/gco:CharacterString&gt;
+               &lt;/gmd:language&gt;
+               &lt;gmd:characterSet&gt;
+                  &lt;gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
+                                           codeListValue="utf8"&gt;utf8&lt;/gmd:MD_CharacterSetCode&gt;
+               &lt;/gmd:characterSet&gt;
+               &lt;gmd:hierarchyLevel&gt;
+                  &lt;gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
+                                    codeListValue="dataset"&gt;dataset&lt;/gmd:MD_ScopeCode&gt;
+               &lt;/gmd:hierarchyLevel&gt;
+               &lt;gmd:contact&gt;
+                  &lt;gmd:CI_ResponsibleParty&gt;
+                     &lt;gmd:organisationName&gt;
+                        &lt;gco:CharacterString&gt;NSIDC DAAC &amp;gt; National Snow and Ice Data Center DAAC&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:organisationName&gt;
+                     &lt;gmd:contactInfo&gt;
+                        &lt;gmd:CI_Contact&gt;
+                           &lt;gmd:address&gt;
+                              &lt;gmd:CI_Address&gt;
+                                 &lt;gmd:electronicMailAddress&gt;
+                                    &lt;gco:CharacterString&gt;nsidc@nsidc.org&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:electronicMailAddress&gt;
+                              &lt;/gmd:CI_Address&gt;
+                           &lt;/gmd:address&gt;
+                           &lt;gmd:onlineResource&gt;
+                              &lt;gmd:CI_OnlineResource&gt;
+                                 &lt;gmd:linkage&gt;
+                                    &lt;gmd:URL&gt;http://nsidc.org/daac/&lt;/gmd:URL&gt;
+                                 &lt;/gmd:linkage&gt;
+                              &lt;/gmd:CI_OnlineResource&gt;
+                           &lt;/gmd:onlineResource&gt;
+                        &lt;/gmd:CI_Contact&gt;
+                     &lt;/gmd:contactInfo&gt;
+                     &lt;gmd:role&gt;
+                        &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                         codeListValue="pointOfContact"&gt;pointOfContact&lt;/gmd:CI_RoleCode&gt;
+                     &lt;/gmd:role&gt;
+                  &lt;/gmd:CI_ResponsibleParty&gt;
+               &lt;/gmd:contact&gt;
+               &lt;gmd:contact&gt;
+                  &lt;gmd:CI_ResponsibleParty&gt;
+                     &lt;gmd:organisationName&gt;
+                        &lt;gco:CharacterString&gt;NASA Global Modeling and Assimilation Office, Goddard Space Flight Center, Greenbelt, Maryland, USA&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:organisationName&gt;
+                     &lt;gmd:role&gt;
+                        &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                         codeListValue="originator"&gt;originator&lt;/gmd:CI_RoleCode&gt;
+                     &lt;/gmd:role&gt;
+                  &lt;/gmd:CI_ResponsibleParty&gt;
+               &lt;/gmd:contact&gt;
+               &lt;gmd:dateStamp&gt;
+                  &lt;gco:DateTime&gt;2018-09-13T03:54:58.000Z&lt;/gco:DateTime&gt;
+               &lt;/gmd:dateStamp&gt;
+               &lt;gmd:metadataStandardName&gt;
+                  &lt;gco:CharacterString&gt;ISO 19115-2 Geographic information - Metadata - Part 2: Extensions for imagery and gridded data&lt;/gco:CharacterString&gt;
+               &lt;/gmd:metadataStandardName&gt;
+               &lt;gmd:metadataStandardVersion&gt;
+                  &lt;gco:CharacterString&gt;ISO 19115-2:2009-02-15&lt;/gco:CharacterString&gt;
+               &lt;/gmd:metadataStandardVersion&gt;
+               &lt;gmd:spatialRepresentationInfo&gt;
+                  &lt;gmd:MD_Georeferenceable&gt;
+                     &lt;gmd:numberOfDimensions&gt;
+                        &lt;gco:Integer&gt;2&lt;/gco:Integer&gt;
+                     &lt;/gmd:numberOfDimensions&gt;
+                     &lt;gmd:axisDimensionProperties&gt;
+                        &lt;gmd:MD_Dimension&gt;
+                           &lt;gmd:dimensionName&gt;
+                              &lt;gmd:MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode"
+                                                            codeListValue="row"&gt;row&lt;/gmd:MD_DimensionNameTypeCode&gt;
+                           &lt;/gmd:dimensionName&gt;
+                           &lt;gmd:dimensionSize&gt;
+                              &lt;gco:Integer&gt;1624&lt;/gco:Integer&gt;
+                           &lt;/gmd:dimensionSize&gt;
+                           &lt;gmd:resolution&gt;
+                              &lt;gco:Length uom="km_on_average"&gt;9&lt;/gco:Length&gt;
+                           &lt;/gmd:resolution&gt;
+                        &lt;/gmd:MD_Dimension&gt;
+                     &lt;/gmd:axisDimensionProperties&gt;
+                     &lt;gmd:axisDimensionProperties&gt;
+                        &lt;gmd:MD_Dimension&gt;
+                           &lt;gmd:dimensionName&gt;
+                              &lt;gmd:MD_DimensionNameTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode"
+                                                            codeListValue="column"&gt;column&lt;/gmd:MD_DimensionNameTypeCode&gt;
+                           &lt;/gmd:dimensionName&gt;
+                           &lt;gmd:dimensionSize&gt;
+                              &lt;gco:Integer&gt;3856&lt;/gco:Integer&gt;
+                           &lt;/gmd:dimensionSize&gt;
+                           &lt;gmd:resolution&gt;
+                              &lt;gco:Length uom="km_on_average"&gt;9&lt;/gco:Length&gt;
+                           &lt;/gmd:resolution&gt;
+                        &lt;/gmd:MD_Dimension&gt;
+                     &lt;/gmd:axisDimensionProperties&gt;
+                     &lt;gmd:cellGeometry&gt;
+                        &lt;gmd:MD_CellGeometryCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CellGeometryCode"
+                                                 codeListValue="area"&gt;area&lt;/gmd:MD_CellGeometryCode&gt;
+                     &lt;/gmd:cellGeometry&gt;
+                     &lt;gmd:transformationParameterAvailability gco:nilReason="missing"/&gt;
+                     &lt;gmd:controlPointAvailability&gt;
+                        &lt;gco:Boolean&gt;false&lt;/gco:Boolean&gt;
+                     &lt;/gmd:controlPointAvailability&gt;
+                     &lt;gmd:orientationParameterAvailability&gt;
+                        &lt;gco:Boolean&gt;false&lt;/gco:Boolean&gt;
+                     &lt;/gmd:orientationParameterAvailability&gt;
+                     &lt;gmd:georeferencedParameters&gt;
+                        &lt;gco:Record xsi:type="gco:CharacterString_PropertyType"&gt;
+                           &lt;gco:CharacterString&gt;SMAP Fixed Earth Grids, SMAP Science Document no:  033, May 11, 2009&lt;/gco:CharacterString&gt;
+                        &lt;/gco:Record&gt;
+                     &lt;/gmd:georeferencedParameters&gt;
+                  &lt;/gmd:MD_Georeferenceable&gt;
+               &lt;/gmd:spatialRepresentationInfo&gt;
+               &lt;gmd:identificationInfo&gt;
+                  &lt;gmd:MD_DataIdentification&gt;
+                     &lt;gmd:citation&gt;
+                        &lt;gmd:CI_Citation&gt;
+                           &lt;gmd:title&gt;
+                              &lt;gmx:FileName&gt;SMAP_L4_SM_aup_20150331T030000_Vv4030_001.h5&lt;/gmx:FileName&gt;
+                           &lt;/gmd:title&gt;
+                           &lt;gmd:date&gt;
+                              &lt;gmd:CI_Date&gt;
+                                 &lt;gmd:date&gt;
+                                    &lt;gco:DateTime&gt;2018-09-13T03:54:58.000Z&lt;/gco:DateTime&gt;
+                                 &lt;/gmd:date&gt;
+                                 &lt;gmd:dateType&gt;
+                                    &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                         codeListValue="creation"&gt;creation&lt;/gmd:CI_DateTypeCode&gt;
+                                 &lt;/gmd:dateType&gt;
+                              &lt;/gmd:CI_Date&gt;
+                           &lt;/gmd:date&gt;
+                           &lt;gmd:edition&gt;
+                              &lt;gco:CharacterString&gt;Vv40300001&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:edition&gt;
+                           &lt;gmd:identifier&gt;
+                              &lt;gmd:MD_Identifier&gt;
+                                 &lt;gmd:code&gt;
+                                    &lt;gco:CharacterString&gt;SPL4SMAU&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:code&gt;
+                                 &lt;gmd:codeSpace&gt;
+                                    &lt;gco:CharacterString&gt;http://gmao.gsfc.nasa.gov&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:codeSpace&gt;
+                                 &lt;gmd:description&gt;
+                                    &lt;gco:CharacterString&gt;The ECS Short Name&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:description&gt;
+                              &lt;/gmd:MD_Identifier&gt;
+                           &lt;/gmd:identifier&gt;
+                           &lt;gmd:identifier&gt;
+                              &lt;gmd:MD_Identifier&gt;
+                                 &lt;gmd:code&gt;
+                                    &lt;gco:CharacterString&gt;004&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:code&gt;
+                                 &lt;gmd:codeSpace&gt;
+                                    &lt;gco:CharacterString&gt;gov.nasa.esdis&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:codeSpace&gt;
+                                 &lt;gmd:description&gt;
+                                    &lt;gco:CharacterString&gt;The ECS Version ID&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:description&gt;
+                              &lt;/gmd:MD_Identifier&gt;
+                           &lt;/gmd:identifier&gt;
+                           &lt;gmd:identifier&gt;
+                              &lt;gmd:MD_Identifier&gt;
+                                 &lt;gmd:code&gt;
+                                    &lt;gco:CharacterString&gt;C85BBFAE-B708-11E8-9FD1-67B56977E630&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:code&gt;
+                                 &lt;gmd:codeSpace&gt;
+                                    &lt;gco:CharacterString&gt;urn:uuid&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:codeSpace&gt;
+                                 &lt;gmd:description&gt;
+                                    &lt;gco:CharacterString&gt;A Universally Unique Identifier (UUID)&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:description&gt;
+                              &lt;/gmd:MD_Identifier&gt;
+                           &lt;/gmd:identifier&gt;
+                           &lt;gmd:citedResponsibleParty&gt;
+                              &lt;gmd:CI_ResponsibleParty&gt;
+                                 &lt;gmd:organisationName&gt;
+                                    &lt;gco:CharacterString&gt;NASA Global Modeling and Assimilation Office, Goddard Space Flight Center, Greenbelt, Maryland, USA&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:organisationName&gt;
+                                 &lt;gmd:role&gt;
+                                    &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                                     codeListValue="processor"&gt;processor&lt;/gmd:CI_RoleCode&gt;
+                                 &lt;/gmd:role&gt;
+                              &lt;/gmd:CI_ResponsibleParty&gt;
+                           &lt;/gmd:citedResponsibleParty&gt;
+                           &lt;gmd:citedResponsibleParty&gt;
+                              &lt;gmd:CI_ResponsibleParty&gt;
+                                 &lt;gmd:organisationName&gt;
+                                    &lt;gco:CharacterString&gt;Global Modeling and Assimilation Office&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:organisationName&gt;
+                                 &lt;gmd:role&gt;
+                                    &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                                     codeListValue="originator"&gt;originator&lt;/gmd:CI_RoleCode&gt;
+                                 &lt;/gmd:role&gt;
+                              &lt;/gmd:CI_ResponsibleParty&gt;
+                           &lt;/gmd:citedResponsibleParty&gt;
+                           &lt;gmd:presentationForm&gt;
+                              &lt;gmd:CI_PresentationFormCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode"
+                                                           codeListValue="documentDigital"&gt;documentDigital&lt;/gmd:CI_PresentationFormCode&gt;
+                           &lt;/gmd:presentationForm&gt;
+                           &lt;gmd:series&gt;
+                              &lt;gmd:CI_Series&gt;
+                                 &lt;gmd:name&gt;
+                                    &lt;gco:CharacterString&gt;L4_SM_aup&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:name&gt;
+                              &lt;/gmd:CI_Series&gt;
+                           &lt;/gmd:series&gt;
+                        &lt;/gmd:CI_Citation&gt;
+                     &lt;/gmd:citation&gt;
+                     &lt;gmd:abstract&gt;
+                        &lt;gco:CharacterString&gt;The SMAP L4_SM data product provides global, 3-hourly surface and root zone soil moisture at 9 km resolution. The L4_SM data product consists of three Collections: geophysical, analysis update and land-model-constants.&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:abstract&gt;
+                     &lt;gmd:purpose&gt;
+                        &lt;gco:CharacterString&gt;The SMAP L4_SM data product provides spatially and temporally complete surface and root zone soil moisture information for science and applications users.&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:purpose&gt;
+                     &lt;gmd:credit&gt;
+                        &lt;gco:CharacterString&gt;The software that generates the L4_SM data product and the data system that automates its production were designed and implemented at the NASA Global Modeling and Assimilation Office, Goddard Space Flight Center, Greenbelt, Maryland, USA.&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:credit&gt;
+                     &lt;gmd:status&gt;
+                        &lt;gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode"
+                                             codeListValue="onGoing"&gt;onGoing&lt;/gmd:MD_ProgressCode&gt;
+                     &lt;/gmd:status&gt;
+                     &lt;gmd:aggregationInfo&gt;
+                        &lt;gmd:MD_AggregateInformation&gt;
+                           &lt;gmd:aggregateDataSetName&gt;
+                              &lt;gmd:CI_Citation&gt;
+                                 &lt;gmd:title&gt;
+                                    &lt;gmx:FileName&gt;SMAP_L4_SM_aup_20150331T030000_Vv4030_001.qa&lt;/gmx:FileName&gt;
+                                 &lt;/gmd:title&gt;
+                                 &lt;gmd:date&gt;
+                                    &lt;gmd:CI_Date&gt;
+                                       &lt;gmd:date&gt;
+                                          &lt;gco:DateTime&gt;2018-09-13T03:54:58.000Z&lt;/gco:DateTime&gt;
+                                       &lt;/gmd:date&gt;
+                                       &lt;gmd:dateType&gt;
+                                          &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                               codeListValue="creation"&gt;creation&lt;/gmd:CI_DateTypeCode&gt;
+                                       &lt;/gmd:dateType&gt;
+                                    &lt;/gmd:CI_Date&gt;
+                                 &lt;/gmd:date&gt;
+                                 &lt;gmd:otherCitationDetails&gt;
+                                    &lt;gco:CharacterString&gt;An ASCII product that contains statistical information on data product results. These statistics enable data producers and users to assess the quality of the data in the data product granule.&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:otherCitationDetails&gt;
+                              &lt;/gmd:CI_Citation&gt;
+                           &lt;/gmd:aggregateDataSetName&gt;
+                           &lt;gmd:associationType&gt;
+                              &lt;gmd:DS_AssociationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode"
+                                                          codeListValue="crossReference"&gt;crossReference&lt;/gmd:DS_AssociationTypeCode&gt;
+                           &lt;/gmd:associationType&gt;
+                        &lt;/gmd:MD_AggregateInformation&gt;
+                     &lt;/gmd:aggregationInfo&gt;
+                     &lt;gmd:language&gt;
+                        &lt;gco:CharacterString&gt;eng&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:language&gt;
+                     &lt;gmd:characterSet&gt;
+                        &lt;gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
+                                                 codeListValue="utf8"&gt;utf8&lt;/gmd:MD_CharacterSetCode&gt;
+                     &lt;/gmd:characterSet&gt;
+                     &lt;gmd:topicCategory&gt;
+                        &lt;gmd:MD_TopicCategoryCode&gt;geoscientificInformation&lt;/gmd:MD_TopicCategoryCode&gt;
+                     &lt;/gmd:topicCategory&gt;
+                     &lt;gmd:environmentDescription&gt;
+                        &lt;gco:CharacterString&gt;Data product generated by the SMAP mission in HDF5 format with ISO 19115 conformant metadata.&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:environmentDescription&gt;
+                     &lt;gmd:extent&gt;
+                        &lt;gmd:EX_Extent&gt;
+                           &lt;gmd:description&gt;
+                              &lt;gco:CharacterString&gt;Global land excluding inland water and permanent ice.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:description&gt;
+                           &lt;gmd:geographicElement&gt;
+                              &lt;gmd:EX_GeographicBoundingBox&gt;
+                                 &lt;gmd:extentTypeCode&gt;
+                                    &lt;gco:Boolean&gt;1&lt;/gco:Boolean&gt;
+                                 &lt;/gmd:extentTypeCode&gt;
+                                 &lt;gmd:westBoundLongitude&gt;
+                                    &lt;gco:Decimal&gt;-180&lt;/gco:Decimal&gt;
+                                 &lt;/gmd:westBoundLongitude&gt;
+                                 &lt;gmd:eastBoundLongitude&gt;
+                                    &lt;gco:Decimal&gt;180&lt;/gco:Decimal&gt;
+                                 &lt;/gmd:eastBoundLongitude&gt;
+                                 &lt;gmd:southBoundLatitude&gt;
+                                    &lt;gco:Decimal&gt;-85.04456&lt;/gco:Decimal&gt;
+                                 &lt;/gmd:southBoundLatitude&gt;
+                                 &lt;gmd:northBoundLatitude&gt;
+                                    &lt;gco:Decimal&gt;85.04456&lt;/gco:Decimal&gt;
+                                 &lt;/gmd:northBoundLatitude&gt;
+                              &lt;/gmd:EX_GeographicBoundingBox&gt;
+                           &lt;/gmd:geographicElement&gt;
+                           &lt;gmd:temporalElement&gt;
+                              &lt;gmd:EX_TemporalExtent&gt;
+                                 &lt;gmd:extent&gt;
+                                    &lt;gml:TimePeriod gml:id="swathTemporalExtent"&gt;
+                                       &lt;gml:beginPosition&gt;2015-03-31T01:30:00.000Z&lt;/gml:beginPosition&gt;
+                                       &lt;gml:endPosition&gt;2015-03-31T04:30:00.000Z&lt;/gml:endPosition&gt;
+                                    &lt;/gml:TimePeriod&gt;
+                                 &lt;/gmd:extent&gt;
+                              &lt;/gmd:EX_TemporalExtent&gt;
+                           &lt;/gmd:temporalElement&gt;
+                        &lt;/gmd:EX_Extent&gt;
+                     &lt;/gmd:extent&gt;
+                  &lt;/gmd:MD_DataIdentification&gt;
+               &lt;/gmd:identificationInfo&gt;
+               &lt;gmd:dataQualityInfo&gt;
+                  &lt;gmd:DQ_DataQuality&gt;
+                     &lt;gmd:scope&gt;
+                        &lt;gmd:DQ_Scope&gt;
+                           &lt;gmd:level&gt;
+                              &lt;gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
+                                                codeListValue="attribute"&gt;attribute&lt;/gmd:MD_ScopeCode&gt;
+                           &lt;/gmd:level&gt;
+                           &lt;gmd:levelDescription&gt;
+                              &lt;gmd:MD_ScopeDescription&gt;
+                                 &lt;gmd:dataset&gt;
+                                    &lt;gco:CharacterString&gt;tb_h_forecast&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:dataset&gt;
+                              &lt;/gmd:MD_ScopeDescription&gt;
+                           &lt;/gmd:levelDescription&gt;
+                        &lt;/gmd:DQ_Scope&gt;
+                     &lt;/gmd:scope&gt;
+                     &lt;gmd:report&gt;
+                        &lt;gmd:DQ_CompletenessOmission&gt;
+                           &lt;gmd:nameOfMeasure&gt;
+                              &lt;gco:CharacterString&gt;Percent of Missing Data&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:nameOfMeasure&gt;
+                           &lt;gmd:measureDescription&gt;
+                              &lt;gco:CharacterString&gt;Percent of land grid cells (excluding inland water and permanent ice) that lack H-polarized model forecast Tb data relative to the total number of land grid cells that fall within the global domain (excluding inland water and permanent ice). Model forecast Tb is only computed where SMAP Tb observations are ingested.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:measureDescription&gt;
+                           &lt;gmd:evaluationMethodType&gt;
+                              &lt;gmd:DQ_EvaluationMethodTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DQ_EvaluationMethodTypeCode"
+                                                               codeListValue="directInternal"&gt;directInternal&lt;/gmd:DQ_EvaluationMethodTypeCode&gt;
+                           &lt;/gmd:evaluationMethodType&gt;
+                           &lt;gmd:result&gt;
+                              &lt;gmd:DQ_QuantitativeResult&gt;
+                                 &lt;gmd:valueUnit&gt;
+                                    &lt;gmx:ML_DerivedUnit gml:id="TBH_F_CO"&gt;
+                                       &lt;gml:identifier codeSpace="http://jpl.nasa.gov/undefined"&gt;*undefined*&lt;/gml:identifier&gt;
+                                       &lt;gml:derivationUnitTerm uom="Percent"/&gt;
+                                       &lt;gmx:alternativeExpression/&gt;
+                                    &lt;/gmx:ML_DerivedUnit&gt;
+                                 &lt;/gmd:valueUnit&gt;
+                                 &lt;gmd:value&gt;
+                                    &lt;gco:Record xsi:type="gco:Real_PropertyType"&gt;
+                                       &lt;gco:Real&gt;100&lt;/gco:Real&gt;
+                                    &lt;/gco:Record&gt;
+                                 &lt;/gmd:value&gt;
+                              &lt;/gmd:DQ_QuantitativeResult&gt;
+                           &lt;/gmd:result&gt;
+                        &lt;/gmd:DQ_CompletenessOmission&gt;
+                     &lt;/gmd:report&gt;
+                     &lt;gmd:report&gt;
+                        &lt;gmd:DQ_DomainConsistency&gt;
+                           &lt;gmd:nameOfMeasure&gt;
+                              &lt;gco:CharacterString&gt;Percent of geophysical data that are within the acceptable range.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:nameOfMeasure&gt;
+                           &lt;gmd:measureDescription&gt;
+                              &lt;gco:CharacterString&gt;Percent of geophysical data that fall within a predefined acceptable range of measure.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:measureDescription&gt;
+                           &lt;gmd:evaluationMethodType&gt;
+                              &lt;gmd:DQ_EvaluationMethodTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DQ_EvaluationMethodTypeCode"
+                                                               codeListValue="directInternal"&gt;directInternal&lt;/gmd:DQ_EvaluationMethodTypeCode&gt;
+                           &lt;/gmd:evaluationMethodType&gt;
+                           &lt;gmd:result&gt;
+                              &lt;gmd:DQ_QuantitativeResult&gt;
+                                 &lt;gmd:valueUnit&gt;
+                                    &lt;gmx:ML_DerivedUnit gml:id="TBH_F_DC"&gt;
+                                       &lt;gml:identifier codeSpace="http://jpl.nasa.gov/undefined"&gt;*undefined*&lt;/gml:identifier&gt;
+                                       &lt;gml:derivationUnitTerm uom="Percent"/&gt;
+                                       &lt;gmx:alternativeExpression/&gt;
+                                    &lt;/gmx:ML_DerivedUnit&gt;
+                                 &lt;/gmd:valueUnit&gt;
+                                 &lt;gmd:value&gt;
+                                    &lt;gco:Record xsi:type="gco:Real_PropertyType"&gt;
+                                       &lt;gco:Real&gt;100&lt;/gco:Real&gt;
+                                    &lt;/gco:Record&gt;
+                                 &lt;/gmd:value&gt;
+                              &lt;/gmd:DQ_QuantitativeResult&gt;
+                           &lt;/gmd:result&gt;
+                        &lt;/gmd:DQ_DomainConsistency&gt;
+                     &lt;/gmd:report&gt;
+                     &lt;gmd:lineage&gt;
+                        &lt;gmd:LI_Lineage&gt;
+                           &lt;gmd:processStep&gt;
+                              &lt;gmi:LE_ProcessStep&gt;
+                                 &lt;gmd:description&gt;
+                                    &lt;gco:CharacterString&gt;Assimilates Level 1 and Level 2 SMAP data into a global land surface model to generate spatially complete and temporally continuous estimates of soil moisture and associated land surface conditions.&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:description&gt;
+                                 &lt;gmd:dateTime&gt;
+                                    &lt;gco:DateTime&gt;2018-09-13T03:54:58.000Z&lt;/gco:DateTime&gt;
+                                 &lt;/gmd:dateTime&gt;
+                                 &lt;gmd:processor&gt;
+                                    &lt;gmd:CI_ResponsibleParty&gt;
+                                       &lt;gmd:organisationName&gt;
+                                          &lt;gco:CharacterString&gt;Soil Moisture Active Passive (SMAP) Mission Science Data System (SDS) Operations Facility&lt;/gco:CharacterString&gt;
+                                       &lt;/gmd:organisationName&gt;
+                                       &lt;gmd:role&gt;
+                                          &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                                           codeListValue="processor"&gt;processor&lt;/gmd:CI_RoleCode&gt;
+                                       &lt;/gmd:role&gt;
+                                    &lt;/gmd:CI_ResponsibleParty&gt;
+                                 &lt;/gmd:processor&gt;
+                                 &lt;gmi:processingInformation&gt;
+                                    &lt;eos:EOS_Processing&gt;
+                                       &lt;gmi:identifier&gt;
+                                          &lt;gmd:MD_Identifier&gt;
+                                             &lt;gmd:code&gt;
+                                                &lt;gco:CharacterString&gt;L4_SM_SPS&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:code&gt;
+                                          &lt;/gmd:MD_Identifier&gt;
+                                       &lt;/gmi:identifier&gt;
+                                       &lt;gmi:softwareReference&gt;
+                                          &lt;gmd:CI_Citation&gt;
+                                             &lt;gmd:title&gt;
+                                                &lt;gco:CharacterString&gt;Level 4 Surface and Root Zone Soil Moisture SPS&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:title&gt;
+                                             &lt;gmd:date&gt;
+                                                &lt;gmd:CI_Date&gt;
+                                                   &lt;gmd:date&gt;
+                                                      &lt;gco:Date&gt;2018-07-11&lt;/gco:Date&gt;
+                                                   &lt;/gmd:date&gt;
+                                                   &lt;gmd:dateType&gt;
+                                                      &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                           codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                                   &lt;/gmd:dateType&gt;
+                                                &lt;/gmd:CI_Date&gt;
+                                             &lt;/gmd:date&gt;
+                                             &lt;gmd:edition&gt;
+                                                &lt;gco:CharacterString&gt;reichle-LDASsa_m3-16_6_p1&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:edition&gt;
+                                          &lt;/gmd:CI_Citation&gt;
+                                       &lt;/gmi:softwareReference&gt;
+                                       &lt;gmi:procedureDescription gco:nilReason="unknown"/&gt;
+                                       &lt;gmi:documentation&gt;
+                                          &lt;gmd:CI_Citation&gt;
+                                             &lt;gmd:title&gt;
+                                                &lt;gco:CharacterString&gt;Soil Moisture Active Passive (SMAP) Level 4 Surface and Root Zone Soil Moisture (L4_SM) Algorithm Theoretical Basis Document (ATBD)&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:title&gt;
+                                             &lt;gmd:date&gt;
+                                                &lt;gmd:CI_Date&gt;
+                                                   &lt;gmd:date&gt;
+                                                      &lt;gco:Date&gt;2014-12-09&lt;/gco:Date&gt;
+                                                   &lt;/gmd:date&gt;
+                                                   &lt;gmd:dateType&gt;
+                                                      &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                           codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                                   &lt;/gmd:dateType&gt;
+                                                &lt;/gmd:CI_Date&gt;
+                                             &lt;/gmd:date&gt;
+                                             &lt;gmd:edition&gt;
+                                                &lt;gco:CharacterString&gt;Revision-A&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:edition&gt;
+                                          &lt;/gmd:CI_Citation&gt;
+                                       &lt;/gmi:documentation&gt;
+                                       &lt;gmi:runTimeParameters gco:nilReason="missing"/&gt;
+                                       &lt;gmi:algorithm&gt;
+                                          &lt;gmi:LE_Algorithm&gt;
+                                             &lt;gmi:citation&gt;
+                                                &lt;gmd:CI_Citation&gt;
+                                                   &lt;gmd:title&gt;
+                                                      &lt;gco:CharacterString&gt;Soil Moisture Active Passive (SMAP) Level 4 Surface and Root Zone Soil Moisture (L4_SM) Algorithm Theoretical Basis Document (ATBD)&lt;/gco:CharacterString&gt;
+                                                   &lt;/gmd:title&gt;
+                                                   &lt;gmd:date&gt;
+                                                      &lt;gmd:CI_Date&gt;
+                                                         &lt;gmd:date&gt;
+                                                            &lt;gco:Date&gt;2014-12-09&lt;/gco:Date&gt;
+                                                         &lt;/gmd:date&gt;
+                                                         &lt;gmd:dateType&gt;
+                                                            &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                                 codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                                         &lt;/gmd:dateType&gt;
+                                                      &lt;/gmd:CI_Date&gt;
+                                                   &lt;/gmd:date&gt;
+                                                   &lt;gmd:edition&gt;
+                                                      &lt;gco:CharacterString&gt;Revision-A&lt;/gco:CharacterString&gt;
+                                                   &lt;/gmd:edition&gt;
+                                                &lt;/gmd:CI_Citation&gt;
+                                             &lt;/gmi:citation&gt;
+                                             &lt;gmi:description&gt;
+                                                &lt;gco:CharacterString&gt;The L4_SM algorithm is a customized, off-line (land-only) version of the ensemble-based NASA GEOS-5 land data assimilation system. It merges SMAP observations with estimates from a land surface model that is driven with observations-based precipitation forcing.&lt;/gco:CharacterString&gt;
+                                             &lt;/gmi:description&gt;
+                                          &lt;/gmi:LE_Algorithm&gt;
+                                       &lt;/gmi:algorithm&gt;
+                                       &lt;eos:otherProperty&gt;
+                                          &lt;gco:Record&gt;
+                                             &lt;eos:EOS_AdditionalAttributes&gt;
+                                                &lt;eos:additionalAttribute&gt;
+                                                   &lt;eos:EOS_AdditionalAttribute&gt;
+                                                      &lt;eos:reference&gt;
+                                                         &lt;eos:EOS_AdditionalAttributeDescription&gt;
+                                                            &lt;eos:type&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeTypeCode"
+                                                                                                    codeListValue="processingInformation"&gt;processingInformation&lt;/eos:EOS_AdditionalAttributeTypeCode&gt;
+                                                            &lt;/eos:type&gt;
+                                                            &lt;eos:identifier&gt;
+                                                               &lt;gmd:MD_Identifier&gt;
+                                                                  &lt;gmd:code&gt;
+                                                                     &lt;gco:CharacterString&gt;uuid for timeVariableEpoch&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:code&gt;
+                                                                  &lt;gmd:codeSpace&gt;
+                                                                     &lt;gco:CharacterString&gt;http://smap.jpl.nasa.gov&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:codeSpace&gt;
+                                                               &lt;/gmd:MD_Identifier&gt;
+                                                            &lt;/eos:identifier&gt;
+                                                            &lt;eos:name&gt;
+                                                               &lt;gco:CharacterString&gt;timeVariableEpoch&lt;/gco:CharacterString&gt;
+                                                            &lt;/eos:name&gt;
+                                                            &lt;eos:dataType&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeDataTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeDataTypeCode"
+                                                                                                        codeListValue="string"&gt;string&lt;/eos:EOS_AdditionalAttributeDataTypeCode&gt;
+                                                            &lt;/eos:dataType&gt;
+                                                         &lt;/eos:EOS_AdditionalAttributeDescription&gt;
+                                                      &lt;/eos:reference&gt;
+                                                      &lt;eos:value&gt;
+                                                         &lt;gco:CharacterString&gt;J2000&lt;/gco:CharacterString&gt;
+                                                      &lt;/eos:value&gt;
+                                                   &lt;/eos:EOS_AdditionalAttribute&gt;
+                                                &lt;/eos:additionalAttribute&gt;
+                                                &lt;eos:additionalAttribute&gt;
+                                                   &lt;eos:EOS_AdditionalAttribute&gt;
+                                                      &lt;eos:reference&gt;
+                                                         &lt;eos:EOS_AdditionalAttributeDescription&gt;
+                                                            &lt;eos:type&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeTypeCode"
+                                                                                                    codeListValue="processingInformation"&gt;processingInformation&lt;/eos:EOS_AdditionalAttributeTypeCode&gt;
+                                                            &lt;/eos:type&gt;
+                                                            &lt;eos:identifier&gt;
+                                                               &lt;gmd:MD_Identifier&gt;
+                                                                  &lt;gmd:code&gt;
+                                                                     &lt;gco:CharacterString&gt;uuid for epochJulianDate&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:code&gt;
+                                                                  &lt;gmd:codeSpace&gt;
+                                                                     &lt;gco:CharacterString&gt;http://smap.jpl.nasa.gov&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:codeSpace&gt;
+                                                               &lt;/gmd:MD_Identifier&gt;
+                                                            &lt;/eos:identifier&gt;
+                                                            &lt;eos:name&gt;
+                                                               &lt;gco:CharacterString&gt;epochJulianDate&lt;/gco:CharacterString&gt;
+                                                            &lt;/eos:name&gt;
+                                                            &lt;eos:dataType&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeDataTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeDataTypeCode"
+                                                                                                        codeListValue="float"&gt;float&lt;/eos:EOS_AdditionalAttributeDataTypeCode&gt;
+                                                            &lt;/eos:dataType&gt;
+                                                         &lt;/eos:EOS_AdditionalAttributeDescription&gt;
+                                                      &lt;/eos:reference&gt;
+                                                      &lt;eos:value&gt;
+                                                         &lt;gco:CharacterString&gt;2451545&lt;/gco:CharacterString&gt;
+                                                      &lt;/eos:value&gt;
+                                                   &lt;/eos:EOS_AdditionalAttribute&gt;
+                                                &lt;/eos:additionalAttribute&gt;
+                                                &lt;eos:additionalAttribute&gt;
+                                                   &lt;eos:EOS_AdditionalAttribute&gt;
+                                                      &lt;eos:reference&gt;
+                                                         &lt;eos:EOS_AdditionalAttributeDescription&gt;
+                                                            &lt;eos:type&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeTypeCode"
+                                                                                                    codeListValue="processingInformation"&gt;processingInformation&lt;/eos:EOS_AdditionalAttributeTypeCode&gt;
+                                                            &lt;/eos:type&gt;
+                                                            &lt;eos:identifier&gt;
+                                                               &lt;gmd:MD_Identifier&gt;
+                                                                  &lt;gmd:code&gt;
+                                                                     &lt;gco:CharacterString&gt;uuid for epochUTCDateTime&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:code&gt;
+                                                                  &lt;gmd:codeSpace&gt;
+                                                                     &lt;gco:CharacterString&gt;http://smap.jpl.nasa.gov&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:codeSpace&gt;
+                                                               &lt;/gmd:MD_Identifier&gt;
+                                                            &lt;/eos:identifier&gt;
+                                                            &lt;eos:name&gt;
+                                                               &lt;gco:CharacterString&gt;epochUTCDateTime&lt;/gco:CharacterString&gt;
+                                                            &lt;/eos:name&gt;
+                                                            &lt;eos:dataType&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeDataTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeDataTypeCode"
+                                                                                                        codeListValue="dateTime"&gt;dateTime&lt;/eos:EOS_AdditionalAttributeDataTypeCode&gt;
+                                                            &lt;/eos:dataType&gt;
+                                                         &lt;/eos:EOS_AdditionalAttributeDescription&gt;
+                                                      &lt;/eos:reference&gt;
+                                                      &lt;eos:value&gt;
+                                                         &lt;gco:CharacterString&gt;2000-01-01T11:58:55.816Z&lt;/gco:CharacterString&gt;
+                                                      &lt;/eos:value&gt;
+                                                   &lt;/eos:EOS_AdditionalAttribute&gt;
+                                                &lt;/eos:additionalAttribute&gt;
+                                             &lt;/eos:EOS_AdditionalAttributes&gt;
+                                          &lt;/gco:Record&gt;
+                                       &lt;/eos:otherProperty&gt;
+                                    &lt;/eos:EOS_Processing&gt;
+                                 &lt;/gmi:processingInformation&gt;
+                              &lt;/gmi:LE_ProcessStep&gt;
+                           &lt;/gmd:processStep&gt;
+                           &lt;gmd:source&gt;
+                              &lt;gmi:LE_Source&gt;
+                                 &lt;gmd:description&gt;
+                                    &lt;gco:CharacterString&gt;The SMAP Level 1C Brightness Temperature product, which contains the assimilated SMAP radiometer brightness temperatures on 36 km EASE-Grid 2.0.&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:description&gt;
+                                 &lt;gmd:sourceCitation&gt;
+                                    &lt;gmd:CI_Citation&gt;
+                                       &lt;gmd:title gco:nilReason="missing"/&gt;
+                                       &lt;gmd:date&gt;
+                                          &lt;gmd:CI_Date&gt;
+                                             &lt;gmd:date gco:nilReason="missing"/&gt;
+                                             &lt;gmd:dateType&gt;
+                                                &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                     codeListValue="creation"&gt;creation&lt;/gmd:CI_DateTypeCode&gt;
+                                             &lt;/gmd:dateType&gt;
+                                          &lt;/gmd:CI_Date&gt;
+                                       &lt;/gmd:date&gt;
+                                       &lt;gmd:edition gco:nilReason="missing"/&gt;
+                                       &lt;gmd:identifier&gt;
+                                          &lt;gmd:MD_Identifier&gt;
+                                             &lt;gmd:code&gt;
+                                                &lt;gco:CharacterString&gt;SPL1CTB&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:code&gt;
+                                             &lt;gmd:codeSpace&gt;
+                                                &lt;gco:CharacterString&gt;http://gmao.gsfc.nasa.gov&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:codeSpace&gt;
+                                             &lt;gmd:description&gt;
+                                                &lt;gco:CharacterString&gt;A short name used by the Soil Moisture Active Passive (SMAP) mission to identify the Level 4 Radar product.&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:description&gt;
+                                          &lt;/gmd:MD_Identifier&gt;
+                                       &lt;/gmd:identifier&gt;
+                                       &lt;gmd:identifier&gt;
+                                          &lt;gmd:MD_Identifier&gt;
+                                             &lt;gmd:code&gt;
+                                                &lt;gmx:Anchor xlink:actuate="onRequest" xlink:href="http://dx.doi.org/"&gt;doi:&lt;/gmx:Anchor&gt;
+                                             &lt;/gmd:code&gt;
+                                             &lt;gmd:codeSpace gco:nilReason="missing"/&gt;
+                                             &lt;gmd:description&gt;
+                                                &lt;gco:CharacterString&gt;A Digital Object Identifier (DOI) that provides a persistent interoperable means to locate the SMAP Level 4 Radar data product.&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:description&gt;
+                                          &lt;/gmd:MD_Identifier&gt;
+                                       &lt;/gmd:identifier&gt;
+                                    &lt;/gmd:CI_Citation&gt;
+                                 &lt;/gmd:sourceCitation&gt;
+                              &lt;/gmi:LE_Source&gt;
+                           &lt;/gmd:source&gt;
+                        &lt;/gmd:LI_Lineage&gt;
+                     &lt;/gmd:lineage&gt;
+                  &lt;/gmd:DQ_DataQuality&gt;
+               &lt;/gmd:dataQualityInfo&gt;
+               &lt;gmd:dataQualityInfo&gt;
+                  &lt;gmd:DQ_DataQuality&gt;
+                     &lt;gmd:scope&gt;
+                        &lt;gmd:DQ_Scope&gt;
+                           &lt;gmd:level&gt;
+                              &lt;gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
+                                                codeListValue="attribute"&gt;attribute&lt;/gmd:MD_ScopeCode&gt;
+                           &lt;/gmd:level&gt;
+                           &lt;gmd:levelDescription&gt;
+                              &lt;gmd:MD_ScopeDescription&gt;
+                                 &lt;gmd:dataset&gt;
+                                    &lt;gco:CharacterString&gt;tb_v_forecast&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:dataset&gt;
+                              &lt;/gmd:MD_ScopeDescription&gt;
+                           &lt;/gmd:levelDescription&gt;
+                        &lt;/gmd:DQ_Scope&gt;
+                     &lt;/gmd:scope&gt;
+                     &lt;gmd:report&gt;
+                        &lt;gmd:DQ_CompletenessOmission&gt;
+                           &lt;gmd:nameOfMeasure&gt;
+                              &lt;gco:CharacterString&gt;Percent of Missing Data&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:nameOfMeasure&gt;
+                           &lt;gmd:measureDescription&gt;
+                              &lt;gco:CharacterString&gt;Percent of land grid cells (excluding inland water and permanent ice) that lack V-polarized model forecast Tb data relative to the total number of land grid cells that fall within the global domain (excluding inland water and permanent ice). Model forecast Tb is only computed where SMAP Tb observations are ingested.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:measureDescription&gt;
+                           &lt;gmd:evaluationMethodType&gt;
+                              &lt;gmd:DQ_EvaluationMethodTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DQ_EvaluationMethodTypeCode"
+                                                               codeListValue="directInternal"&gt;directInternal&lt;/gmd:DQ_EvaluationMethodTypeCode&gt;
+                           &lt;/gmd:evaluationMethodType&gt;
+                           &lt;gmd:result&gt;
+                              &lt;gmd:DQ_QuantitativeResult&gt;
+                                 &lt;gmd:valueUnit&gt;
+                                    &lt;gmx:ML_DerivedUnit gml:id="TBV_F_CO"&gt;
+                                       &lt;gml:identifier codeSpace="http://jpl.nasa.gov/undefined"&gt;*undefined*&lt;/gml:identifier&gt;
+                                       &lt;gml:derivationUnitTerm uom="Percent"/&gt;
+                                       &lt;gmx:alternativeExpression/&gt;
+                                    &lt;/gmx:ML_DerivedUnit&gt;
+                                 &lt;/gmd:valueUnit&gt;
+                                 &lt;gmd:value&gt;
+                                    &lt;gco:Record xsi:type="gco:Real_PropertyType"&gt;
+                                       &lt;gco:Real&gt;100&lt;/gco:Real&gt;
+                                    &lt;/gco:Record&gt;
+                                 &lt;/gmd:value&gt;
+                              &lt;/gmd:DQ_QuantitativeResult&gt;
+                           &lt;/gmd:result&gt;
+                        &lt;/gmd:DQ_CompletenessOmission&gt;
+                     &lt;/gmd:report&gt;
+                     &lt;gmd:report&gt;
+                        &lt;gmd:DQ_DomainConsistency&gt;
+                           &lt;gmd:nameOfMeasure&gt;
+                              &lt;gco:CharacterString&gt;Percent of geophysical data that are within the acceptable range.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:nameOfMeasure&gt;
+                           &lt;gmd:measureDescription&gt;
+                              &lt;gco:CharacterString&gt;Percent of geophysical data that fall within a predefined acceptable range of measure.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:measureDescription&gt;
+                           &lt;gmd:evaluationMethodType&gt;
+                              &lt;gmd:DQ_EvaluationMethodTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DQ_EvaluationMethodTypeCode"
+                                                               codeListValue="directInternal"&gt;directInternal&lt;/gmd:DQ_EvaluationMethodTypeCode&gt;
+                           &lt;/gmd:evaluationMethodType&gt;
+                           &lt;gmd:result&gt;
+                              &lt;gmd:DQ_QuantitativeResult&gt;
+                                 &lt;gmd:valueUnit&gt;
+                                    &lt;gmx:ML_DerivedUnit gml:id="TBV_F_DC"&gt;
+                                       &lt;gml:identifier codeSpace="http://jpl.nasa.gov/undefined"&gt;*undefined*&lt;/gml:identifier&gt;
+                                       &lt;gml:derivationUnitTerm uom="Percent"/&gt;
+                                       &lt;gmx:alternativeExpression/&gt;
+                                    &lt;/gmx:ML_DerivedUnit&gt;
+                                 &lt;/gmd:valueUnit&gt;
+                                 &lt;gmd:value&gt;
+                                    &lt;gco:Record xsi:type="gco:Real_PropertyType"&gt;
+                                       &lt;gco:Real&gt;100&lt;/gco:Real&gt;
+                                    &lt;/gco:Record&gt;
+                                 &lt;/gmd:value&gt;
+                              &lt;/gmd:DQ_QuantitativeResult&gt;
+                           &lt;/gmd:result&gt;
+                        &lt;/gmd:DQ_DomainConsistency&gt;
+                     &lt;/gmd:report&gt;
+                     &lt;gmd:lineage&gt;
+                        &lt;gmd:LI_Lineage&gt;
+                           &lt;gmd:processStep&gt;
+                              &lt;gmi:LE_ProcessStep&gt;
+                                 &lt;gmd:description&gt;
+                                    &lt;gco:CharacterString&gt;Assimilates Level 1 and Level 2 SMAP data into a global land surface model to generate spatially complete and temporally continuous estimates of soil moisture and associated land surface conditions.&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:description&gt;
+                                 &lt;gmd:dateTime&gt;
+                                    &lt;gco:DateTime&gt;2018-09-13T03:54:58.000Z&lt;/gco:DateTime&gt;
+                                 &lt;/gmd:dateTime&gt;
+                                 &lt;gmd:processor&gt;
+                                    &lt;gmd:CI_ResponsibleParty&gt;
+                                       &lt;gmd:organisationName&gt;
+                                          &lt;gco:CharacterString&gt;Soil Moisture Active Passive (SMAP) Mission Science Data System (SDS) Operations Facility&lt;/gco:CharacterString&gt;
+                                       &lt;/gmd:organisationName&gt;
+                                       &lt;gmd:role&gt;
+                                          &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                                           codeListValue="processor"&gt;processor&lt;/gmd:CI_RoleCode&gt;
+                                       &lt;/gmd:role&gt;
+                                    &lt;/gmd:CI_ResponsibleParty&gt;
+                                 &lt;/gmd:processor&gt;
+                                 &lt;gmi:processingInformation&gt;
+                                    &lt;eos:EOS_Processing&gt;
+                                       &lt;gmi:identifier&gt;
+                                          &lt;gmd:MD_Identifier&gt;
+                                             &lt;gmd:code&gt;
+                                                &lt;gco:CharacterString&gt;L4_SM_SPS&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:code&gt;
+                                          &lt;/gmd:MD_Identifier&gt;
+                                       &lt;/gmi:identifier&gt;
+                                       &lt;gmi:softwareReference&gt;
+                                          &lt;gmd:CI_Citation&gt;
+                                             &lt;gmd:title&gt;
+                                                &lt;gco:CharacterString&gt;Level 4 Surface and Root Zone Soil Moisture SPS&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:title&gt;
+                                             &lt;gmd:date&gt;
+                                                &lt;gmd:CI_Date&gt;
+                                                   &lt;gmd:date&gt;
+                                                      &lt;gco:Date&gt;2018-07-11&lt;/gco:Date&gt;
+                                                   &lt;/gmd:date&gt;
+                                                   &lt;gmd:dateType&gt;
+                                                      &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                           codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                                   &lt;/gmd:dateType&gt;
+                                                &lt;/gmd:CI_Date&gt;
+                                             &lt;/gmd:date&gt;
+                                             &lt;gmd:edition&gt;
+                                                &lt;gco:CharacterString&gt;reichle-LDASsa_m3-16_6_p1&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:edition&gt;
+                                          &lt;/gmd:CI_Citation&gt;
+                                       &lt;/gmi:softwareReference&gt;
+                                       &lt;gmi:procedureDescription gco:nilReason="unknown"/&gt;
+                                       &lt;gmi:documentation&gt;
+                                          &lt;gmd:CI_Citation&gt;
+                                             &lt;gmd:title&gt;
+                                                &lt;gco:CharacterString&gt;Soil Moisture Active Passive (SMAP) Level 4 Surface and Root Zone Soil Moisture (L4_SM) Algorithm Theoretical Basis Document (ATBD)&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:title&gt;
+                                             &lt;gmd:date&gt;
+                                                &lt;gmd:CI_Date&gt;
+                                                   &lt;gmd:date&gt;
+                                                      &lt;gco:Date&gt;2014-12-09&lt;/gco:Date&gt;
+                                                   &lt;/gmd:date&gt;
+                                                   &lt;gmd:dateType&gt;
+                                                      &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                           codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                                   &lt;/gmd:dateType&gt;
+                                                &lt;/gmd:CI_Date&gt;
+                                             &lt;/gmd:date&gt;
+                                             &lt;gmd:edition&gt;
+                                                &lt;gco:CharacterString&gt;Revision-A&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:edition&gt;
+                                          &lt;/gmd:CI_Citation&gt;
+                                       &lt;/gmi:documentation&gt;
+                                       &lt;gmi:runTimeParameters gco:nilReason="missing"/&gt;
+                                       &lt;gmi:algorithm&gt;
+                                          &lt;gmi:LE_Algorithm&gt;
+                                             &lt;gmi:citation&gt;
+                                                &lt;gmd:CI_Citation&gt;
+                                                   &lt;gmd:title&gt;
+                                                      &lt;gco:CharacterString&gt;Soil Moisture Active Passive (SMAP) Level 4 Surface and Root Zone Soil Moisture (L4_SM) Algorithm Theoretical Basis Document (ATBD)&lt;/gco:CharacterString&gt;
+                                                   &lt;/gmd:title&gt;
+                                                   &lt;gmd:date&gt;
+                                                      &lt;gmd:CI_Date&gt;
+                                                         &lt;gmd:date&gt;
+                                                            &lt;gco:Date&gt;2014-12-09&lt;/gco:Date&gt;
+                                                         &lt;/gmd:date&gt;
+                                                         &lt;gmd:dateType&gt;
+                                                            &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                                 codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                                         &lt;/gmd:dateType&gt;
+                                                      &lt;/gmd:CI_Date&gt;
+                                                   &lt;/gmd:date&gt;
+                                                   &lt;gmd:edition&gt;
+                                                      &lt;gco:CharacterString&gt;Revision-A&lt;/gco:CharacterString&gt;
+                                                   &lt;/gmd:edition&gt;
+                                                &lt;/gmd:CI_Citation&gt;
+                                             &lt;/gmi:citation&gt;
+                                             &lt;gmi:description&gt;
+                                                &lt;gco:CharacterString&gt;The L4_SM algorithm is a customized, off-line (land-only) version of the ensemble-based NASA GEOS-5 land data assimilation system. It merges SMAP observations with estimates from a land surface model that is driven with observations-based precipitation forcing.&lt;/gco:CharacterString&gt;
+                                             &lt;/gmi:description&gt;
+                                          &lt;/gmi:LE_Algorithm&gt;
+                                       &lt;/gmi:algorithm&gt;
+                                       &lt;eos:otherProperty&gt;
+                                          &lt;gco:Record&gt;
+                                             &lt;eos:EOS_AdditionalAttributes&gt;
+                                                &lt;eos:additionalAttribute&gt;
+                                                   &lt;eos:EOS_AdditionalAttribute&gt;
+                                                      &lt;eos:reference&gt;
+                                                         &lt;eos:EOS_AdditionalAttributeDescription&gt;
+                                                            &lt;eos:type&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeTypeCode"
+                                                                                                    codeListValue="processingInformation"&gt;processingInformation&lt;/eos:EOS_AdditionalAttributeTypeCode&gt;
+                                                            &lt;/eos:type&gt;
+                                                            &lt;eos:identifier&gt;
+                                                               &lt;gmd:MD_Identifier&gt;
+                                                                  &lt;gmd:code&gt;
+                                                                     &lt;gco:CharacterString&gt;uuid for timeVariableEpoch&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:code&gt;
+                                                                  &lt;gmd:codeSpace&gt;
+                                                                     &lt;gco:CharacterString&gt;http://smap.jpl.nasa.gov&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:codeSpace&gt;
+                                                               &lt;/gmd:MD_Identifier&gt;
+                                                            &lt;/eos:identifier&gt;
+                                                            &lt;eos:name&gt;
+                                                               &lt;gco:CharacterString&gt;timeVariableEpoch&lt;/gco:CharacterString&gt;
+                                                            &lt;/eos:name&gt;
+                                                            &lt;eos:dataType&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeDataTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeDataTypeCode"
+                                                                                                        codeListValue="string"&gt;string&lt;/eos:EOS_AdditionalAttributeDataTypeCode&gt;
+                                                            &lt;/eos:dataType&gt;
+                                                         &lt;/eos:EOS_AdditionalAttributeDescription&gt;
+                                                      &lt;/eos:reference&gt;
+                                                      &lt;eos:value&gt;
+                                                         &lt;gco:CharacterString&gt;J2000&lt;/gco:CharacterString&gt;
+                                                      &lt;/eos:value&gt;
+                                                   &lt;/eos:EOS_AdditionalAttribute&gt;
+                                                &lt;/eos:additionalAttribute&gt;
+                                                &lt;eos:additionalAttribute&gt;
+                                                   &lt;eos:EOS_AdditionalAttribute&gt;
+                                                      &lt;eos:reference&gt;
+                                                         &lt;eos:EOS_AdditionalAttributeDescription&gt;
+                                                            &lt;eos:type&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeTypeCode"
+                                                                                                    codeListValue="processingInformation"&gt;processingInformation&lt;/eos:EOS_AdditionalAttributeTypeCode&gt;
+                                                            &lt;/eos:type&gt;
+                                                            &lt;eos:identifier&gt;
+                                                               &lt;gmd:MD_Identifier&gt;
+                                                                  &lt;gmd:code&gt;
+                                                                     &lt;gco:CharacterString&gt;uuid for epochJulianDate&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:code&gt;
+                                                                  &lt;gmd:codeSpace&gt;
+                                                                     &lt;gco:CharacterString&gt;http://smap.jpl.nasa.gov&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:codeSpace&gt;
+                                                               &lt;/gmd:MD_Identifier&gt;
+                                                            &lt;/eos:identifier&gt;
+                                                            &lt;eos:name&gt;
+                                                               &lt;gco:CharacterString&gt;epochJulianDate&lt;/gco:CharacterString&gt;
+                                                            &lt;/eos:name&gt;
+                                                            &lt;eos:dataType&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeDataTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeDataTypeCode"
+                                                                                                        codeListValue="float"&gt;float&lt;/eos:EOS_AdditionalAttributeDataTypeCode&gt;
+                                                            &lt;/eos:dataType&gt;
+                                                         &lt;/eos:EOS_AdditionalAttributeDescription&gt;
+                                                      &lt;/eos:reference&gt;
+                                                      &lt;eos:value&gt;
+                                                         &lt;gco:CharacterString&gt;2451545&lt;/gco:CharacterString&gt;
+                                                      &lt;/eos:value&gt;
+                                                   &lt;/eos:EOS_AdditionalAttribute&gt;
+                                                &lt;/eos:additionalAttribute&gt;
+                                                &lt;eos:additionalAttribute&gt;
+                                                   &lt;eos:EOS_AdditionalAttribute&gt;
+                                                      &lt;eos:reference&gt;
+                                                         &lt;eos:EOS_AdditionalAttributeDescription&gt;
+                                                            &lt;eos:type&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeTypeCode"
+                                                                                                    codeListValue="processingInformation"&gt;processingInformation&lt;/eos:EOS_AdditionalAttributeTypeCode&gt;
+                                                            &lt;/eos:type&gt;
+                                                            &lt;eos:identifier&gt;
+                                                               &lt;gmd:MD_Identifier&gt;
+                                                                  &lt;gmd:code&gt;
+                                                                     &lt;gco:CharacterString&gt;uuid for epochUTCDateTime&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:code&gt;
+                                                                  &lt;gmd:codeSpace&gt;
+                                                                     &lt;gco:CharacterString&gt;http://smap.jpl.nasa.gov&lt;/gco:CharacterString&gt;
+                                                                  &lt;/gmd:codeSpace&gt;
+                                                               &lt;/gmd:MD_Identifier&gt;
+                                                            &lt;/eos:identifier&gt;
+                                                            &lt;eos:name&gt;
+                                                               &lt;gco:CharacterString&gt;epochUTCDateTime&lt;/gco:CharacterString&gt;
+                                                            &lt;/eos:name&gt;
+                                                            &lt;eos:dataType&gt;
+                                                               &lt;eos:EOS_AdditionalAttributeDataTypeCode codeList="http://cdn.earthdata.nasa.gov/iso/resources/Codelist/eosCodelists.xml#EOS_AdditionalAttributeDataTypeCode"
+                                                                                                        codeListValue="dateTime"&gt;dateTime&lt;/eos:EOS_AdditionalAttributeDataTypeCode&gt;
+                                                            &lt;/eos:dataType&gt;
+                                                         &lt;/eos:EOS_AdditionalAttributeDescription&gt;
+                                                      &lt;/eos:reference&gt;
+                                                      &lt;eos:value&gt;
+                                                         &lt;gco:CharacterString&gt;2000-01-01T11:58:55.816Z&lt;/gco:CharacterString&gt;
+                                                      &lt;/eos:value&gt;
+                                                   &lt;/eos:EOS_AdditionalAttribute&gt;
+                                                &lt;/eos:additionalAttribute&gt;
+                                             &lt;/eos:EOS_AdditionalAttributes&gt;
+                                          &lt;/gco:Record&gt;
+                                       &lt;/eos:otherProperty&gt;
+                                    &lt;/eos:EOS_Processing&gt;
+                                 &lt;/gmi:processingInformation&gt;
+                              &lt;/gmi:LE_ProcessStep&gt;
+                           &lt;/gmd:processStep&gt;
+                           &lt;gmd:source&gt;
+                              &lt;gmi:LE_Source&gt;
+                                 &lt;gmd:description&gt;
+                                    &lt;gco:CharacterString&gt;The SMAP Level 1C Brightness Temperature product, which contains the assimilated SMAP radiometer brightness temperatures on 36 km EASE-Grid 2.0.&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:description&gt;
+                                 &lt;gmd:sourceCitation&gt;
+                                    &lt;gmd:CI_Citation&gt;
+                                       &lt;gmd:title gco:nilReason="missing"/&gt;
+                                       &lt;gmd:date&gt;
+                                          &lt;gmd:CI_Date&gt;
+                                             &lt;gmd:date gco:nilReason="missing"/&gt;
+                                             &lt;gmd:dateType&gt;
+                                                &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                     codeListValue="creation"&gt;creation&lt;/gmd:CI_DateTypeCode&gt;
+                                             &lt;/gmd:dateType&gt;
+                                          &lt;/gmd:CI_Date&gt;
+                                       &lt;/gmd:date&gt;
+                                       &lt;gmd:edition gco:nilReason="missing"/&gt;
+                                       &lt;gmd:identifier&gt;
+                                          &lt;gmd:MD_Identifier&gt;
+                                             &lt;gmd:code&gt;
+                                                &lt;gco:CharacterString&gt;SPL1CTB&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:code&gt;
+                                             &lt;gmd:codeSpace&gt;
+                                                &lt;gco:CharacterString&gt;http://gmao.gsfc.nasa.gov&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:codeSpace&gt;
+                                             &lt;gmd:description&gt;
+                                                &lt;gco:CharacterString&gt;A short name used by the Soil Moisture Active Passive (SMAP) mission to identify the Level 4 Radar product.&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:description&gt;
+                                          &lt;/gmd:MD_Identifier&gt;
+                                       &lt;/gmd:identifier&gt;
+                                       &lt;gmd:identifier&gt;
+                                          &lt;gmd:MD_Identifier&gt;
+                                             &lt;gmd:code&gt;
+                                                &lt;gmx:Anchor xlink:actuate="onRequest" xlink:href="http://dx.doi.org/"&gt;doi:&lt;/gmx:Anchor&gt;
+                                             &lt;/gmd:code&gt;
+                                             &lt;gmd:codeSpace gco:nilReason="missing"/&gt;
+                                             &lt;gmd:description&gt;
+                                                &lt;gco:CharacterString&gt;A Digital Object Identifier (DOI) that provides a persistent interoperable means to locate the SMAP Level 4 Radar data product.&lt;/gco:CharacterString&gt;
+                                             &lt;/gmd:description&gt;
+                                          &lt;/gmd:MD_Identifier&gt;
+                                       &lt;/gmd:identifier&gt;
+                                    &lt;/gmd:CI_Citation&gt;
+                                 &lt;/gmd:sourceCitation&gt;
+                              &lt;/gmi:LE_Source&gt;
+                           &lt;/gmd:source&gt;
+                        &lt;/gmd:LI_Lineage&gt;
+                     &lt;/gmd:lineage&gt;
+                  &lt;/gmd:DQ_DataQuality&gt;
+               &lt;/gmd:dataQualityInfo&gt;
+               &lt;gmi:acquisitionInformation&gt;
+                  &lt;gmi:MI_AcquisitionInformation&gt;
+                     &lt;gmi:platform&gt;
+                        &lt;gmi:MI_Platform&gt;
+                           &lt;gmi:citation&gt;
+                              &lt;gmd:CI_Citation&gt;
+                                 &lt;gmd:title gco:nilReason="missing"/&gt;
+                                 &lt;gmd:date&gt;
+                                    &lt;gmd:CI_Date&gt;
+                                       &lt;gmd:date gco:nilReason="missing"/&gt;
+                                       &lt;gmd:dateType&gt;
+                                          &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                               codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                       &lt;/gmd:dateType&gt;
+                                    &lt;/gmd:CI_Date&gt;
+                                 &lt;/gmd:date&gt;
+                                 &lt;gmd:edition gco:nilReason="missing"/&gt;
+                              &lt;/gmd:CI_Citation&gt;
+                           &lt;/gmi:citation&gt;
+                           &lt;gmi:identifier&gt;
+                              &lt;gmd:MD_Identifier&gt;
+                                 &lt;gmd:code&gt;
+                                    &lt;gco:CharacterString&gt;SMAP&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:code&gt;
+                                 &lt;gmd:codeSpace&gt;
+                                    &lt;gco:CharacterString&gt;http://smap.jpl.nasa.gov&lt;/gco:CharacterString&gt;
+                                 &lt;/gmd:codeSpace&gt;
+                              &lt;/gmd:MD_Identifier&gt;
+                           &lt;/gmi:identifier&gt;
+                           &lt;gmi:description&gt;
+                              &lt;gco:CharacterString&gt;The SMAP observatory houses an L-band radiometer that operates at 1.4 GHz and an L-band radar that operates at 1.26-1.29 GHz. The instruments share a rotating reflector antenna with a 6 meter aperture that scans over a 1000 km swath. The bus is a 3 axis stabilized spacecraft that provides momentum compensation for the rotating antenna.&lt;/gco:CharacterString&gt;
+                           &lt;/gmi:description&gt;
+                           &lt;gmi:instrument&gt;
+                              &lt;gmi:MI_Instrument&gt;
+                                 &lt;gmi:citation&gt;
+                                    &lt;gmd:CI_Citation&gt;
+                                       &lt;gmd:title gco:nilReason="missing"/&gt;
+                                       &lt;gmd:date&gt;
+                                          &lt;gmd:CI_Date&gt;
+                                             &lt;gmd:date gco:nilReason="missing"/&gt;
+                                             &lt;gmd:dateType&gt;
+                                                &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                     codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                             &lt;/gmd:dateType&gt;
+                                          &lt;/gmd:CI_Date&gt;
+                                       &lt;/gmd:date&gt;
+                                       &lt;gmd:edition gco:nilReason="missing"/&gt;
+                                    &lt;/gmd:CI_Citation&gt;
+                                 &lt;/gmi:citation&gt;
+                                 &lt;gmi:identifier&gt;
+                                    &lt;gmd:MD_Identifier&gt;
+                                       &lt;gmd:code&gt;
+                                          &lt;gco:CharacterString&gt;SMAP SAR&lt;/gco:CharacterString&gt;
+                                       &lt;/gmd:code&gt;
+                                    &lt;/gmd:MD_Identifier&gt;
+                                 &lt;/gmi:identifier&gt;
+                                 &lt;gmi:type&gt;
+                                    &lt;gco:CharacterString&gt;L-band Synthetic Aperture Radar&lt;/gco:CharacterString&gt;
+                                 &lt;/gmi:type&gt;
+                                 &lt;gmi:description&gt;
+                                    &lt;gco:CharacterString&gt;The SMAP radar instrument employs an L-band conically scanned system and SAR processing techniques to achieve moderate resolution (1 km) backscatter measurements over a very wide 1000 km swath.&lt;/gco:CharacterString&gt;
+                                 &lt;/gmi:description&gt;
+                              &lt;/gmi:MI_Instrument&gt;
+                           &lt;/gmi:instrument&gt;
+                           &lt;gmi:instrument&gt;
+                              &lt;gmi:MI_Instrument&gt;
+                                 &lt;gmi:citation&gt;
+                                    &lt;gmd:CI_Citation&gt;
+                                       &lt;gmd:title gco:nilReason="missing"/&gt;
+                                       &lt;gmd:date&gt;
+                                          &lt;gmd:CI_Date&gt;
+                                             &lt;gmd:date gco:nilReason="missing"/&gt;
+                                             &lt;gmd:dateType&gt;
+                                                &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                                     codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                                             &lt;/gmd:dateType&gt;
+                                          &lt;/gmd:CI_Date&gt;
+                                       &lt;/gmd:date&gt;
+                                       &lt;gmd:edition gco:nilReason="missing"/&gt;
+                                    &lt;/gmd:CI_Citation&gt;
+                                 &lt;/gmi:citation&gt;
+                                 &lt;gmi:identifier&gt;
+                                    &lt;gmd:MD_Identifier&gt;
+                                       &lt;gmd:code&gt;
+                                          &lt;gco:CharacterString&gt;SMAP RAD&lt;/gco:CharacterString&gt;
+                                       &lt;/gmd:code&gt;
+                                    &lt;/gmd:MD_Identifier&gt;
+                                 &lt;/gmi:identifier&gt;
+                                 &lt;gmi:type&gt;
+                                    &lt;gco:CharacterString&gt;L-band Radiometer&lt;/gco:CharacterString&gt;
+                                 &lt;/gmi:type&gt;
+                                 &lt;gmi:description&gt;
+                                    &lt;gco:CharacterString&gt;The SMAP L-band Radiometer records V-pol, H-pol, 3rd and 4th Stokes brightness temperatures at 40 km resolution at 4.3 Megabits per second with accuracies of 1.3 Kelvin or better.&lt;/gco:CharacterString&gt;
+                                 &lt;/gmi:description&gt;
+                              &lt;/gmi:MI_Instrument&gt;
+                           &lt;/gmi:instrument&gt;
+                        &lt;/gmi:MI_Platform&gt;
+                     &lt;/gmi:platform&gt;
+                  &lt;/gmi:MI_AcquisitionInformation&gt;
+               &lt;/gmi:acquisitionInformation&gt;
+            &lt;/gmi:MI_Metadata&gt;
+         &lt;/gmd:has&gt;
+      &lt;/gmd:DS_DataSet&gt;
+   &lt;/gmd:composedOf&gt;
+   &lt;gmd:seriesMetadata gco:nilReason="missing"/&gt;
+&lt;/gmd:DS_Series&gt;</MDI>
+    <MDI key="Metadata_iso_19139_series_xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;gmd:DS_Series xmlns:gmi="http://www.isotc211.org/2005/gmi"
+               xmlns:gco="http://www.isotc211.org/2005/gco"
+               xmlns:gmd="http://www.isotc211.org/2005/gmd"
+               xmlns:gml="http://www.opengis.net/gml/3.2"
+               xmlns:gmx="http://www.isotc211.org/2005/gmx"
+               xmlns:gss="http://www.isotc211.org/2005/gss"
+               xmlns:gsr="http://www.isotc211.org/2005/gsr"
+               xmlns:gts="http://www.isotc211.org/2005/gts"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:srv="http://www.isotc211.org/2005/srv"
+               xmlns:eos="http://earthdata.nasa.gov/schema/eos"
+               xsi:schemaLocation="http://www.isotc211.org/2005/gmi http://cdn.earthdata.nasa.gov/iso/schema/1.0/ISO19115-2_EOS.xsd"&gt;
+   &lt;gmd:composedOf gco:nilReason="inapplicable"/&gt;
+   &lt;gmd:seriesMetadata&gt;
+      &lt;gmi:MI_Metadata&gt;
+         &lt;gmd:fileIdentifier&gt;
+            &lt;gmx:FileName&gt;L4_SM_aup&lt;/gmx:FileName&gt;
+         &lt;/gmd:fileIdentifier&gt;
+         &lt;gmd:language&gt;
+            &lt;gco:CharacterString&gt;eng&lt;/gco:CharacterString&gt;
+         &lt;/gmd:language&gt;
+         &lt;gmd:characterSet&gt;
+            &lt;gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"&gt;utf8&lt;/gmd:MD_CharacterSetCode&gt;
+         &lt;/gmd:characterSet&gt;
+         &lt;gmd:hierarchyLevel&gt;
+            &lt;gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
+                              codeListValue="series"&gt;series&lt;/gmd:MD_ScopeCode&gt;
+         &lt;/gmd:hierarchyLevel&gt;
+         &lt;gmd:contact&gt;
+            &lt;gmd:CI_ResponsibleParty&gt;
+               &lt;gmd:organisationName&gt;
+                  &lt;gco:CharacterString&gt;NSIDC DAAC &amp;gt; National Snow and Ice Data Center DAAC&lt;/gco:CharacterString&gt;
+               &lt;/gmd:organisationName&gt;
+               &lt;gmd:contactInfo&gt;
+                  &lt;gmd:CI_Contact&gt;
+                     &lt;gmd:address&gt;
+                        &lt;gmd:CI_Address&gt;
+                           &lt;gmd:electronicMailAddress&gt;
+                              &lt;gco:CharacterString&gt;nsidc@nsidc.org&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:electronicMailAddress&gt;
+                        &lt;/gmd:CI_Address&gt;
+                     &lt;/gmd:address&gt;
+                     &lt;gmd:onlineResource&gt;
+                        &lt;gmd:CI_OnlineResource&gt;
+                           &lt;gmd:linkage&gt;
+                              &lt;gmd:URL&gt;http://nsidc.org/daac/&lt;/gmd:URL&gt;
+                           &lt;/gmd:linkage&gt;
+                        &lt;/gmd:CI_OnlineResource&gt;
+                     &lt;/gmd:onlineResource&gt;
+                  &lt;/gmd:CI_Contact&gt;
+               &lt;/gmd:contactInfo&gt;
+               &lt;gmd:role&gt;
+                  &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                   codeListValue="pointOfContact"&gt;pointOfContact&lt;/gmd:CI_RoleCode&gt;
+               &lt;/gmd:role&gt;
+            &lt;/gmd:CI_ResponsibleParty&gt;
+         &lt;/gmd:contact&gt;
+         &lt;gmd:dateStamp&gt;
+            &lt;gco:Date&gt;2018-05-31&lt;/gco:Date&gt;
+         &lt;/gmd:dateStamp&gt;
+         &lt;gmd:metadataStandardName&gt;
+            &lt;gco:CharacterString&gt;ISO 19115-2 Geographic information - Metadata - Part 2: Extensions for imagery and gridded data&lt;/gco:CharacterString&gt;
+         &lt;/gmd:metadataStandardName&gt;
+         &lt;gmd:metadataStandardVersion&gt;
+            &lt;gco:CharacterString&gt;ISO 19115-2:2009-02-15&lt;/gco:CharacterString&gt;
+         &lt;/gmd:metadataStandardVersion&gt;
+         &lt;gmd:identificationInfo&gt;
+            &lt;gmd:MD_DataIdentification&gt;
+               &lt;gmd:citation&gt;
+                  &lt;gmd:CI_Citation&gt;
+                     &lt;gmd:title&gt;
+                        &lt;gco:CharacterString&gt;SMAP L4 Global 3-hourly 9 km Surface and Rootzone Soil Moisture Analysis Update&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:title&gt;
+                     &lt;gmd:date&gt;
+                        &lt;gmd:CI_Date&gt;
+                           &lt;gmd:date&gt;
+                              &lt;gco:Date&gt;2018-05-31&lt;/gco:Date&gt;
+                           &lt;/gmd:date&gt;
+                           &lt;gmd:dateType&gt;
+                              &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="revision"&gt;revision&lt;/gmd:CI_DateTypeCode&gt;
+                           &lt;/gmd:dateType&gt;
+                        &lt;/gmd:CI_Date&gt;
+                     &lt;/gmd:date&gt;
+                     &lt;gmd:edition&gt;
+                        &lt;gco:CharacterString&gt;Vv4030&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:edition&gt;
+                     &lt;gmd:identifier&gt;
+                        &lt;gmd:MD_Identifier&gt;
+                           &lt;gmd:code&gt;
+                              &lt;gco:CharacterString&gt;SPL4SMAU&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:code&gt;
+                           &lt;gmd:codeSpace&gt;
+                              &lt;gco:CharacterString&gt;http://gmao.gsfc.nasa.gov&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:codeSpace&gt;
+                           &lt;gmd:description&gt;
+                              &lt;gco:CharacterString&gt;The ECS Short Name&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:description&gt;
+                        &lt;/gmd:MD_Identifier&gt;
+                     &lt;/gmd:identifier&gt;
+                     &lt;gmd:identifier&gt;
+                        &lt;gmd:MD_Identifier&gt;
+                           &lt;gmd:code&gt;
+                              &lt;gco:CharacterString&gt;004&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:code&gt;
+                           &lt;gmd:codeSpace&gt;
+                              &lt;gco:CharacterString&gt;gov.nasa.esdis&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:codeSpace&gt;
+                           &lt;gmd:description&gt;
+                              &lt;gco:CharacterString&gt;The ECS Version ID&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:description&gt;
+                        &lt;/gmd:MD_Identifier&gt;
+                     &lt;/gmd:identifier&gt;
+                     &lt;gmd:identifier&gt;
+                        &lt;gmd:MD_Identifier&gt;
+                           &lt;gmd:code&gt;
+                              &lt;gmx:Anchor xlink:actuate="onRequest"
+                                          xlink:href="http://dx.doi.org/10.5067/60HB8VIP2T8W"&gt;doi:10.5067/60HB8VIP2T8W&lt;/gmx:Anchor&gt;
+                           &lt;/gmd:code&gt;
+                           &lt;gmd:codeSpace&gt;
+                              &lt;gco:CharacterString&gt;gov.nasa.esdis&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:codeSpace&gt;
+                           &lt;gmd:description&gt;
+                              &lt;gco:CharacterString&gt;A Digital Object Identifier (DOI) that provides a persistent interoperable means to locate the SMAP Level 4 Radar data product.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:description&gt;
+                        &lt;/gmd:MD_Identifier&gt;
+                     &lt;/gmd:identifier&gt;
+                     &lt;gmd:citedResponsibleParty&gt;
+                        &lt;gmd:CI_ResponsibleParty&gt;
+                           &lt;gmd:organisationName&gt;
+                              &lt;gco:CharacterString&gt;National Aeronautics and Space Administration&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:organisationName&gt;
+                           &lt;gmd:role&gt;
+                              &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                               codeListValue="resourceProvider"&gt;resourceProvider&lt;/gmd:CI_RoleCode&gt;
+                           &lt;/gmd:role&gt;
+                        &lt;/gmd:CI_ResponsibleParty&gt;
+                     &lt;/gmd:citedResponsibleParty&gt;
+                     &lt;gmd:citedResponsibleParty&gt;
+                        &lt;gmd:CI_ResponsibleParty&gt;
+                           &lt;gmd:organisationName&gt;
+                              &lt;gco:CharacterString&gt;Global Modeling and Assimilation Office&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:organisationName&gt;
+                           &lt;gmd:role&gt;
+                              &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                               codeListValue="originator"&gt;originator&lt;/gmd:CI_RoleCode&gt;
+                           &lt;/gmd:role&gt;
+                        &lt;/gmd:CI_ResponsibleParty&gt;
+                     &lt;/gmd:citedResponsibleParty&gt;
+                     &lt;gmd:presentationForm&gt;
+                        &lt;gmd:CI_PresentationFormCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode"
+                                                     codeListValue="documentDigital"&gt;documentDigital&lt;/gmd:CI_PresentationFormCode&gt;
+                     &lt;/gmd:presentationForm&gt;
+                     &lt;gmd:series&gt;
+                        &lt;gmd:CI_Series&gt;
+                           &lt;gmd:name&gt;
+                              &lt;gco:CharacterString&gt;L4_SM&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:name&gt;
+                        &lt;/gmd:CI_Series&gt;
+                     &lt;/gmd:series&gt;
+                     &lt;gmd:otherCitationDetails&gt;
+                        &lt;gco:CharacterString&gt;The Version-4 Release of the SMAP Level 4 Science Processing Software.&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:otherCitationDetails&gt;
+                  &lt;/gmd:CI_Citation&gt;
+               &lt;/gmd:citation&gt;
+               &lt;gmd:abstract&gt;
+                  &lt;gco:CharacterString&gt;The SMAP L4_SM data product provides global, 3-hourly surface and root zone soil moisture at 9 km resolution. The L4_SM data product consists of three Collections: geophysical, analysis update and land-model-constants.&lt;/gco:CharacterString&gt;
+               &lt;/gmd:abstract&gt;
+               &lt;gmd:purpose&gt;
+                  &lt;gco:CharacterString&gt;The SMAP L4_SM data product provides spatially and temporally complete surface and root zone soil moisture information for science and applications users.&lt;/gco:CharacterString&gt;
+               &lt;/gmd:purpose&gt;
+               &lt;gmd:credit&gt;
+                  &lt;gco:CharacterString&gt;The software that generates the L4_SM data product and the data system that automates its production were designed and implemented at the NASA Global Modeling and Assimilation Office, Goddard Space Flight Center, Greenbelt, Maryland, USA.&lt;/gco:CharacterString&gt;
+               &lt;/gmd:credit&gt;
+               &lt;gmd:status&gt;
+                  &lt;gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode"
+                                       codeListValue="onGoing"&gt;onGoing&lt;/gmd:MD_ProgressCode&gt;
+               &lt;/gmd:status&gt;
+               &lt;gmd:pointOfContact&gt;
+                  &lt;gmd:CI_ResponsibleParty&gt;
+                     &lt;gmd:organisationName&gt;
+                        &lt;gco:CharacterString&gt;National Snow and Ice Data Center, Boulder, Colorado, USA.&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:organisationName&gt;
+                     &lt;gmd:role&gt;
+                        &lt;gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode"
+                                         codeListValue="distributor"&gt;distributor&lt;/gmd:CI_RoleCode&gt;
+                     &lt;/gmd:role&gt;
+                  &lt;/gmd:CI_ResponsibleParty&gt;
+               &lt;/gmd:pointOfContact&gt;
+               &lt;gmd:resourceMaintenance&gt;
+                  &lt;gmd:MD_MaintenanceInformation&gt;
+                     &lt;gmd:maintenanceAndUpdateFrequency&gt;
+                        &lt;gmd:MD_MaintenanceFrequencyCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                                                         codeListValue="As Needed"&gt;As Needed&lt;/gmd:MD_MaintenanceFrequencyCode&gt;
+                     &lt;/gmd:maintenanceAndUpdateFrequency&gt;
+                     &lt;gmd:dateOfNextUpdate&gt;
+                        &lt;gco:Date&gt;2019-05-31&lt;/gco:Date&gt;
+                     &lt;/gmd:dateOfNextUpdate&gt;
+                     &lt;gmd:updateScope&gt;
+                        &lt;gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode"
+                                          codeListValue="series"&gt;series&lt;/gmd:MD_ScopeCode&gt;
+                     &lt;/gmd:updateScope&gt;
+                  &lt;/gmd:MD_MaintenanceInformation&gt;
+               &lt;/gmd:resourceMaintenance&gt;
+               &lt;gmd:resourceFormat&gt;
+                  &lt;gmd:MD_Format&gt;
+                     &lt;gmd:name&gt;
+                        &lt;gco:CharacterString&gt;HDF5&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:name&gt;
+                     &lt;gmd:version&gt;
+                        &lt;gco:CharacterString&gt;Version 1.8.14&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:version&gt;
+                  &lt;/gmd:MD_Format&gt;
+               &lt;/gmd:resourceFormat&gt;
+               &lt;gmd:descriptiveKeywords&gt;
+                  &lt;gmd:MD_Keywords&gt;
+                     &lt;gmd:keyword&gt;
+                        &lt;gco:CharacterString&gt;EARTH SCIENCE &amp;gt; LAND SURFACE &amp;gt; SOILS &amp;gt; SOIL MOISTURE/WATER CONTENT&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:keyword&gt;
+                     &lt;gmd:keyword&gt;
+                        &lt;gco:CharacterString&gt;EARTH SCIENCE &amp;gt; LAND SURFACE &amp;gt; SOILS &amp;gt; SOIL MOISTURE/WATER CONTENT &amp;gt; NONE &amp;gt; NONE &amp;gt; SURFACE SOIL MOISTURE&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:keyword&gt;
+                     &lt;gmd:keyword&gt;
+                        &lt;gco:CharacterString&gt;EARTH SCIENCE &amp;gt; LAND SURFACE &amp;gt; SOILS &amp;gt; SOIL MOISTURE/WATER CONTENT &amp;gt; NONE &amp;gt; NONE &amp;gt; ROOT ZONE SOIL MOISTURE&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:keyword&gt;
+                     &lt;gmd:type&gt;
+                        &lt;gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
+                                                codeListValue="theme"&gt;theme&lt;/gmd:MD_KeywordTypeCode&gt;
+                     &lt;/gmd:type&gt;
+                     &lt;gmd:thesaurusName&gt;
+                        &lt;gmd:CI_Citation&gt;
+                           &lt;gmd:title&gt;
+                              &lt;gco:CharacterString&gt;NASA/GCMD Earth Science Keywords&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:title&gt;
+                           &lt;gmd:date gco:nilReason="missing"/&gt;
+                        &lt;/gmd:CI_Citation&gt;
+                     &lt;/gmd:thesaurusName&gt;
+                  &lt;/gmd:MD_Keywords&gt;
+               &lt;/gmd:descriptiveKeywords&gt;
+               &lt;gmd:descriptiveKeywords&gt;
+                  &lt;gmd:MD_Keywords&gt;
+                     &lt;gmd:keyword&gt;
+                        &lt;gco:CharacterString&gt;Earth Remote Sensing Instruments &amp;gt; Active Remote Sensing &amp;gt; NONE &amp;gt; SMAP L-BAND RADAR &amp;gt; SMAP L-Band Radar&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:keyword&gt;
+                     &lt;gmd:type&gt;
+                        &lt;gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
+                                                codeListValue="theme"&gt;theme&lt;/gmd:MD_KeywordTypeCode&gt;
+                     &lt;/gmd:type&gt;
+                     &lt;gmd:thesaurusName&gt;
+                        &lt;gmd:CI_Citation&gt;
+                           &lt;gmd:title&gt;
+                              &lt;gco:CharacterString&gt;NASA/GCMD Earth Science Keywords&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:title&gt;
+                           &lt;gmd:date gco:nilReason="missing"/&gt;
+                        &lt;/gmd:CI_Citation&gt;
+                     &lt;/gmd:thesaurusName&gt;
+                  &lt;/gmd:MD_Keywords&gt;
+               &lt;/gmd:descriptiveKeywords&gt;
+               &lt;gmd:descriptiveKeywords&gt;
+                  &lt;gmd:MD_Keywords&gt;
+                     &lt;gmd:keyword&gt;
+                        &lt;gco:CharacterString&gt;Earth Observation Satellites &amp;gt; NASA Decadal Survey &amp;gt; SMAP &amp;gt; Soil Moisture Active and Passive Observatory&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:keyword&gt;
+                     &lt;gmd:type&gt;
+                        &lt;gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
+                                                codeListValue="theme"&gt;theme&lt;/gmd:MD_KeywordTypeCode&gt;
+                     &lt;/gmd:type&gt;
+                     &lt;gmd:thesaurusName&gt;
+                        &lt;gmd:CI_Citation&gt;
+                           &lt;gmd:title&gt;
+                              &lt;gco:CharacterString&gt;NASA/GCMD Earth Science Keywords&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:title&gt;
+                           &lt;gmd:date gco:nilReason="missing"/&gt;
+                        &lt;/gmd:CI_Citation&gt;
+                     &lt;/gmd:thesaurusName&gt;
+                  &lt;/gmd:MD_Keywords&gt;
+               &lt;/gmd:descriptiveKeywords&gt;
+               &lt;gmd:descriptiveKeywords&gt;
+                  &lt;gmd:MD_Keywords&gt;
+                     &lt;gmd:keyword&gt;
+                        &lt;gco:CharacterString&gt;GEOGRAPHIC REGION &amp;gt; GLOBAL&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:keyword&gt;
+                     &lt;gmd:type&gt;
+                        &lt;gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode"
+                                                codeListValue="theme"&gt;theme&lt;/gmd:MD_KeywordTypeCode&gt;
+                     &lt;/gmd:type&gt;
+                     &lt;gmd:thesaurusName&gt;
+                        &lt;gmd:CI_Citation&gt;
+                           &lt;gmd:title&gt;
+                              &lt;gco:CharacterString&gt;NASA/GCMD Earth Science Keywords&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:title&gt;
+                           &lt;gmd:date gco:nilReason="missing"/&gt;
+                        &lt;/gmd:CI_Citation&gt;
+                     &lt;/gmd:thesaurusName&gt;
+                  &lt;/gmd:MD_Keywords&gt;
+               &lt;/gmd:descriptiveKeywords&gt;
+               &lt;gmd:aggregationInfo&gt;
+                  &lt;gmd:MD_AggregateInformation&gt;
+                     &lt;gmd:aggregateDataSetIdentifier&gt;
+                        &lt;gmd:MD_Identifier&gt;
+                           &lt;gmd:code&gt;
+                              &lt;gco:CharacterString&gt;SMAP&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:code&gt;
+                        &lt;/gmd:MD_Identifier&gt;
+                     &lt;/gmd:aggregateDataSetIdentifier&gt;
+                     &lt;gmd:associationType&gt;
+                        &lt;gmd:DS_AssociationTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode"
+                                                    codeListValue="largerWorkCitation"&gt;largerWorkCitation&lt;/gmd:DS_AssociationTypeCode&gt;
+                     &lt;/gmd:associationType&gt;
+                     &lt;gmd:initiativeType&gt;
+                        &lt;gmd:DS_InitiativeTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_InitiativeTypeCode"
+                                                   codeListValue="mission"&gt;mission&lt;/gmd:DS_InitiativeTypeCode&gt;
+                     &lt;/gmd:initiativeType&gt;
+                  &lt;/gmd:MD_AggregateInformation&gt;
+               &lt;/gmd:aggregationInfo&gt;
+               &lt;gmd:language&gt;
+                  &lt;gco:CharacterString&gt;eng&lt;/gco:CharacterString&gt;
+               &lt;/gmd:language&gt;
+               &lt;gmd:characterSet&gt;
+                  &lt;gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode"
+                                           codeListValue="utf8"&gt;utf8&lt;/gmd:MD_CharacterSetCode&gt;
+               &lt;/gmd:characterSet&gt;
+               &lt;gmd:topicCategory&gt;
+                  &lt;gmd:MD_TopicCategoryCode&gt;geoscientificInformation&lt;/gmd:MD_TopicCategoryCode&gt;
+               &lt;/gmd:topicCategory&gt;
+               &lt;gmd:environmentDescription&gt;
+                  &lt;gco:CharacterString&gt;Data product generated by the SMAP mission in HDF5 format with metadata that conforms to the ISO 19115 model.&lt;/gco:CharacterString&gt;
+               &lt;/gmd:environmentDescription&gt;
+               &lt;gmd:extent&gt;
+                  &lt;gmd:EX_Extent&gt;
+                     &lt;gmd:description&gt;
+                        &lt;gco:CharacterString&gt;Global land excluding inland water and permanent ice.&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:description&gt;
+                     &lt;gmd:geographicElement&gt;
+                        &lt;gmd:EX_GeographicBoundingBox&gt;
+                           &lt;gmd:extentTypeCode&gt;
+                              &lt;gco:Boolean&gt;1&lt;/gco:Boolean&gt;
+                           &lt;/gmd:extentTypeCode&gt;
+                           &lt;gmd:westBoundLongitude&gt;
+                              &lt;gco:Decimal&gt;-180&lt;/gco:Decimal&gt;
+                           &lt;/gmd:westBoundLongitude&gt;
+                           &lt;gmd:eastBoundLongitude&gt;
+                              &lt;gco:Decimal&gt;180&lt;/gco:Decimal&gt;
+                           &lt;/gmd:eastBoundLongitude&gt;
+                           &lt;gmd:southBoundLatitude&gt;
+                              &lt;gco:Decimal&gt;-85.04456&lt;/gco:Decimal&gt;
+                           &lt;/gmd:southBoundLatitude&gt;
+                           &lt;gmd:northBoundLatitude&gt;
+                              &lt;gco:Decimal&gt;85.04456&lt;/gco:Decimal&gt;
+                           &lt;/gmd:northBoundLatitude&gt;
+                        &lt;/gmd:EX_GeographicBoundingBox&gt;
+                     &lt;/gmd:geographicElement&gt;
+                     &lt;gmd:temporalElement&gt;
+                        &lt;gmd:EX_TemporalExtent&gt;
+                           &lt;gmd:extent&gt;
+                              &lt;gml:TimePeriod gml:id="swathTemporalExtent"&gt;
+                                 &lt;gml:beginPosition&gt;2015-03-31T01:30:00.000Z&lt;/gml:beginPosition&gt;
+                                 &lt;gml:endPosition&gt;2021-01-01T01:29:59.999Z&lt;/gml:endPosition&gt;
+                              &lt;/gml:TimePeriod&gt;
+                           &lt;/gmd:extent&gt;
+                        &lt;/gmd:EX_TemporalExtent&gt;
+                     &lt;/gmd:temporalElement&gt;
+                  &lt;/gmd:EX_Extent&gt;
+               &lt;/gmd:extent&gt;
+            &lt;/gmd:MD_DataIdentification&gt;
+         &lt;/gmd:identificationInfo&gt;
+         &lt;gmd:identificationInfo&gt;
+            &lt;gmd:MD_DataIdentification&gt;
+               &lt;gmd:citation&gt;
+                  &lt;gmd:CI_Citation&gt;
+                     &lt;gmd:title&gt;
+                        &lt;gco:CharacterString&gt;Soil Moisture Active Passive Mission Level 4 Surface and Root Zone Soil Moisture (L4_SM) Product Specification Document&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:title&gt;
+                     &lt;gmd:date&gt;
+                        &lt;gmd:CI_Date&gt;
+                           &lt;gmd:date&gt;
+                              &lt;gco:Date&gt;2018-05-31&lt;/gco:Date&gt;
+                           &lt;/gmd:date&gt;
+                           &lt;gmd:dateType&gt;
+                              &lt;gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"&gt;publication&lt;/gmd:CI_DateTypeCode&gt;
+                           &lt;/gmd:dateType&gt;
+                        &lt;/gmd:CI_Date&gt;
+                     &lt;/gmd:date&gt;
+                     &lt;gmd:edition&gt;
+                        &lt;gco:CharacterString&gt;1.5&lt;/gco:CharacterString&gt;
+                     &lt;/gmd:edition&gt;
+                     &lt;gmd:identifier&gt;
+                        &lt;gmd:MD_Identifier&gt;
+                           &lt;gmd:code&gt;
+                              &lt;gco:CharacterString&gt;L4_SM&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:code&gt;
+                           &lt;gmd:codeSpace&gt;
+                              &lt;gco:CharacterString&gt;http://gmao.gsfc.nasa.gov&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:codeSpace&gt;
+                           &lt;gmd:description&gt;
+                              &lt;gco:CharacterString&gt;A short name used by the Soil Moisture Active Passive (SMAP) mission to identify the Level 4 Radar product.&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:description&gt;
+                        &lt;/gmd:MD_Identifier&gt;
+                     &lt;/gmd:identifier&gt;
+                     &lt;gmd:presentationForm&gt;
+                        &lt;gmd:CI_PresentationFormCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode"
+                                                     codeListValue="documentDigital"&gt;documentDigital&lt;/gmd:CI_PresentationFormCode&gt;
+                     &lt;/gmd:presentationForm&gt;
+                     &lt;gmd:series&gt;
+                        &lt;gmd:CI_Series&gt;
+                           &lt;gmd:name&gt;
+                              &lt;gco:CharacterString&gt;L4_SM&lt;/gco:CharacterString&gt;
+                           &lt;/gmd:name&gt;
+                        &lt;/gmd:CI_Series&gt;
+                     &lt;/gmd:series&gt;
+                  &lt;/gmd:CI_Citation&gt;
+               &lt;/gmd:citation&gt;
+               &lt;gmd:abstract&gt;
+                  &lt;gco:CharacterString&gt;The SMAP L4_SM data product provides global, 3-hourly surface and root zone soil moisture at 9 km resolution. The L4_SM data product consists of three Collections: geophysical, analysis update and land-model-constants.&lt;/gco:CharacterString&gt;
+               &lt;/gmd:abstract&gt;
+               &lt;gmd:language&gt;
+                  &lt;gco:CharacterString&gt;eng&lt;/gco:CharacterString&gt;
+               &lt;/gmd:language&gt;
+            &lt;/gmd:MD_DataIdentification&gt;
+         &lt;/gmd:identificationInfo&gt;
+      &lt;/gmi:MI_Metadata&gt;
+   &lt;/gmd:seriesMetadata&gt;
+&lt;/gmd:DS_Series&gt;
+</MDI>
+    <MDI key="Metadata_ProcessStep_algorithmDescription">The L4_SM algorithm is a customized, off-line (land-only) version of the ensemble-based NASA GEOS-5 land data assimilation system. It merges SMAP observations with estimates from a land surface model that is driven with observations-based precipitation forcing.</MDI>
+    <MDI key="Metadata_ProcessStep_algorithmVersionID">reichle-LDASsa_m3-16_6_p1</MDI>
+    <MDI key="Metadata_ProcessStep_ATBDDate">2014-12-09</MDI>
+    <MDI key="Metadata_ProcessStep_ATBDTitle">Soil Moisture Active Passive (SMAP) Level 4 Surface and Root Zone Soil Moisture (L4_SM) Algorithm Theoretical Basis Document (ATBD)</MDI>
+    <MDI key="Metadata_ProcessStep_ATBDVersion">Revision-A</MDI>
+    <MDI key="Metadata_ProcessStep_documentation">Soil Moisture Active Passive (SMAP) Level 4 Surface and Root Zone Soil Moisture (L4_SM) Algorithm Theoretical Basis Document (ATBD)</MDI>
+    <MDI key="Metadata_ProcessStep_documentDate">2014-12-09</MDI>
+    <MDI key="Metadata_ProcessStep_documentVersion">Revision-A</MDI>
+    <MDI key="Metadata_ProcessStep_epochJulianDate">2451545 </MDI>
+    <MDI key="Metadata_ProcessStep_epochUTCDate">2000-01-01T11:58:55.816Z</MDI>
+    <MDI key="Metadata_ProcessStep_identifier">L4_SM_SPS</MDI>
+    <MDI key="Metadata_ProcessStep_processDescription">Assimilates Level 1 and Level 2 SMAP data into a global land surface model to generate spatially complete and temporally continuous estimates of soil moisture and associated land surface conditions.</MDI>
+    <MDI key="Metadata_ProcessStep_processor">Soil Moisture Active Passive (SMAP) Mission Science Data System (SDS) Operations Facility</MDI>
+    <MDI key="Metadata_ProcessStep_softwareDate">2018-07-11</MDI>
+    <MDI key="Metadata_ProcessStep_softwareTitle">Level 4 Surface and Root Zone Soil Moisture SPS</MDI>
+    <MDI key="Metadata_ProcessStep_stepDateTime">2018-09-13T03:54:58.000Z</MDI>
+    <MDI key="Metadata_ProcessStep_SWVersionID">reichle-LDASsa_m3-16_6_p1</MDI>
+    <MDI key="Metadata_ProcessStep_timeVariableEpoch">J2000</MDI>
+    <MDI key="Metadata_SeriesIdentification_abstract">The SMAP L4_SM data product provides global, 3-hourly surface and root zone soil moisture at 9 km resolution. The L4_SM data product consists of three Collections: geophysical, analysis update and land-model-constants.</MDI>
+    <MDI key="Metadata_SeriesIdentification_characterSet">utf8</MDI>
+    <MDI key="Metadata_SeriesIdentification_CompositeReleaseID">Vv40300001</MDI>
+    <MDI key="Metadata_SeriesIdentification_credit">The software that generates the L4_SM data product and the data system that automates its production were designed and implemented at the NASA Global Modeling and Assimilation Office, Goddard Space Flight Center, Greenbelt, Maryland, USA.</MDI>
+    <MDI key="Metadata_SeriesIdentification_ECSVersionDescription">Three-character string that identifies the type of ECS data stream and reflects the major science version of the product.</MDI>
+    <MDI key="Metadata_SeriesIdentification_ECSVersionID">004</MDI>
+    <MDI key="Metadata_SeriesIdentification_format">HDF5</MDI>
+    <MDI key="Metadata_SeriesIdentification_formatVersion">Version 1.8.14</MDI>
+    <MDI key="Metadata_SeriesIdentification_identifier_product_DOI">10.5067/60HB8VIP2T8W</MDI>
+    <MDI key="Metadata_SeriesIdentification_language">eng</MDI>
+    <MDI key="Metadata_SeriesIdentification_longName">SMAP L4 Global 3-hourly 9 km Surface and Rootzone Soil Moisture Analysis Update</MDI>
+    <MDI key="Metadata_SeriesIdentification_maintenanceAndUpdateFrequency">As Needed</MDI>
+    <MDI key="Metadata_SeriesIdentification_maintenanceDate">2019-05-31</MDI>
+    <MDI key="Metadata_SeriesIdentification_mission">SMAP</MDI>
+    <MDI key="Metadata_SeriesIdentification_pointOfContact">National Snow and Ice Data Center, Boulder, Colorado, USA.</MDI>
+    <MDI key="Metadata_SeriesIdentification_PSDEdition">1.5</MDI>
+    <MDI key="Metadata_SeriesIdentification_PSDPublicationDate">2018-05-31</MDI>
+    <MDI key="Metadata_SeriesIdentification_PSDTitle">Soil Moisture Active Passive Mission Level 4 Surface and Root Zone Soil Moisture (L4_SM) Product Specification Document</MDI>
+    <MDI key="Metadata_SeriesIdentification_purpose">The SMAP L4_SM data product provides spatially and temporally complete surface and root zone soil moisture information for science and applications users.</MDI>
+    <MDI key="Metadata_SeriesIdentification_resourceProviderOrganizationName">National Aeronautics and Space Administration</MDI>
+    <MDI key="Metadata_SeriesIdentification_revisionDate">2018-05-31</MDI>
+    <MDI key="Metadata_SeriesIdentification_shortName">SPL4SMAU</MDI>
+    <MDI key="Metadata_SeriesIdentification_SMAPShortName">L4_SM</MDI>
+    <MDI key="Metadata_SeriesIdentification_status">onGoing</MDI>
+    <MDI key="Metadata_SeriesIdentification_topicCategoryCode">geoscientificInformation</MDI>
+    <MDI key="Metadata_SeriesIdentification_VersionID">Vv4030</MDI>
+    <MDI key="Metadata_Source_L1C_TB_creationDate"></MDI>
+    <MDI key="Metadata_Source_L1C_TB_description">The SMAP Level 1C Brightness Temperature product, which contains the assimilated SMAP radiometer brightness temperatures on 36 km EASE-Grid 2.0.</MDI>
+    <MDI key="Metadata_Source_L1C_TB_DOI"></MDI>
+    <MDI key="Metadata_Source_L1C_TB_fileName"></MDI>
+    <MDI key="Metadata_Source_L1C_TB_identifier">SPL1CTB</MDI>
+    <MDI key="Metadata_Source_L1C_TB_version"></MDI>
+    <MDI key="References">see SMAP L4_SM Product Specification Documentation</MDI>
+    <MDI key="Source">reichle-LDASsa_m3-16_6_p1</MDI>
+    <MDI key="Title">SMAP L4_SM Analysis Update (AUP) Data Granule</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Metadata>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_coordinates">/cell_lat /cell_lon</MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_DIMENSION_LABELS">yx</MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_fmissing_value">-9999 </MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_grid_mapping">EASE2_global_projection</MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_long_name">Analysis root zone soil moisture (0-100 cm)</MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_missing_value">-9999 </MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_units">m3 m-3</MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_valid_max">0.89999998 </MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis_valid_min">0 </MDI>
+      <MDI key="Analysis_Data_sm_rootzone_analysis__FillValue">-9999 </MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

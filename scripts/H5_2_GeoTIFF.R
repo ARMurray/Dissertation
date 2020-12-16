@@ -2,21 +2,31 @@ library(raster)
 library(gdalUtils)
 library(dplyr)
 library(stringr)
+library(rhdf5)
+library(here)
 
 # Identify the folder which contains all of the SMAP data files (both .h5 and .xml files)
-folder <- here("SMAP_Downloads")
+folder <- here("Data/SMAP/SPL4SMAU")
 
 # Identify the folder you want to write the output GeoTiffs to.
-outFolder <- here("SMAP_GeoTIFFs")
+outFolder <- here("Data/SMAP/SPL4SMAU_GEOTIFF")
 
 # List the .h5 files (These are the raster without spatial extents)
-h5Files <- list.files(path = folder, pattern = ".h5$", recursive = TRUE)
+h5Files <- list.files(path = folder, pattern = ".h5$", recursive = TRUE, full.names = TRUE)
 
 # List the .xml files (These have the spatial extents for the rasters)
 xmlFiles <- list.files(path = here("SMAP_Downloads"), pattern = ".iso.xml$", recursive = TRUE)
 
 # Here we will iterate through the folder file by file and convert the seperate
 # H5 and xml files to singular GeoTIFFs
+
+
+## Pull a subdataset
+sds <- h5read(file = h5Files[1], 
+              name = "/Analysis_Data/sm_rootzone_analysis")
+
+open <- H5Fopen(h5Files[1])
+
 
 start <- Sys.time()
 
@@ -52,5 +62,5 @@ for(n in 1:length(h5Files)){
   writeRaster(wgs84,paste0(outFolder,"/",substr(h5Files[n],1,nchar(h5Files[n])-3),".tif"),overwrite=TRUE)
 }
 
-end <- Sys.time()
+gdalend <- Sys.time()
 print(paste0("Converted: ",length(h5Files)," files to GeoTiffs in: ",end-start))
