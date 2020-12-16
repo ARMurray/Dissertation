@@ -1,58 +1,56 @@
-# Dissertation Outline
+## Estimating Dynamic Groundwater Vulnerability in the United States
 
-## Estimating Vulnerability to Privately Owned Domestic Wells in Response to Extreme Precipitation Events
+### Landscape Response to Extreme Precipitation measured with SMAP
 
-### Chapter 1: the relationship between soil moisture, precipitation and Landcover
+Within this repository are many tools that allow for utilizing SMAP data in R. In the scripts folder you will find work flows to convert hdf5 raw SMAP data into spatial data for use with analysis.
 
-Driving questions: 
-* Can we predict what the SMAP soil moisture reading will be before it happens?
-* Do soil moisture values respond to Hurricanes in predictable ways based on landcover?
+### Estimating Return Time of Soil Moisture
 
-Data Products to be Used:
-* SMAP 9km soil moisture
-* PRISM daily rainfall
-* 2016 NLCD
-* gSSURGO
+I am interested in predicting the amount of time it takes fro antecedent soil moisture conditions to return after a major rain event. This is an important indicator in vulnerability modeling, especially as it relates to groundwater contamination following extreme weather events such as tropical cyclones. You can explore the progress of my analysis [HERE](https://murraygeo.com/post/agu2020/agu2020_post/).
 
-Analyses:
-* Extract NLCD values to SMAP pixels using dominant landcover type. I think dominant landcover should be used here but perhaps I need to extract all landcover types and their percent coverage.
-* Using SMAP soil moisture products, make every pixel an outlet and delineate it's watershed.
-Calculate percentages of Landcover types in that watershed
-Create metrics of precipitation such as: 
-+ total PPT within previous 7 days of soil moisture capture.
-* Create a topography metric which will provide steepness of the watershed
-+ I think this will help us identify SMAP pixels that are more prone to quickflow vs flooding but I need to explore this a bit more
-* Establish a value for dominant soil type in the watershed
-+ This should be done in the same way as the NLCD
-* Establish relationship between soil moisture and calculated variables
+### Repository Directory
 
-### Chapter 2: SMAP assisted estimation of hydraulic conductivity, recharge, and water table height.
+**Data**
 
-Hypothesis: High frequency soil moisture readings can tell us how quickly the soil is becoming saturated or drying out. With known soil data, PPT data and elevation data we can use soil moisture to estimate rates of recharge, conductivity and water table depth.
+Wrangled data products are stored here, however no raw SMAP data as those files take up more than a Terabyte
 
-Would likely need to collect well drilling records to establish baseline water table levels through time.
-Could also incorporate USGS monitoring wells though these are sparse.
-Incorporate EPA published infiltration models
+**Presentations**
 
-### Chapter 3: DRASTIC+
+Presentation Materials are stored here
 
-Hypothesis: the DRASTIC index can be improved by incorporating SMAP assisted recharge, conductivity and water table depth. It can be further benefited by incorporating land cover and topography.
-Using established DRASTIC variables along with methods established in chapter 1 & 2, the DRASTIC+ index can be calculated every 1.5 days (when a new SMAP capture becomes available)
-This index will be a 30m raster, corresponding to the data it uses with the finest resolution (NLCD & SSURGO).
+**Scripts**
 
-### Chapter 4: Performance of DRASTIC+ in response to extreme precipitation events
+Code work flows and scripts are stored here
 
-Hypothesis: Higher rates of well contamination will occur in areas estimated to be more vulnerable.
-Well testing records will be sought from labs at Virginia Tech, Texas A&M, NC State and from within UNC. Collectively, these groups have conducted water well testing immediately following the past five major hurricanes to hit the southeastern US (Matthew, Harvey, Irma, Michael, Florence).
+**Visualizations**
 
-### Chapter 5: Automating DRASTIC+ to run in a standalone or web based environment and deployment for public use
+Stand a lone visualizations can be found here
 
-This is largely dependent on where funding comes from over the next year or two.
-Could be incorporated into existing programs such as SpoRT at NASA or could simply self automate the method at UNC and deploy results on personal website.
-A long term goal of mine which probably is outside the scope of this dissertation is to create a DRASTIC+ visualization tool online that also acts as a place where the public can self-report the existence of private wells and water testing results.
+### Dashboards
 
-Larry band model
+Some of my work is presented in dashboards that are undergoing active development. You can see each dashboard by clicking on the interactive link below corresponding to each tropical cyclone that has made landfall in the southeastern United States since 2015
 
-Make sure you look at existing models so I don’t reinvent the wheel.
-
-
+| Storm Name | Year | Max Category | Interactive Map                                    |
+|------------|------|:------------:|----------------------------------------------------|
+| Ana        | 2015 |      H1      | [Interactive](https://murraygeo.com/dashboards/ANA_Dashboard.html)      |
+| Bill       | 2015 |              | [Interactive](https://murraygeo.com/dashboards/BILL_Dashboard.html)     |
+| Two        | 2016 |              | [Interactive](https://murraygeo.com/dashboards/TWO_Dashboard.html)      |
+| Colin      | 2016 |              | [Interactive](https://murraygeo.com/dashboards/COLIN_Dashboard.html)    |
+| Hermine    | 2016 |      H1      | [Interactive](https://murraygeo.com/dashboards/HERMINE_Dashboard.html)  |
+| Invest     | 2016 |              | [Interactive](https://murraygeo.com/dashboards/INVEST_Dashboard.html)   |
+| Cindy      | 2017 |              | [Interactive](https://murraygeo.com/dashboards/CINDY_Dashboard.html)    |
+| Emily      | 2017 |              | [Interactive](https://murraygeo.com/dashboards/EMILY_Dashboard.html)    |
+| Harvey     | 2017 |      H4      | [Interactive](https://murraygeo.com/dashboards/HARVEY_Dashboard.html)   |
+| Irma       | 2017 |      H5      | [Interactive](https://murraygeo.com/dashboards/IRMA_Dashboard.html)     |
+| Maria      | 2017 |      H5      | [Interactive](https://murraygeo.com/dashboards/MARIA_Dashboard.html)    |
+| Nate       | 2017 |      H1      | [Interactive](https://murraygeo.com/dashboards/NATE_Dashboard.html)     |
+| Alberto    | 2018 |              | [Interactive](https://murraygeo.com/dashboards/ALBERTO_Dashboard.html)  |
+| Gordon     | 2018 |              | [Interactive](https://murraygeo.com/dashboards/GORDON_Dashboard.html)   |
+| Florence   | 2018 |      H4      | [Interactive](https://murraygeo.com/dashboards/FLORENCE_Dashboard.html) |
+| Michael    | 2018 |      H4      | [Interactive](https://murraygeo.com/dashboards/MICHAEL_Dashboard.html)  |
+| Barry      | 2019 |      H1      | [Interactive](https://murraygeo.com/dashboards/BARRY_Dashboard.html)    |
+| Imelda     | 2019 |              | [Interactive](https://murraygeo.com/dashboards/IMELDA_Dashboard.html)   |
+| Karen      | 2019 |              | [Interactive](https://murraygeo.com/dashboards/KAREN_Dashboard.html)    |
+| Sixteen    | 2019 |              | [Interactive](https://murraygeo.com/dashboards/SIXTEEN_Dashboard.html)  |
+| Olga       | 2019 |              | [Interactive](https://murraygeo.com/dashboards/OLGA_Dashboard.html)     |
+| Bertha     | 2020 |              | [Interactive](https://murraygeo.com/dashboards/BERTHA_Dashboard.html)   |
