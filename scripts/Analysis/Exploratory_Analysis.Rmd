@@ -25,7 +25,8 @@ colnames(slope)[2] <- "Mean_Slope"
 all <- read.csv(here("Data/Analysis/AllStorms_Combo.csv"))%>%
   filter(!Class == "Open Water" & !is.na(ppt_mm))%>%
   left_join(sinfo, by = c("storm" = "ID"))%>%
-  left_join(slope, by = c("Cell_ID" = "CELL_ID"))
+  left_join(slope, by = c("Cell_ID" = "CELL_ID"))%>%
+  mutate(Rtrn_Lngth = ifelse(is.na(Rtrn_Lngth),lubridate::ymd_hms(minSM_Time) - lubridate::ymd_hms(Peak_Time),Rtrn_Lngth))
 all$Class <- factor(all$Class)
 
 all$Class  <- with(all, reorder(Class, Dom_LC))
@@ -59,22 +60,24 @@ nlcdCols <- c("Open Water" = "#486DA2",
               "Woody Wetlands" = "#BAD7ED",
               "Emergent Herbaceous Wetlands" = "#71A4C1")
 
-ggplot(all)+
+p <- ggplot(all)+
   geom_point(aes(x = ppt_mm, y = Peak_SM - ant_SM, col = Class))+
   facet_wrap(~Class)+
-  scale_color_manual(values = nlcdCols)
+  scale_color_manual(values = nlcdCols)+
+  labs(title = "Soil Moisture Increase by Land Cover")
 ```
 
 ## Antecedent Soil Moisture Varies
 
 ```{r}
-ggplot(all)+
+antPlot <- ggplot(all)+
   geom_boxplot(aes(x = Class, y = ant_SM, fill = Class), outlier.shape = 21)+
   scale_fill_manual(values = nlcdCols)+
   labs(title = "Antecedent Soil Moisture for all Tropical Cyclones since 2015",
        x = "",
        y = "Antecedent Soil Moisture")+
-  theme(axis.text.x = element_blank())+
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x=element_blank())+
   guides(fill=guide_legend(title="NLCD Class"))
 
 reg1 <- lm(all$Rtrn_Lngth + all$Dom_LC ~ all$ant_SM)
@@ -120,8 +123,8 @@ global <- out2%>%
 # Run it for each storm
 out3 <- data.frame()
 
-storms <- data.frame(ID = unique(all$storm))%>%
-  filter(!ID %in% c("al062018","al092017","al112019","al142018","al162017","al162019","al172019"))
+storms <- data.frame(ID = unique(all$storm))
+  #filter(!ID %in% c("al062018","al092017","al112019","al142018","al162017","al162019","al172019"))
 
 for(n in storms$ID){
   
@@ -153,6 +156,41 @@ outByStorm <- out3%>%
   filter(N > 25)
 
 write.csv(outByStorm, here("Data/Analysis/regressionsByStorm.csv"))
+
+
+
+# Run it for each storm without binning b by NLCD
+out4 <- data.frame()
+
+storms <- data.frame(ID = unique(all$storm))
+  #filter(!ID %in% c("al062018","al092017","al112019","al142018","al162017","al162019","al172019"))
+
+for(n in storms$ID){
+  
+  stormfilt <- all%>%
+    filter(storm == n)
+  
+  for(i in c("ant_SM","ppt_mm","yDay","Mean_Slope")){
+  
+      lm <- lm(stormfilt$Rtrn_Lngth ~ stormfilt[,i])
+  
+      #print(paste0("Summary of Regression for: ",var))
+  
+      coef <- as.data.frame(summary(lm)$coefficients)
+  
+      r2 <- as.numeric(summary(lm)$r.squared)
+  
+      out <- data.frame("storm" = n,"Ind_Var" = i , "NLCD_Class" = var, "T_Stat" = coef[2,3], "p_val" = as.numeric(coef[2,4],5), "R2" = r2, "N" = nrow(filt))
+  
+      out4 <- rbind(out4,out)
+    }
+}
+
+
+
+
+
+
 ```
 
 ## Peak Soil Moisture Varies
