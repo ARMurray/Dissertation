@@ -43,11 +43,14 @@ class: center, middle, inverse, title-slide
 .pull-left[
 - Recap of Proposal Defense
 
+- Update on Current Work
+ - Modelling Landscape Drying following Tropical Cyclones
+ 
 - Transition to EPA
 
-- Update on Current Work
+- Publications in Progress &amp; Planned
 
-- Updated Outlook
+- Two Paths Forward
 
 - Discussion
 ]
@@ -56,17 +59,32 @@ class: center, middle, inverse, title-slide
 
 ???
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+Thank you all for making some time in your schedule to contemplate and discuss my dissertation. It has been about a year since I completed my comprehensive exams and defended my proposal and a lot has happened in that time, almost all of it related in some way shape or form to the global pandemic. I have a lot to cover today so I will dive right into a presentation that will start with a recap of what we discussed a year ago, and then discuss where that work stands at present. I will also discuss my transition and return to the Environmental Protection Agency and give a description of the project I am working on there. Finally, I will discuss the overlap and differences between my dissertation work and my EPA work, talk about the status of multiple publications both in the works and planned and present two paths to finishing my dissertation. I would ask if you could give particular thought to both the science presentation and the implications of my decisions on my career plans. Please feel free to stop me at any time for clarification or follow up questions. Otherwise I will plan to present for about thirty minutes and allow plenty of time towards the end for specific and general discussion.
 
 ---
-class: center, middle
+class: left
 
-# xaringan
+# Recap of Proposal Defense
 
-### /ʃaː.'riŋ.ɡan/
+.pull-left[
+## Chapters
+1.  Connecting soil moisture, precipitation and Landcover / Vegetation
+
+2.  SMAP assisted estimation of hydraulic conductivity, recharge, and water table height.
+
+3.  DRASTIC+
+]
+
+.pull-right[
+![](Figures/florence.png)
+]
+
+???
+
+To review, last year I presented my plans for three papers, targeted at developing a national groundwater vulnerability model. The purpose of such a model is to present a dynamic view of vulnerability that has not been presented before. You will recall that I hypothesized that groundwater vulnerability is not static and that it is heavily dependent on a complex mixture of normal, current and antecedent conditions. The most notable index to date, and which I aim to improve upon is the DRASTIC index, which is a relative index based on inputs relating to depth to water, Rate of Recharge, Aquifer Media, Soil Media, Topography, Impact of the Vadose Zone and hydraulic conductivity. While some of these inputs such as topography are easily obtained and utilized, others, like aquifer media, are poorly understood, and some, such as water table height are dynamic in nature. Still others are conspicuously absent such as seasonal components related to temperature, precipitation and vegetation. There is also the issue of surface composition such as land cover and imperviousness. The chapters which I have laid out to you previously aim to act as building blocks to using temporal soil moisture data as the basis for building towards this outcome. Soil moisture could be one of the keys to understanding regional scale hydraulic characteristics such as conductivity when coupled with other factors such as precipitation and land cover. Extreme precipitation events, such as tropical cyclones provide exceptional data opportunities for identifying regional scale spatial patterns as they provide significant swings in rainfall
 
 ---
-class: inverse, center, middle
+class: left
 
 # Get Started
 
@@ -349,8 +367,10 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-8f34325c4625d851a52e" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f34325c4625d851a52e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+```{=html}
+&lt;div id="htmlwidget-325bccd78d70cabbd904" style="width:100%;height:432px;" class="leaflet html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-325bccd78d70cabbd904"&gt;{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&amp;copy; &lt;a href=\"http://openstreetmap.org\"&gt;OpenStreetMap&lt;\/a&gt; contributors, &lt;a href=\"http://creativecommons.org/licenses/by-sa/2.0/\"&gt;CC-BY-SA&lt;\/a&gt;"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}&lt;/script&gt;
+```
 
 ---
 
@@ -362,8 +382,10 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-11fdd7c5f70d5cc8cc5b" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-11fdd7c5f70d5cc8cc5b">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+```{=html}
+&lt;div id="htmlwidget-dca2b231223c4744b181" style="width:100%;height:auto;" class="datatables html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-dca2b231223c4744b181"&gt;{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"&lt;table class=\"display\"&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt; &lt;\/th&gt;\n      &lt;th&gt;Sepal.Length&lt;\/th&gt;\n      &lt;th&gt;Sepal.Width&lt;\/th&gt;\n      &lt;th&gt;Petal.Length&lt;\/th&gt;\n      &lt;th&gt;Petal.Width&lt;\/th&gt;\n      &lt;th&gt;Species&lt;\/th&gt;\n    &lt;\/tr&gt;\n  &lt;\/thead&gt;\n&lt;\/table&gt;","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+```
 
 ---
 

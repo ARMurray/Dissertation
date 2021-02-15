@@ -24,13 +24,14 @@ options(htmltools.dir.version = FALSE)
 .pull-left[
 - Recap of Proposal Defense
 
-- Transition to EPA
-
 - Update on Current Work
  - Modelling Landscape Drying following Tropical Cyclones
  
+- Transition to EPA
 
-- Updated Outlook
+- Publications in Progress & Planned
+
+- Two Paths Forward
 
 - Discussion
 ]
@@ -39,17 +40,32 @@ options(htmltools.dir.version = FALSE)
 
 ???
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+Thank you all for making some time in your schedule to contemplate and discuss my dissertation. It has been about a year since I completed my comprehensive exams and defended my proposal and a lot has happened in that time, almost all of it related in some way shape or form to the global pandemic. I have a lot to cover today so I will dive right into a presentation that will start with a recap of what we discussed a year ago, and then discuss where that work stands at present. I will also discuss my transition and return to the Environmental Protection Agency and give a description of the project I am working on there. Finally, I will discuss the overlap and differences between my dissertation work and my EPA work, talk about the status of multiple publications both in the works and planned and present two paths to finishing my dissertation. I would ask if you could give particular thought to both the science presentation and the implications of my decisions on my career plans. Please feel free to stop me at any time for clarification or follow up questions. Otherwise I will plan to present for about thirty minutes and allow plenty of time towards the end for specific and general discussion.
 
 ---
-class: center, middle
+class: left
 
-# xaringan
+# Recap of Proposal Defense
 
-### /ʃaː.'riŋ.ɡan/
+.pull-left[
+## Chapters
+1.  Connecting soil moisture, precipitation and Landcover / Vegetation
+
+2.  SMAP assisted estimation of hydraulic conductivity, recharge, and water table height.
+
+3.  DRASTIC+
+]
+
+.pull-right[
+![](Figures/florence.png)
+]
+
+???
+
+To review, last year I presented my plans for three papers, targeted at developing a national groundwater vulnerability model. The purpose of such a model is to present a dynamic view of vulnerability that has not been presented before. You will recall that I hypothesized that groundwater vulnerability is not static and that it is heavily dependent on a complex mixture of normal, current and antecedent conditions. The most notable index to date, and which I aim to improve upon is the DRASTIC index, which is a relative index based on inputs relating to depth to water, Rate of Recharge, Aquifer Media, Soil Media, Topography, Impact of the Vadose Zone and hydraulic conductivity. While some of these inputs such as topography are easily obtained and utilized, others, like aquifer media, are poorly understood, and some, such as water table height are dynamic in nature. Still others are conspicuously absent such as seasonal components related to temperature, precipitation and vegetation. There is also the issue of surface composition such as land cover and imperviousness. The chapters which I have laid out to you previously aim to act as building blocks to using temporal soil moisture data as the basis for building towards this outcome. Soil moisture could be one of the keys to understanding regional scale hydraulic characteristics such as conductivity when coupled with other factors such as precipitation and land cover. Extreme precipitation events, such as tropical cyclones provide exceptional data opportunities for identifying regional scale spatial patterns as they provide significant swings in rainfall
 
 ---
-class: inverse, center, middle
+class: left
 
 # Get Started
 
