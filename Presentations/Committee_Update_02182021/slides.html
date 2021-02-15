@@ -9,13 +9,6 @@
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
     <script src="libs/htmlwidgets/htmlwidgets.js"></script>
     <script src="libs/jquery/jquery.min.js"></script>
-    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
-    <script src="libs/leaflet/leaflet.js"></script>
-    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
-    <script src="libs/proj4/proj4.min.js"></script>
-    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
-    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
-    <script src="libs/leaflet-binding/leaflet.js"></script>
     <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
     <script src="libs/datatables-binding/datatables.js"></script>
     <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -23,6 +16,13 @@
     <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
     <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
     <script src="libs/crosstalk/js/crosstalk.min.js"></script>
+    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet/leaflet.js"></script>
+    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
+    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding/leaflet.js"></script>
     <link rel="stylesheet" href="my-theme.css" type="text/css" />
   </head>
   <body>
@@ -44,7 +44,7 @@ class: center, middle, inverse, title-slide
 - Recap of Proposal Defense
 
 - Update on Current Work
- - Modelling Landscape Drying following Tropical Cyclones
+ - Modeling Landscape Drying following Tropical Cyclones
  
 - Transition to EPA
 
@@ -86,47 +86,104 @@ To review, last year I presented my plans for three papers, targeted at developi
 ---
 class: left
 
-# Get Started
+# Modeling Landscape Drying following Tropical Cyclones
+
+.pull-left[
+- Vulnerability to contamination is coupled with a variety of landscape processes.
+
+- Soil moisture is a key component of understanding th ability of the landscape to respond to precipitation and potential contamination events.
+
+- Understanding how the landscape responds in the context of other characeteistics can help us forecast vulnerability parameters
+]
+
+.pull-right[
+![](Figures/florence.png)
+
+Hurricane Florence shows the disconnect between soil wetting and drying rates.
+]
+
+???
+
+The driving question behind this first piece of my research is if we can predict how long it will take soil moisture to return to antecedent conditions following precipitation from a tropical storm
 
 ---
+.center[
+# Dashboards
+]
 
-# Hello World
+.pull-left[
 
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
-
-
-```r
-remotes::install_github("yihui/xaringan")
-```
-
---
-
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation`;&lt;sup&gt;1&lt;/sup&gt;
-
---
-
-- Click the `Knit` button to compile it;
-
---
-
-- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)&lt;sup&gt;2&lt;/sup&gt; "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
-
-.footnote[
-[1] 中文用户请看[这份教程](https://slides.yihui.org/xaringan/zh-CN.html)
-
-[2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
+| Storm Name | Year | Max Category | Interactive Map                                    |
+|------------|------|:------------:|----------------------------------------------------|
+| Ana        | 2015 |      H1      | [Interactive](https://murraygeo.com/dashboards/ANA_Dashboard.html)      |
+| Bill       | 2015 |              | [Interactive](https://murraygeo.com/dashboards/BILL_Dashboard.html)     |
+| Two        | 2016 |              | [Interactive](https://murraygeo.com/dashboards/TWO_Dashboard.html)      |
+| Colin      | 2016 |              | [Interactive](https://murraygeo.com/dashboards/COLIN_Dashboard.html)    |
+| Hermine    | 2016 |      H1      | [Interactive](https://murraygeo.com/dashboards/HERMINE_Dashboard.html)  |
+| Invest     | 2016 |              | [Interactive](https://murraygeo.com/dashboards/INVEST_Dashboard.html)   |
+| Cindy      | 2017 |              | [Interactive](https://murraygeo.com/dashboards/CINDY_Dashboard.html)    |
+| Emily      | 2017 |              | [Interactive](https://murraygeo.com/dashboards/EMILY_Dashboard.html)    |
+| Harvey     | 2017 |      H4      | [Interactive](https://murraygeo.com/dashboards/HARVEY_Dashboard.html)   |
+| Irma       | 2017 |      H5      | [Interactive](https://murraygeo.com/dashboards/IRMA_Dashboard.html)     |
+| Maria      | 2017 |      H5      | [Interactive](https://murraygeo.com/dashboards/MARIA_Dashboard.html)    |
+]
+.pull-right[
+| Storm Name | Year | Max Category | Interactive Map                                    |
+|------------|------|:------------:|----------------------------------------------------|
+| Nate       | 2017 |      H1      | [Interactive](https://murraygeo.com/dashboards/NATE_Dashboard.html)     |
+| Alberto    | 2018 |              | [Interactive](https://murraygeo.com/dashboards/ALBERTO_Dashboard.html)  |
+| Gordon     | 2018 |              | [Interactive](https://murraygeo.com/dashboards/GORDON_Dashboard.html)   |
+| Florence   | 2018 |      H4      | [Interactive](https://murraygeo.com/dashboards/FLORENCE_Dashboard.html) |
+| Michael    | 2018 |      H4      | [Interactive](https://murraygeo.com/dashboards/MICHAEL_Dashboard.html)  |
+| Barry      | 2019 |      H1      | [Interactive](https://murraygeo.com/dashboards/BARRY_Dashboard.html)    |
+| Imelda     | 2019 |              | [Interactive](https://murraygeo.com/dashboards/IMELDA_Dashboard.html)   |
+| Karen      | 2019 |              | [Interactive](https://murraygeo.com/dashboards/KAREN_Dashboard.html)    |
+| Sixteen    | 2019 |              | [Interactive](https://murraygeo.com/dashboards/SIXTEEN_Dashboard.html)  |
+| Olga       | 2019 |              | [Interactive](https://murraygeo.com/dashboards/OLGA_Dashboard.html)     |
+| Bertha     | 2020 |              | [Interactive](https://murraygeo.com/dashboards/BERTHA_Dashboard.html)   |
 ]
 
 ---
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-position: 50% 50%
-class: center, bottom, inverse
 
-# You only live once!
+## Preliminary Analysis
+
+
+<div id="htmlwidget-e83b4711e72239ee7732" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e83b4711e72239ee7732">{"x":{"filter":"none","data":[["Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope"],["Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous"],[-0.835,-1.029,-5.548,-2.233,-3.619,-20.977,-6.333,-6.067,-4.744,-1.598,-5.252,6.125,15.757,16.241,54.911,15.27,60.129,74.053,13.09,24.509,49.546,33.785,27.269,8.589,-0.056,4.36,16.409,1.302,1.272,12.27,-3.337,4.302,18.508,9.109,6.158,-2.492,2.011,1.812,3.643,-0.827,-16.493,-1.984,-10.698,-6.347,-0.866,2.948,-3.262,3.08],[0.403887,0.304444,0,0.025753,0.000297,0,0,0,2e-06,0.110209,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.95499,2e-05,0,0.19306,0.203518,0,0.000849,1.8e-05,0,0,0,0.012829,0.044562,0.071367,0.00027,0.408555,0,0.047263,0,0,0.386422,0.003229,0.001135,0.002119],[0.001,0.005,0.003,0.004,0.002,0.021,0.004,0.014,0.003,0.001,0.021,0.032,0.191,0.539,0.204,0.158,0.301,0.214,0.017,0.187,0.233,0.348,0.372,0.061,0,0.078,0.022,0.001,0,0.007,0.001,0.007,0.041,0.037,0.029,0.005,0.004,0.014,0.001,0.001,0.031,0,0.011,0.015,0,0.004,0.008,0.008],[1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Independent Variable<\/th>\n      <th>NLCD Class<\/th>\n      <th>T Statistic<\/th>\n      <th>P - Value<\/th>\n      <th>R^2<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.1 ? \"#d73027\" : value <= 0.2 ? \"#fc8d59\" : value <= 0.3 ? \"#fee08b\" : value <= 0.4 ? \"#ffffbf\" : value <= 0.5 ? \"#d9ef8b\" : value <= 0.6 ? \"#91cf60\" : \"#1a9850\"});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.0005 ? \"#1a9850\" : value <= 0.005 ? \"#91cf60\" : value <= 0.05 ? \"#d9ef8b\" : \"#d73027\"});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'background-color':value == \"Cultivated Crops\" ? \"#AE7229\" : value == \"Deciduous Forest\" ? \"#6CA966\" : value == \"Developed High Intensity\" ? \"#AB0101\" : value == \"Developed, Low Intensity\" ? \"#DC9881\" : value == \"Developed, Medium Intensity\" ? \"#F10100\" : value == \"Developed, Open Space\" ? \"#E1CDCE\" : value == \"Emergent Herbaceous Wetlands\" ? \"#71A4C1\" : value == \"Evergreen Forest\" ? \"#1D6533\" : value == \"Grassland/Herbaceous\" ? \"#EDECCD\" : value == \"Mixed Forest\" ? \"#BDCC93\" : value == \"Pasture/Hay\" ? \"#DDD83E\" : value == \"Shrub/Scrub\" ? \"#D1BB82\" : value == \"Woody Wetlands\" ? \"#BAD7ED\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+
+???
+
+As you might expect, the main driver of soil moisture return time is, of course, total precipitation. We can see from these linear regression tests that this is indeed the case. In fact there are strong linear relationships present for a variety of land cover types. However, once we move through these relationships, we see a sharp dropoff in R^2 values but we maintain significance with very low p-values. What we can glean from this is that while these factors are drivers of return time, they are not representative of something as simple as a linear relationship. This is to be expected as we all know how complex these relationships are. It may very well be the case that an increase in mean slope my lead to faster drying times, but this may be overidden by dominant land cover type. For example, we might find that a mixed forest with higher slope may retain soil moisture for longer periods than urban centers with low slopes. This tells us that a more complex satistical method must be applied to improve our modelling.
+---
+
+# Random Forest
+
+.pull-left[
+- Machine Learning Approach Allows for:
+
+  - Complex relationships built by randomized tree approach
+  
+  - Bootstrapping of data serves as built-in validation
+  
+  - Protection against overfitting
+
+]
+
+.pull-right[
+![](Figures/fig8_14.png)
+.small[Kuhn &amp; Johnson (2013) - Applied Predictive Modeling Figure 8.14]
+]
+
+???
+
+We turn then to a machine learning approach in the form of the Random Forest. Random forests present many advantages to simple linear regression while still utilizing the basic relationships we have identified. If you are not familiar with the methods within a Random Forest, I find the best way to think of it as linear regressions on randomized subsets of the data. Essentially you start with a large sample of data and remove a percentage of the data points to later be used for validation. In my case, I remove 25% of the dataset. This is referred to as the out of bag sample and will be used to test model performance once the model is tuned. From there, the remaining data are randomly binned into separate trees and split at each iteration to test random relationships. At each split, predictor variables are randomly selected to test a relationship. The number of predictor variables to use at each split is referred to as mTry. Multiple scenarios are generated at each split and the one with the least amount of error is retained. Therefore, at each split a new test is developed and applied in the form of an ifelse statement to determine which data points follow which path at the split. So for a specific subset of the data, the random forest might determine that urban land cover should follow one path and then within that path a slope threshold might be determined in combination with precipitation totals. This allows for far more complexity within the model.
 
 ---
+
+# Random Forest Results
+
+---
+
 
 # Hello Ninja
 
@@ -367,10 +424,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-```{=html}
-&lt;div id="htmlwidget-325bccd78d70cabbd904" style="width:100%;height:432px;" class="leaflet html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-325bccd78d70cabbd904"&gt;{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&amp;copy; &lt;a href=\"http://openstreetmap.org\"&gt;OpenStreetMap&lt;\/a&gt; contributors, &lt;a href=\"http://creativecommons.org/licenses/by-sa/2.0/\"&gt;CC-BY-SA&lt;\/a&gt;"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}&lt;/script&gt;
-```
+<div id="htmlwidget-1d22caaf7a049d2de1e1" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1d22caaf7a049d2de1e1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -382,10 +437,8 @@ DT::datatable(
 )
 ```
 
-```{=html}
-&lt;div id="htmlwidget-dca2b231223c4744b181" style="width:100%;height:auto;" class="datatables html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-dca2b231223c4744b181"&gt;{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"&lt;table class=\"display\"&gt;\n  &lt;thead&gt;\n    &lt;tr&gt;\n      &lt;th&gt; &lt;\/th&gt;\n      &lt;th&gt;Sepal.Length&lt;\/th&gt;\n      &lt;th&gt;Sepal.Width&lt;\/th&gt;\n      &lt;th&gt;Petal.Length&lt;\/th&gt;\n      &lt;th&gt;Petal.Width&lt;\/th&gt;\n      &lt;th&gt;Species&lt;\/th&gt;\n    &lt;\/tr&gt;\n  &lt;\/thead&gt;\n&lt;\/table&gt;","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}&lt;/script&gt;
-```
+<div id="htmlwidget-99c3fc3f69f2fa625bed" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-99c3fc3f69f2fa625bed">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -690,13 +743,12 @@ names(xaringan:::list_css())
 ## [10] "ki-fonts"         "ki"               "kunoichi"        
 ## [13] "lucy-fonts"       "lucy"             "metropolis-fonts"
 ## [16] "metropolis"       "middlebury-fonts" "middlebury"      
-## [19] "nhsr-fonts"       "nhsr"             "ninjutsu"        
-## [22] "rladies-fonts"    "rladies"          "robot-fonts"     
-## [25] "robot"            "rutgers-fonts"    "rutgers"         
-## [28] "shinobi"          "tamu-fonts"       "tamu"            
-## [31] "uio-fonts"        "uio"              "uo-fonts"        
-## [34] "uo"               "uol-fonts"        "uol"             
-## [37] "useR-fonts"       "useR"
+## [19] "ninjutsu"         "rladies-fonts"    "rladies"         
+## [22] "robot-fonts"      "robot"            "rutgers-fonts"   
+## [25] "rutgers"          "shinobi"          "tamu-fonts"      
+## [28] "tamu"             "uio-fonts"        "uio"             
+## [31] "uo-fonts"         "uo"               "uol-fonts"       
+## [34] "uol"              "useR-fonts"       "useR"
 ```
 
 ---

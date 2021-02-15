@@ -17,6 +17,9 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+library(tidyverse)
+library(DT)
+library(here)
 ```
 
 # Overview
@@ -25,7 +28,7 @@ options(htmltools.dir.version = FALSE)
 - Recap of Proposal Defense
 
 - Update on Current Work
- - Modelling Landscape Drying following Tropical Cyclones
+ - Modeling Landscape Drying following Tropical Cyclones
  
 - Transition to EPA
 
@@ -67,46 +70,134 @@ To review, last year I presented my plans for three papers, targeted at developi
 ---
 class: left
 
-# Get Started
+# Modeling Landscape Drying following Tropical Cyclones
+
+.pull-left[
+- Vulnerability to contamination is coupled with a variety of landscape processes.
+
+- Soil moisture is a key component of understanding th ability of the landscape to respond to precipitation and potential contamination events.
+
+- Understanding how the landscape responds in the context of other characeteistics can help us forecast vulnerability parameters
+]
+
+.pull-right[
+![](Figures/florence.png)
+
+Hurricane Florence shows the disconnect between soil wetting and drying rates.
+]
+
+???
+
+The driving question behind this first piece of my research is if we can predict how long it will take soil moisture to return to antecedent conditions following precipitation from a tropical storm
 
 ---
+.center[
+# Dashboards
+]
 
-# Hello World
+.pull-left[
 
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
-
-```{r eval=FALSE, tidy=FALSE}
-remotes::install_github("yihui/xaringan")
-```
-
---
-
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
-
---
-
-- Click the `Knit` button to compile it;
-
---
-
-- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)<sup>2</sup> "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
-
-.footnote[
-[1] 中文用户请看[这份教程](https://slides.yihui.org/xaringan/zh-CN.html)
-
-[2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
+| Storm Name | Year | Max Category | Interactive Map                                    |
+|------------|------|:------------:|----------------------------------------------------|
+| Ana        | 2015 |      H1      | [Interactive](https://murraygeo.com/dashboards/ANA_Dashboard.html)      |
+| Bill       | 2015 |              | [Interactive](https://murraygeo.com/dashboards/BILL_Dashboard.html)     |
+| Two        | 2016 |              | [Interactive](https://murraygeo.com/dashboards/TWO_Dashboard.html)      |
+| Colin      | 2016 |              | [Interactive](https://murraygeo.com/dashboards/COLIN_Dashboard.html)    |
+| Hermine    | 2016 |      H1      | [Interactive](https://murraygeo.com/dashboards/HERMINE_Dashboard.html)  |
+| Invest     | 2016 |              | [Interactive](https://murraygeo.com/dashboards/INVEST_Dashboard.html)   |
+| Cindy      | 2017 |              | [Interactive](https://murraygeo.com/dashboards/CINDY_Dashboard.html)    |
+| Emily      | 2017 |              | [Interactive](https://murraygeo.com/dashboards/EMILY_Dashboard.html)    |
+| Harvey     | 2017 |      H4      | [Interactive](https://murraygeo.com/dashboards/HARVEY_Dashboard.html)   |
+| Irma       | 2017 |      H5      | [Interactive](https://murraygeo.com/dashboards/IRMA_Dashboard.html)     |
+| Maria      | 2017 |      H5      | [Interactive](https://murraygeo.com/dashboards/MARIA_Dashboard.html)    |
+]
+.pull-right[
+| Storm Name | Year | Max Category | Interactive Map                                    |
+|------------|------|:------------:|----------------------------------------------------|
+| Nate       | 2017 |      H1      | [Interactive](https://murraygeo.com/dashboards/NATE_Dashboard.html)     |
+| Alberto    | 2018 |              | [Interactive](https://murraygeo.com/dashboards/ALBERTO_Dashboard.html)  |
+| Gordon     | 2018 |              | [Interactive](https://murraygeo.com/dashboards/GORDON_Dashboard.html)   |
+| Florence   | 2018 |      H4      | [Interactive](https://murraygeo.com/dashboards/FLORENCE_Dashboard.html) |
+| Michael    | 2018 |      H4      | [Interactive](https://murraygeo.com/dashboards/MICHAEL_Dashboard.html)  |
+| Barry      | 2019 |      H1      | [Interactive](https://murraygeo.com/dashboards/BARRY_Dashboard.html)    |
+| Imelda     | 2019 |              | [Interactive](https://murraygeo.com/dashboards/IMELDA_Dashboard.html)   |
+| Karen      | 2019 |              | [Interactive](https://murraygeo.com/dashboards/KAREN_Dashboard.html)    |
+| Sixteen    | 2019 |              | [Interactive](https://murraygeo.com/dashboards/SIXTEEN_Dashboard.html)  |
+| Olga       | 2019 |              | [Interactive](https://murraygeo.com/dashboards/OLGA_Dashboard.html)     |
+| Bertha     | 2020 |              | [Interactive](https://murraygeo.com/dashboards/BERTHA_Dashboard.html)   |
 ]
 
 ---
-background-image: url(`r xaringan:::karl`)
-background-position: 50% 50%
-class: center, bottom, inverse
 
-# You only live once!
+## Preliminary Analysis
+
+
+```{r globalRegressions, echo = FALSE}
+# Data tables
+
+global <- read.csv(here("Data/Analysis/Regressions_Global.csv"))%>%
+  select(!X)%>%
+  mutate(Ind_Var = recode(Ind_Var, ant_SM = "Antecedent SM",
+                          Mean_Slope = "Mean Slope",
+                          ppt_mm = "PPT",
+                          yDay = "Day of Year"),
+         T_Stat = round(T_Stat,3),
+         p_val = round(p_val,6),
+         R2 = round(R2,3))
+
+datatable(global,rownames = FALSE,
+          colnames = c('Independent Variable', 'NLCD Class', 'T Statistic', 'P - Value', 'R^2',"N"))%>%
+  formatStyle("R2", backgroundColor = styleInterval(c(.1,.2,.3,.4,.5,.6), c("#d73027","#fc8d59","#fee08b","#ffffbf","#d9ef8b","#91cf60","#1a9850")))%>%
+  formatStyle("p_val",backgroundColor = styleInterval(c(.0005,.005,.05),c("#1a9850","#91cf60","#d9ef8b","#d73027")))%>%
+  formatStyle(
+    'NLCD_Class', backgroundColor = styleEqual(c("Cultivated Crops","Deciduous Forest","Developed High Intensity",
+                                                 "Developed, Low Intensity","Developed, Medium Intensity",
+                                                 "Developed, Open Space","Emergent Herbaceous Wetlands",
+                                                 "Evergreen Forest","Grassland/Herbaceous","Mixed Forest",
+                                                 "Pasture/Hay","Shrub/Scrub","Woody Wetlands"),
+                                               c("#AE7229", "#6CA966","#AB0101",
+                                                 "#DC9881","#F10100",
+                                                 "#E1CDCE","#71A4C1",
+                                                 "#1D6533","#EDECCD","#BDCC93",
+                                                 "#DDD83E","#D1BB82","#BAD7ED"
+                                                 ))
+  )
+
+```
+
+???
+
+As you might expect, the main driver of soil moisture return time is, of course, total precipitation. We can see from these linear regression tests that this is indeed the case. In fact there are strong linear relationships present for a variety of land cover types. However, once we move through these relationships, we see a sharp dropoff in R^2 values but we maintain significance with very low p-values. What we can glean from this is that while these factors are drivers of return time, they are not representative of something as simple as a linear relationship. This is to be expected as we all know how complex these relationships are. It may very well be the case that an increase in mean slope my lead to faster drying times, but this may be overidden by dominant land cover type. For example, we might find that a mixed forest with higher slope may retain soil moisture for longer periods than urban centers with low slopes. This tells us that a more complex satistical method must be applied to improve our modelling.
+---
+
+# Random Forest
+
+.pull-left[
+- Machine Learning Approach Allows for:
+
+  - Complex relationships built by randomized tree approach
+  
+  - Bootstrapping of data serves as built-in validation
+  
+  - Protection against overfitting
+
+]
+
+.pull-right[
+![](Figures/fig8_14.png)
+.small[Kuhn & Johnson (2013) - Applied Predictive Modeling Figure 8.14]
+]
+
+???
+
+We turn then to a machine learning approach in the form of the Random Forest. Random forests present many advantages to simple linear regression while still utilizing the basic relationships we have identified. If you are not familiar with the methods within a Random Forest, I find the best way to think of it as linear regressions on randomized subsets of the data. Essentially you start with a large sample of data and remove a percentage of the data points to later be used for validation. In my case, I remove 25% of the dataset. This is referred to as the out of bag sample and will be used to test model performance once the model is tuned. From there, the remaining data are randomly binned into separate trees and split at each iteration to test random relationships. At each split, predictor variables are randomly selected to test a relationship. The number of predictor variables to use at each split is referred to as mTry. Multiple scenarios are generated at each split and the one with the least amount of error is retained. Therefore, at each split a new test is developed and applied in the form of an ifelse statement to determine which data points follow which path at the split. So for a specific subset of the data, the random forest might determine that urban land cover should follow one path and then within that path a slope threshold might be determined in combination with precipitation totals. This allows for far more complexity within the model.
 
 ---
+
+# Random Forest Results
+
+---
+
 
 # Hello Ninja
 
