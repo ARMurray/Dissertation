@@ -16,13 +16,6 @@
     <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
     <link href="libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
     <script src="libs/crosstalk/js/crosstalk.min.js"></script>
-    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
-    <script src="libs/leaflet/leaflet.js"></script>
-    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
-    <script src="libs/Proj4Leaflet/proj4-compressed.js"></script>
-    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
-    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
-    <script src="libs/leaflet-binding/leaflet.js"></script>
     <link rel="stylesheet" href="my-theme.css" type="text/css" />
   </head>
   <body>
@@ -50,7 +43,7 @@ class: center, middle, inverse, title-slide
 
 - Publications in Progress &amp; Planned
 
-- Two Paths Forward
+- Path Forward
 
 - Discussion
 ]
@@ -59,7 +52,7 @@ class: center, middle, inverse, title-slide
 
 ???
 
-Thank you all for making some time in your schedule to contemplate and discuss my dissertation. It has been about a year since I completed my comprehensive exams and defended my proposal and a lot has happened in that time, almost all of it related in some way shape or form to the global pandemic. I have a lot to cover today so I will dive right into a presentation that will start with a recap of what we discussed a year ago, and then discuss where that work stands at present. I will also discuss my transition and return to the Environmental Protection Agency and give a description of the project I am working on there. Finally, I will discuss the overlap and differences between my dissertation work and my EPA work, talk about the status of multiple publications both in the works and planned and present two paths to finishing my dissertation. I would ask if you could give particular thought to both the science presentation and the implications of my decisions on my career plans. Please feel free to stop me at any time for clarification or follow up questions. Otherwise I will plan to present for about thirty minutes and allow plenty of time towards the end for specific and general discussion.
+Thank you all for making some time in your schedule to contemplate and discuss my dissertation. It has been about a year since I completed my comprehensive exams and defended my proposal and a lot has happened in that time, almost all of it related in some way shape or form to the global pandemic. I have a lot to cover today so I will dive right into a presentation that will start with a recap of what we discussed a year ago, and then discuss where that work stands at present. I will also discuss my transition and return to the Environmental Protection Agency and give a description of the project I am working on there. Finally, I will discuss the overlap and differences between my dissertation work and my EPA work, talk about the status of multiple publications both in the works and planned and discuss my path to finishing my dissertation. I would ask if you could give particular thought to both the science presentation and the implications of my decisions on my career plans. Please feel free to stop me at any time for clarification or follow up questions. Otherwise I will plan to present for about thirty minutes and allow plenty of time towards the end for specific and general discussion.
 
 ---
 class: left
@@ -77,6 +70,8 @@ class: left
 
 .pull-right[
 ![](Figures/florence.png)
+![](Figures/DRASTIC.png)
+
 ]
 
 ???
@@ -104,7 +99,7 @@ Hurricane Florence shows the disconnect between soil wetting and drying rates.
 
 ???
 
-The driving question behind this first piece of my research is if we can predict how long it will take soil moisture to return to antecedent conditions following precipitation from a tropical storm
+The driving question behind this first piece of my research is if we can predict how long it will take soil moisture to return to antecedent conditions following precipitation from a tropical storm. This is critical to understand at both local and regional scales as the ability for a contaminant to travle over the surface or into the groundwater will depend on how much time it has to do this. Therefore it is important to understand landscape response to precipitation events and how long it takes to return to it's antecedent state. Based on this, I chose to identify rebound, or return time as the independent variable on which to test. I define return time as the time, in hours a SMAP pixel takes to return from it's peak soil moisture value to within 5% of it's antecedent state. As a preliminary analysis, I ran linear regressions on a variety of variables on return time to estimate Gloabl, and sotrm specific R2 values.
 
 ---
 .center[
@@ -143,17 +138,22 @@ The driving question behind this first piece of my research is if we can predict
 | Bertha     | 2020 |              | [Interactive](https://murraygeo.com/dashboards/BERTHA_Dashboard.html)   |
 ]
 
+???
+
+This table represents each of tropical systems included in this work. The variables I initially included were precipitation totals, calculated as the mean precipitation that fell over each SMAP pixel over the duration of each storm event, Antecedent soil moisture values, The Day of the year of landfall, and the average slope within the SMAP pixel. The regressions were further broken down by dominant landcover class within the SMAP pixel. I also ran global regressions for all of the systems lumped together. We can take a look at a specific storm, for example, Hurricane Florence and see how these variables performed as a predictor of return time. As you might expect, precipitation is the dominant factor, yielding R2 values of up to .61 within pixels dominated by evergreen forest. There is a significant dropoff in predictive power however once you move to other variables, although they remain statistically significant.
+
 ---
 
 ## Preliminary Analysis
 
 
-<div id="htmlwidget-e83b4711e72239ee7732" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e83b4711e72239ee7732">{"x":{"filter":"none","data":[["Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope"],["Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous"],[-0.835,-1.029,-5.548,-2.233,-3.619,-20.977,-6.333,-6.067,-4.744,-1.598,-5.252,6.125,15.757,16.241,54.911,15.27,60.129,74.053,13.09,24.509,49.546,33.785,27.269,8.589,-0.056,4.36,16.409,1.302,1.272,12.27,-3.337,4.302,18.508,9.109,6.158,-2.492,2.011,1.812,3.643,-0.827,-16.493,-1.984,-10.698,-6.347,-0.866,2.948,-3.262,3.08],[0.403887,0.304444,0,0.025753,0.000297,0,0,0,2e-06,0.110209,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.95499,2e-05,0,0.19306,0.203518,0,0.000849,1.8e-05,0,0,0,0.012829,0.044562,0.071367,0.00027,0.408555,0,0.047263,0,0,0.386422,0.003229,0.001135,0.002119],[0.001,0.005,0.003,0.004,0.002,0.021,0.004,0.014,0.003,0.001,0.021,0.032,0.191,0.539,0.204,0.158,0.301,0.214,0.017,0.187,0.233,0.348,0.372,0.061,0,0.078,0.022,0.001,0,0.007,0.001,0.007,0.041,0.037,0.029,0.005,0.004,0.014,0.001,0.001,0.031,0,0.011,0.015,0,0.004,0.008,0.008],[1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Independent Variable<\/th>\n      <th>NLCD Class<\/th>\n      <th>T Statistic<\/th>\n      <th>P - Value<\/th>\n      <th>R^2<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.1 ? \"#d73027\" : value <= 0.2 ? \"#fc8d59\" : value <= 0.3 ? \"#fee08b\" : value <= 0.4 ? \"#ffffbf\" : value <= 0.5 ? \"#d9ef8b\" : value <= 0.6 ? \"#91cf60\" : \"#1a9850\"});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.0005 ? \"#1a9850\" : value <= 0.005 ? \"#91cf60\" : value <= 0.05 ? \"#d9ef8b\" : \"#d73027\"});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'background-color':value == \"Cultivated Crops\" ? \"#AE7229\" : value == \"Deciduous Forest\" ? \"#6CA966\" : value == \"Developed High Intensity\" ? \"#AB0101\" : value == \"Developed, Low Intensity\" ? \"#DC9881\" : value == \"Developed, Medium Intensity\" ? \"#F10100\" : value == \"Developed, Open Space\" ? \"#E1CDCE\" : value == \"Emergent Herbaceous Wetlands\" ? \"#71A4C1\" : value == \"Evergreen Forest\" ? \"#1D6533\" : value == \"Grassland/Herbaceous\" ? \"#EDECCD\" : value == \"Mixed Forest\" ? \"#BDCC93\" : value == \"Pasture/Hay\" ? \"#DDD83E\" : value == \"Shrub/Scrub\" ? \"#D1BB82\" : value == \"Woody Wetlands\" ? \"#BAD7ED\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-1f32f5bc2af5d129c64d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1f32f5bc2af5d129c64d">{"x":{"filter":"none","data":[["Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","Antecedent SM","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","PPT","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Day of Year","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope","Mean Slope"],["Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous","Developed, Low Intensity","Developed, Medium Intensity","Woody Wetlands","Developed, Open Space","Pasture/Hay","Evergreen Forest","Deciduous Forest","Mixed Forest","Cultivated Crops","Emergent Herbaceous Wetlands","Shrub/Scrub","Grassland/Herbaceous"],[-0.835,-1.029,-5.548,-2.233,-3.619,-20.977,-6.333,-6.067,-4.744,-1.598,-5.252,6.125,15.757,16.241,54.911,15.27,60.129,74.053,13.09,24.509,49.546,33.785,27.269,8.589,-0.056,4.36,16.409,1.302,1.272,12.27,-3.337,4.302,18.508,9.109,6.158,-2.492,2.011,1.812,3.643,-0.827,-16.493,-1.984,-10.698,-6.347,-0.866,2.948,-3.262,3.08],[0.403887,0.304444,0,0.025753,0.000297,0,0,0,2e-06,0.110209,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.95499,2e-05,0,0.19306,0.203518,0,0.000849,1.8e-05,0,0,0,0.012829,0.044562,0.071367,0.00027,0.408555,0,0.047263,0,0,0.386422,0.003229,0.001135,0.002119],[0.001,0.005,0.003,0.004,0.002,0.021,0.004,0.014,0.003,0.001,0.021,0.032,0.191,0.539,0.204,0.158,0.301,0.214,0.017,0.187,0.233,0.348,0.372,0.061,0,0.078,0.022,0.001,0,0.007,0.001,0.007,0.041,0.037,0.029,0.005,0.004,0.014,0.001,0.001,0.031,0,0.011,0.015,0,0.004,0.008,0.008],[1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132,1059,228,11793,1244,8407,20168,9955,2647,8089,2147,1259,1132]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Independent Variable<\/th>\n      <th>NLCD Class<\/th>\n      <th>T Statistic<\/th>\n      <th>P - Value<\/th>\n      <th>R^2<\/th>\n      <th>N<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.1 ? \"#d73027\" : value <= 0.2 ? \"#fc8d59\" : value <= 0.3 ? \"#fee08b\" : value <= 0.4 ? \"#ffffbf\" : value <= 0.5 ? \"#d9ef8b\" : value <= 0.6 ? \"#91cf60\" : \"#1a9850\"});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'background-color':isNaN(parseFloat(value)) ? '' : value <= 0.0005 ? \"#1a9850\" : value <= 0.005 ? \"#91cf60\" : value <= 0.05 ? \"#d9ef8b\" : \"#d73027\"});\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'background-color':value == \"Cultivated Crops\" ? \"#AE7229\" : value == \"Deciduous Forest\" ? \"#6CA966\" : value == \"Developed High Intensity\" ? \"#AB0101\" : value == \"Developed, Low Intensity\" ? \"#DC9881\" : value == \"Developed, Medium Intensity\" ? \"#F10100\" : value == \"Developed, Open Space\" ? \"#E1CDCE\" : value == \"Emergent Herbaceous Wetlands\" ? \"#71A4C1\" : value == \"Evergreen Forest\" ? \"#1D6533\" : value == \"Grassland/Herbaceous\" ? \"#EDECCD\" : value == \"Mixed Forest\" ? \"#BDCC93\" : value == \"Pasture/Hay\" ? \"#DDD83E\" : value == \"Shrub/Scrub\" ? \"#D1BB82\" : value == \"Woody Wetlands\" ? \"#BAD7ED\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 
 ???
 
-As you might expect, the main driver of soil moisture return time is, of course, total precipitation. We can see from these linear regression tests that this is indeed the case. In fact there are strong linear relationships present for a variety of land cover types. However, once we move through these relationships, we see a sharp dropoff in R^2 values but we maintain significance with very low p-values. What we can glean from this is that while these factors are drivers of return time, they are not representative of something as simple as a linear relationship. This is to be expected as we all know how complex these relationships are. It may very well be the case that an increase in mean slope my lead to faster drying times, but this may be overidden by dominant land cover type. For example, we might find that a mixed forest with higher slope may retain soil moisture for longer periods than urban centers with low slopes. This tells us that a more complex satistical method must be applied to improve our modelling.
+Here we can view the global results, when regressions were applied to all storms at once, and again,
+as you might expect, the main driver of soil moisture return time is, of course, total precipitation. We can see from these linear regression tests that this is indeed the case. In fact there are strong linear relationships present for a variety of land cover types. However, once we move through these relationships, we see a sharp dropoff in R^2 values but we maintain significance with very low p-values. What we can glean from this is that while these factors are drivers of return time, they are not representative of something as simple as a linear relationship. This is to be expected as we all know how complex these relationships are. It may very well be the case that an increase in mean slope my lead to faster drying times, but this may be overidden by dominant land cover type. For example, we might find that a mixed forest with higher slope may retain soil moisture for longer periods than urban centers with low slopes. This tells us that a more complex satistical method must be applied to improve our modelling.
 ---
 
 # Random Forest
@@ -179,661 +179,364 @@ As you might expect, the main driver of soil moisture return time is, of course,
 We turn then to a machine learning approach in the form of the Random Forest. Random forests present many advantages to simple linear regression while still utilizing the basic relationships we have identified. If you are not familiar with the methods within a Random Forest, I find the best way to think of it as linear regressions on randomized subsets of the data. Essentially you start with a large sample of data and remove a percentage of the data points to later be used for validation. In my case, I remove 25% of the dataset. This is referred to as the out of bag sample and will be used to test model performance once the model is tuned. From there, the remaining data are randomly binned into separate trees and split at each iteration to test random relationships. At each split, predictor variables are randomly selected to test a relationship. The number of predictor variables to use at each split is referred to as mTry. Multiple scenarios are generated at each split and the one with the least amount of error is retained. Therefore, at each split a new test is developed and applied in the form of an ifelse statement to determine which data points follow which path at the split. So for a specific subset of the data, the random forest might determine that urban land cover should follow one path and then within that path a slope threshold might be determined in combination with precipitation totals. This allows for far more complexity within the model.
 
 ---
+# Random Forest Inputs
+.pull-left[
+&lt;div class="figure"&gt;
+&lt;img src="Figures/inputs.png" alt="Clockwise from top-left: SMAP Soil Moisture, MODIS LAI, PRISM Precipitation, NLCD" width="700" /&gt;
+&lt;p class="caption"&gt;Clockwise from top-left: SMAP Soil Moisture, MODIS LAI, PRISM Precipitation, NLCD&lt;/p&gt;
+&lt;/div&gt;
 
+]
+
+.pull-right[
+- SMAP L4 SPL4SMAU Root Zone Soil Moisture 
+
+- MODIS MCD15A2H 8-day composite LAI (500 m)
+
+- 2016 National Land Cover Dataset
+
+- National Elevation Dataset
+
+- Prism Precipitation
+]
+
+???
+
+You may have noticed that I left out a few important factors in the regression analyses. First, I did not include a measure of leaf area index. I took a simplified approach by using the day of the year as a proxy for seasonality, but this was an oversimplification. I also did not include soil properties, which still need to be included before this work is finished. To get at the complexity of these relationships within and between pixels, I began utilizing a random forest approach. The inputs remain the same, with the exception of seasonality. In this case I added the MODIS MCD15A2H 8-day composite LAI (500 m). This is an 8-day composite of leaf area index, measured as M2/M2 and was calculated individually for each storm. The images were downloaded for the most immediately available prior to each landfall, all within two weeks. The spatial mean of LAI was calculated for each pixel, for each storm. 
+
+---
+
+## Model Inputs
+
+.pull-left[
+
+Map of Included Pixels I Modeled
+![](Figures/pixel_count.png)
+Each Pixel represents the number of tropical systems that delivered &gt; 5mm ppt
+]
+
+.pull-right[
+Return Time of Soil Moisture
+![](Figures/return_histogram.png)
+
+Return time is defined as the time, in hours, that a pixel took return from peak soil moisture to within 5% of it's measured antecedent soil moisture value.
+]
+
+???
+Again, we are modeling the return time of each SMAP pixel to it's antecedent state. The model took into account a total of about 37,000 pixels accross 22 storms. The map on the left shows the spatial distribution of the pixels included in the analysis. The colors essentially show the number of tropical systems each pixel has received &gt; 5 mm of ppt from since 2015, and is in itself a really interesting look at tropical impacts to the southeastern United States. The ihstogram on the right displays the distribution of our independent variable, return time with a range from 0 to more than 800 hours for return to antecedent state.
+
+---
 # Random Forest Results
 
----
-
-
-# Hello Ninja
-
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
-
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-# remark.js
-
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax&lt;sup&gt;*&lt;/sup&gt; and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-size: cover
-class: center, bottom, inverse
-
-# I was so happy to have discovered remark.js!
-
----
-class: inverse, middle, center
-
-# Using xaringan
-
----
-
-# xaringan
-
-Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
-
-```yaml
----
-title: "A Cool Presentation"
-output:
-  xaringan::moon_reader:
-    yolo: true
-    nature:
-      autoplay: 30000
----
-```
-
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
-
----
-
-# remark.js vs xaringan
-
-Some differences between using remark.js (left) and using **xaringan** (right):
+100 randomized iterations were run of a random forest model considering various inputs and mTry combinations.
 
 .pull-left[
-1. Start with a boilerplate HTML file;
 
-1. Plain Markdown;
+R&lt;sup&gt;2&lt;/sup&gt; against RMSE
 
-1. Write JavaScript to autoplay slides;
-
-1. Manually configure MathJax;
-
-1. Highlight code with `*`;
-
-1. Edit Markdown source and refresh browser to see updated slides;
+![](Figures/rmse_v_r2.png)
 ]
 
 .pull-right[
-1. Start with an R Markdown document;
 
-1. R Markdown (can embed R/other code chunks);
+Number of variables considered at each split against RMSE:
 
-1. Provide an option `autoplay`;
-
-1. MathJax just works;&lt;sup&gt;*&lt;/sup&gt;
-
-1. Highlight code with `{{}}`;
-
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+![](Figures/mtry_v_rmse.png)
 ]
 
-.footnote[[*] Not really. See next page.]
+???
+For the random forest, I ran 100 iterations which randomized the number of input variables considered at each node split between 2 and 7. It further randomizes the variable combinations at each split to minimize error. 25% of the data was removed prior to the random forest to be used as a testing dataset, or out of bag sample. The best performing model presented a pseudo R2 of .89 with an RMSE of 62 hours, suggesting that the model accurately predicts return time within about 2 and a half days as applied to the global dataset. It should be noted that within the random forest, the individual storms are not considered as they were within the simple regressions. This yields extremely promising results for the ability to model response to tropical systems and by extension, extreme precipitation.
 
 ---
-
-# Math Expressions
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &amp;#36;\alpha+\beta$ renders `\(\alpha+\beta\)`. You can use the display style with double dollar signs:
-
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-`$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
-
----
-
-# R Code
-
-
-```r
-# a boring regression
-fit = lm(dist ~ 1 + speed, data = cars)
-coef(summary(fit))
-```
-
-```
-#               Estimate Std. Error   t value     Pr(&gt;|t|)
-# (Intercept) -17.579095  6.7584402 -2.601058 1.231882e-02
-# speed         3.932409  0.4155128  9.463990 1.489836e-12
-```
-
-```r
-dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
-grep('天', dojutsu, value = TRUE)
-```
-
-```
-# character(0)
-```
-
----
-
-# R Plots
-
-
-```r
-par(mar = c(4, 4, 1, .1))
-plot(cars, pch = 19, col = 'darkgray', las = 1)
-abline(fit, lwd = 2)
-```
-
-![](slides_files/figure-html/cars-1.svg)&lt;!-- --&gt;
-
----
-
-# Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-
-```r
-knitr::kable(head(iris), format = 'html')
-```
-
-&lt;table&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
----
-
-# HTML Widgets
-
-I have not thoroughly tested HTML widgets against **xaringan**. Some may work well, and some may not. It is a little tricky.
-
-Similarly, the Shiny mode (`runtime: shiny`) does not work. I might get these issues fixed in the future, but these are not of high priority to me. I never turn my presentation into a Shiny app. When I need to demonstrate more complicated examples, I just launch them separately. It is convenient to share slides with other people when they are plain HTML/JS applications.
-
-See the next page for two HTML widgets.
-
----
-
-
-```r
-library(leaflet)
-leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
-```
-
-<div id="htmlwidget-1d22caaf7a049d2de1e1" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1d22caaf7a049d2de1e1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
-
----
-
-
-```r
-DT::datatable(
-  head(iris, 10),
-  fillContainer = FALSE, options = list(pageLength = 8)
-)
-```
-
-<div id="htmlwidget-99c3fc3f69f2fa625bed" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-99c3fc3f69f2fa625bed">{"x":{"filter":"none","fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
-
----
-
-# Some Tips
-
-- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        yolo: true
-    ```
-
----
-
-# Some Tips
-
-- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds in a lightning talk:
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          autoplay: 30000
-    ```
-
-- If you want to restart the play after it reaches the last slide, you may set the sub-option `loop` to TRUE, e.g.,
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          autoplay:
-            interval: 30000
-            loop: true
-    ```
-
----
-
-# Some Tips
-
-- A countdown timer can be added to every page of the slides using the `countdown` option under `nature`, e.g. if you want to spend one minute on every page when you give the talk, you can set:
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          countdown: 60000
-    ```
-
-    Then you will see a timer counting down from `01:00`, to `00:59`, `00:58`, ... When the time is out, the timer will continue but the time turns red.
-    
----
-
-# Some Tips
-
-- The title slide is created automatically by **xaringan**, but it is just another remark.js slide added before your other slides.
-
-    The title slide is set to `class: center, middle, inverse, title-slide` by default. You can change the classes applied to the title slide with the `titleSlideClass` option of `nature` (`title-slide` is always applied).
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          titleSlideClass: [top, left, inverse]
-    ```
-    
---
-
-- If you'd like to create your own title slide, disable **xaringan**'s title slide with the `seal = FALSE` option of `moon_reader`.
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        seal: false
-    ```
-
----
-
-# Some Tips
-
-- There are several ways to build incremental slides. See [this presentation](https://slides.yihui.org/xaringan/incremental.html) for examples.
-
-- The option `highlightLines: true` of `nature` will highlight code lines that start with `*`, or are wrapped in `{{ }}`, or have trailing comments `#&lt;&lt;`;
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          highlightLines: true
-    ```
-
-    See examples on the next page.
-
----
-
-# Some Tips
-
+## Random Forest Results
 
 .pull-left[
-An example using a leading `*`:
-
-    ```r
-    if (TRUE) {
-    ** message("Very important!")
-    }
-    ```
-Output:
-```r
-if (TRUE) {
-* message("Very important!")
-}
-```
-
-This is invalid R code, so it is a plain fenced code block that is not executed.
+![](Figures/RF_Importance.png)
 ]
 
 .pull-right[
-An example using `{{}}`:
 
-````
-```{r tidy=FALSE}
-if (TRUE) {
-*{{ message("Very important!") }}
-}
-```
-````
-Output:
+Results Breakdown:
 
-```r
-if (TRUE) {
-* message("Very important!") 
-}
-```
+- R&lt;sup&gt;2&lt;/sup&gt; = .89
 
-```
-## Very important!
-```
+- RMSE = 62 hours
 
-It is valid R code so you can run it. Note that `{{}}` can wrap an R expression of multiple lines.
+- Antecedent Conditions are now dominant when combined with other factors.
+
 ]
 
+
+???
+
+Because random forests are by nature very complex, no simple coefficients can be calculated to determine the fixed effects of any predictor variable on an outcome, however we can test the importance of each input variable by using a measure of node purity which tells us how much better or worse the model performs with the addition or removal of specific inputs with respect to all of the other inputs. This box plot illustrates those importance values for the 100 randomized forest models I ran. Interstingly, precipitation, while dominant, is not the most dominant factor. In fact we see that antecedent soil moisture is the most important component. This tells us that while there may not be a significant predictive quality to antecedent soil moisture on its own, as was demonstrated by the lack of such a relationship in the simple linear regressions, that once it is combined with other factors such as precipitation, landcover class and leaf area index, it becomes a dominant component. I believe these results are compelling on their own but I think I can improve upon this model by incorporating soil characteristics as well. My plan, before publishing this work is to include additional predicitve variable from the soil grids dataset, a global 250m resolution dataset which contains several common soil variables which I think will further improve the modeling power.
 ---
 
-# Some Tips
 
-An example of using the trailing comment `#&lt;&lt;` to highlight lines:
+# Hydraulic Parameterization
 
-````markdown
-```{r tidy=FALSE}
-library(ggplot2)
-ggplot(mtcars) + 
-  aes(mpg, disp) + 
-  geom_point() +   #&lt;&lt;
-  geom_smooth()    #&lt;&lt;
-```
-````
+Temporal SMAP offers data inputs which may allow for parameterization of soil hydraulic components:
 
-Output:
+- Hydraulic Conductivity
 
+- Recharge
 
-```r
-library(ggplot2)
-ggplot(mtcars) + 
-  aes(mpg, disp) + 
-* geom_point() +
-* geom_smooth()
-```
+- Porosity
 
----
+- Water Table Depth
 
-# Some Tips
+Much of this work has been done already by a team at Texas A&amp;M and it continues to be one of their primary foci.
 
-When you enable line-highlighting, you can also use the chunk option `highlight.output` to highlight specific lines of the text output from a code chunk. For example, `highlight.output = TRUE` means highlighting all lines, and `highlight.output = c(1, 3)` means highlighting the first and third line.
+[Vadose Zone Research Group (Texas A&amp;M)](https://vadosezone.tamu.edu/projects/)
 
-````md
-```{r, highlight.output=c(1, 3)}
-head(iris)
-```
-````
+Publications:
 
+[Guar et al., 2019](https://ui.adsabs.harvard.edu/abs/2019AGUFM.H22A..05G/abstract)
 
-```
-*##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-## 1          5.1         3.5          1.4         0.2  setosa
-*## 2          4.9         3.0          1.4         0.2  setosa
-## 3          4.7         3.2          1.3         0.2  setosa
-## 4          4.6         3.1          1.5         0.2  setosa
-## 5          5.0         3.6          1.4         0.2  setosa
-## 6          5.4         3.9          1.7         0.4  setosa
-```
+[Sehgal et al., 2019](https://www.researchgate.net/profile/Vinit_Sehgal/publication/337290010_The_Signature_of_Climate_and_Vegetative_Influence_on_the_Effective_Soil_Water_Retention_at_a_Continental_Scale/links/5dcef5844585156b35163ecd/The-Signature-of-Climate-and-Vegetative-Influence-on-the-Effective-Soil-Water-Retention-at-a-Continental-Scale.pdf)
 
-Question: what does `highlight.output = c(TRUE, FALSE)` mean? (Hint: think about R's recycling of vectors)
+[Sehgal et al., 2020 (Abstract)](https://agu.confex.com/agu/fm20/meetingapp.cgi/Paper/774328)
+
+???
+
+Hydraulic Parameterization remains a key next step for those studying remotely sensed soil moisture. Originally I had planned to focus my second chapter around this concept, however it became apparent to me during this most recent AGU that the group run by Binayak Mohanty, a soil moisture remote sensing expert out of Texas A&amp;M has made great strides in this area of research and are preparing to publish findings on it. This group is directly funded by NASA and is frankly much farther along than I can hope to catch up to. The silver lining is of course that I may be able to pick up on their results and use them in an applied way for estimating groundwater vulnerability in the future. The downside is that I fear that if I continue to pursue this as my next block of research, the time may be wasted as we await their findings to be published. Further, I believe I may be able to accomplish the creation of this vulnerability index without fully incorporating hydraulic variables in the forms they were presented in by the original DRASTIC index. This is to say that with the incorporation of machine learning and reliable soil properties that may be related to, but not directly representative of variables such as hydraulic conductivity, we may still be able to produce an effective model. 
 
 ---
 
-# Some Tips
+## Transition to EPA: 
 
-- To make slides work offline, you need to download a copy of remark.js in advance, because **xaringan** uses the online version by default (see the help page `?xaringan::moon_reader`).
+.pull-left[
+- 5 Year Contract in the Center for Environmental Solutions and Emergency Response [CESER](https://www.epa.gov/aboutepa/about-center-environmental-solutions-and-emergency-response-ceser)
 
-- You can use `xaringan::summon_remark()` to download the latest or a specified version of remark.js. By default, it is downloaded to `libs/remark-latest.min.js`.
+  - Oak Ridge Student Services Contract (Pre-Doc)
 
-- Then change the `chakra` option in YAML to point to this file, e.g.
+- Part of EPA Research Branch (ORD)
 
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        chakra: libs/remark-latest.min.js
-    ```
+- Located in the Andrew Breidenbach Research Center (Cincinnati)
 
-- If you used Google fonts in slides (the default theme uses _Yanone Kaffeesatz_, _Droid Serif_, and _Source Code Pro_), they won't work offline unless you download or install them locally. The Heroku app [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/fonts) can help you download fonts and generate the necessary CSS.
+- Potential for Federal Position with Expansion of AST Program (FY 2022)
 
----
-
-# Macros
-
-- remark.js [allows users to define custom macros](https://github.com/yihui/xaringan/issues/80) (JS functions) that can be applied to Markdown text using the syntax `![:macroName arg1, arg2, ...]` or `![:macroName arg1, arg2, ...](this)`. For example, before remark.js initializes the slides, you can define a macro named `scale`:
-
-    ```js
-    remark.macros.scale = function (percentage) {
-      var url = this;
-      return '&lt;img src="' + url + '" style="width: ' + percentage + '" /&gt;';
-    };
-    ```
-
-    Then the Markdown text
-
-    ```markdown
-    ![:scale 50%](image.jpg)
-    ```
-
-    will be translated to
-    
-    ```html
-    &lt;img src="image.jpg" style="width: 50%" /&gt;
-    ```
-
----
-
-# Macros (continued)
-
-- To insert macros in **xaringan** slides, you can use the option `beforeInit` under the option `nature`, e.g.,
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          beforeInit: "macros.js"
-    ```
-
-    You save your remark.js macros in the file `macros.js`.
-
-- The `beforeInit` option can be used to insert arbitrary JS code before `remark.create()`. Inserting macros is just one of its possible applications.
-
----
-
-# CSS
-
-Among all options in `xaringan::moon_reader`, the most challenging but perhaps also the most rewarding one is `css`, because it allows you to customize the appearance of your slides using any CSS rules or hacks you know.
-
-You can see the default CSS file [here](https://github.com/yihui/xaringan/blob/master/inst/rmarkdown/templates/xaringan/resources/default.css). You can completely replace it with your own CSS files, or define new rules to override the default. See the help page `?xaringan::moon_reader` for more information.
-
----
-
-# CSS
-
-For example, suppose you want to change the font for code from the default "Source Code Pro" to "Ubuntu Mono". You can create a CSS file named, say, `ubuntu-mono.css`:
-
-```css
-@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
-
-.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-```
-
-Then set the `css` option in the YAML metadata:
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: ["default", "ubuntu-mono.css"]
-```
-
-Here I assume `ubuntu-mono.css` is under the same directory as your Rmd.
-
-See [yihui/xaringan#83](https://github.com/yihui/xaringan/issues/83) for an example of using the [Fira Code](https://github.com/tonsky/FiraCode) font, which supports ligatures in program code.
-
----
-
-# Themes
-
-Don't want to learn CSS? Okay, you can use some user-contributed themes. A theme typically consists of two CSS files `foo.css` and `foo-fonts.css`, where `foo` is the theme name. Below are some existing themes:
-
-
-```r
-names(xaringan:::list_css())
-```
-
-```
-##  [1] "chocolate-fonts"  "chocolate"        "default-fonts"   
-##  [4] "default"          "duke-blue"        "fc-fonts"        
-##  [7] "fc"               "hygge-duke"       "hygge"           
-## [10] "ki-fonts"         "ki"               "kunoichi"        
-## [13] "lucy-fonts"       "lucy"             "metropolis-fonts"
-## [16] "metropolis"       "middlebury-fonts" "middlebury"      
-## [19] "ninjutsu"         "rladies-fonts"    "rladies"         
-## [22] "robot-fonts"      "robot"            "rutgers-fonts"   
-## [25] "rutgers"          "shinobi"          "tamu-fonts"      
-## [28] "tamu"             "uio-fonts"        "uio"             
-## [31] "uo-fonts"         "uo"               "uol-fonts"       
-## [34] "uol"              "useR-fonts"       "useR"
-```
-
----
-
-# Themes
-
-To use a theme, you can specify the `css` option as an array of CSS filenames (without the `.css` extensions), e.g.,
-
-```yaml
-output:
-  xaringan::moon_reader:
-    css: [default, metropolis, metropolis-fonts]
-```
-
-If you want to contribute a theme to **xaringan**, please read [this blog post](https://yihui.org/en/2017/10/xaringan-themes).
-
----
-class: inverse, middle, center
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Naruto_Shiki_Fujin.svg)
-background-size: contain
-
-# Naruto
-
----
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-background-size: 100px
-background-position: 90% 8%
-
-# Sharingan
-
-The R package name **xaringan** was derived&lt;sup&gt;1&lt;/sup&gt; from **Sharingan**, a dōjutsu in the Japanese anime _Naruto_ with two abilities:
-
-- the "Eye of Insight"
-
-- the "Eye of Hypnotism"
-
-I think a presentation is basically a way to communicate insights to the audience, and a great presentation may even "hypnotize" the audience.&lt;sup&gt;2,3&lt;/sup&gt;
-
-.footnote[
-[1] In Chinese, the pronounciation of _X_ is _Sh_ /ʃ/ (as in _shrimp_). Now you should have a better idea of how to pronounce my last name _Xie_.
-
-[2] By comparison, bad presentations only put the audience to sleep.
-
-[3] Personally I find that setting background images for slides is a killer feature of remark.js. It is an effective way to bring visual impact into your presentations.
 ]
 
----
+.pull-right[
+![](Figures/OrgChart.png)
+]
 
-# Naruto terminology
+???
+I want to take a few moments to pause and describe my transition back to the Environmental Protection Agency over the past year, and the implications on my dissertation and career goals. Almost a year ago we met at my proposal defense where I was asked what my career goals were after my PhD. At that time it was my goal to pursue a tenure-track academic position and while that is something I am not ruling out, as you know, the last year has had significant effects on academia as a whole. As you know, personally I am married and have a five year old and with the loss of my wife's employment early in the pandemic we had to adapt to the situation as it was becoming financially untenable. I was privileged to be offered an opportunity to return to a position at EPA, working under the same supervisor I had worked with prior to my coming to UNC and after making sure it would not derail my pursuit of my PhD, I took it. As I have talked about previously, my dissertation work largely builds from the work I was conducting at EPA and my supervisor agreed that publications and overlap with my dissertation work in my day-to-day activities would be a priority for her. In August, we relocated to Cincinnati and I began a position as a student services contractor through the Oak Ridge Program. My position within EPA is funded through the Center for Environmental Solutions &amp; Emergency Response, which is a division within EPA's office of research and development. I am contracted to work on a National Groundwater Vulnerability Model which is a product for the office of underground storage tanks. This topic aligns well with my defended dissertation proposal, as well as my interests in applying geographic thought to real world problems in support of public health goals. I am still enrolled as a full-time student at UNC and am currently self-funding with authorization from the Graduate school for the off-campus rate. The contract I am funded under is renewable for up to five years, extending in theory to May 15, 2025. However, my current plan is to convert into a federal employee well before that and continue to pursue this line of work. The most likely present scenario for that is the expansion of the underground storage tank program at EPA within the next year. The EPA has identified an expansion to include a new Above Ground Storage tank program, which I would be well suited for. While this expansion has been on the books for the past year, the start of the new presidential administration is likely to make this more likely. So as I just mentioned, while I am not shutting the door on an academic position in the future, for now I am very priveleged to be in the position I am in. I am very happy with the work I am doing, and the situation provides a large measure of career security for the forseeable future. 
 
-The **xaringan** package borrowed a few terms from Naruto, such as
-
-- [Sharingan](https://naruto.fandom.com/wiki/Sharingan) (写輪眼; the package name)
-
-- The [moon reader](https://naruto.fandom.com/wiki/Moon_Reader) (月読; an attractive R Markdown output format)
-
-- [Chakra](https://naruto.fandom.com/wiki/Chakra) (查克拉; the path to the remark.js library, which is the power to drive the presentation)
-
-- [Nature transformation](https://naruto.fandom.com/wiki/Nature_Transformation) (性質変化; transform the chakra by setting different options)
-
-- The [infinite moon reader](https://naruto.fandom.com/wiki/Infinite_Tsukuyomi) (無限月読; start a local web server to continuously serve your slides)
-
-- The [summoning technique](https://naruto.fandom.com/wiki/Summoning_Technique) (download remark.js from the web)
-
-You can click the links to know more about them if you want. The jutsu "Moon Reader" may seem a little evil, but that does not mean your slides are evil.
 
 ---
 
-class: center
+## Sustainable and Healthy Communities
 
-# Hand seals (印)
+Ground Water Vulnerability Model: Underground Storage Tanks
 
-Press `h` or `?` to see the possible ninjutsu you can use in remark.js.
+This product will provide the Program Office, States, and Tribes with a **dataset that will be incorporated into the national UST database**. Releases from underground storage tanks pose a threat to aquifers and drinking water supplies nationally. Conditional on geography, soil conditions, aquifer media, etc., the severity of risk varies by site and proximity to leaking USTs. The UST ground water vulnerability model will **give a dynamic representation of the relative risk a potential UST release could have to ground water.** The model will be validated through empirical plume length, depth, and attenuation rate data. This model will allow the assessment of the UST contaminant release potential for a hydrogeologic setting to be systematically evaluated by state and tribal partners.
 
-![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Mudra-Naruto-KageBunshin.svg)
+**Product Form: This spatial dataset will be published on the GeoPlatform and integrated with the national database on underground storage tank infrastructure product.**
+
+Key Words: underground storage tanks, leaking underground storage tanks, ground water
+
+Interdependencies: Completion of national underground storage tank infrastructure database in FY20
+
+Product Lead: Alex Hall, ORD/CESER/LRTD
+
+Partners: Ryan Haerer, OLEM/OUST; ASTSWMO
+
+???
+
+Specifically, the program I am supporting is EPAs Sustainable and Healthy Communities Research Program, which is tasked with providing technical solutions, tools, information, and other resources the three topic areas of: Contaminated Sites, Waste and Materials Management and Healthy and Resilient Communities. The specific product we are working on is to create a model which will identify potential groundwater contamination from underground storage tanks, which are generally gas stations around the country. As you may already be thinking, this has the potential to shift the direction of my dissertation, but I believe the possibilities are all positive. One of the major issues raised in my defense last year was how to validate any sort of groundwater vulnerability model that I would create. This focus on leaking underground storage tanks presents a narrowed scope on which to focus while presenting me with a significant amount of field data to use for validation of impacts on groundwater from tank sites. The obvious negative effect of this narrowing of scope is that it limits the contaminants we are focused on. However we have already begun incorporating other contaminants as we have gathered more field data. I will discuss this in a minute when I talk more specifically about the publications I am working on. 
+
+ASTSWMO stands for the Association of State and Territorial Solid Waste Management
+---
+
+### Publications
+
+#### In Preparation
+
+- Estimating Soil Moisture Return Time Following Tropical Cyclones Using SMAP (Lead Author)
+
+- Machine Learning Approach to Background Contaminant Level Estimates Across Geographies (Lead Author)
+
+#### Planned
+
+- Estimated 2020 Private Well Use in the United States (Lead Author)
+
+- Locations and Trends in Underground Storage Tank Infrastructure in the United States, PNAS (Co-Author)
+
+- Potential Impacts to Drinking Water Systems from Leaking Underground Storage Tanks, AWWA (Co-Author)
+In response to the [American Water Infrastructure Act (2018)](https://www.epa.gov/waterresilience/awia-section-2013#CD)
+
+- Estimating Groundwater Risk of Leaking Underground Storage Tanks Plume Length and Persistence, NGWA (Lead Author)
+
+- Disproportionate Environmental Burden of Underground Storage Tanks on EJ Communities (Lead Author)
+
+- Impacts of Superfund / RCRA Sites to Private Domestic Wells (Co-Author)
+
+- Impacts of CAFOS on Private Domestic Wells (Co-Author)
+
+???
+
+The American Water Infrastructure Act requires that all public water utilities to develope a risk assessment and emergency response plan. One of the important components of this will be the potential impacts of leaking underground storage tanks to community water systems. 
 
 ---
 
-class: center, middle
+## Machine Learning Approach to Background Contaminant Level Estimates Across Geographies (Lead Author)
 
-# Thanks!
+.pull-left[
+![](Figures/lopez_1.png)
+.small[Lopez et al., 2020]
+]
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+.pull-left[
+- 23 Environmental Input Parameters
+  - Soil Properties including Calcium, Nitrate, Sulfate, pH and others
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr/), and [R Markdown](https://rmarkdown.rstudio.com).
+- 558 total groundwater samples
+  - Training = 446
+  - Testing = 112
+
+- pseudo R&lt;sup&gt;2&lt;/sup&gt; = 0.73
+
+
+]
+
+???
+I now want to transition to discussing the papers on which I am the lead author and consider how they might be incorporated into my dissertation.
+Understanding levels of a variety of contaminants, both naturally occuring and anthropogenic are essential to building a national groundwater vulnerability model. For example, Arsenic is a leading cause for private well water contamination but most often is the result of naturally occuring deposits. It is therefore essential that we leverage available date to not only determine where we know these concentrations are generally high but enable us to estimate where they might also be high even if we lack field testing data. One paper, published this past December leverages a Random Forest model to estimate Uranium Concentrations in California's Central Valley. I found this analysis to be compelling and became curious if we could duplicate or improve upon these results elsewhere. One of the challenges present in duplicating this model is access to soil characteristic data. The data used for this study were obtained from state specific field campaigns and would not be available outside of the study area
+
+---
+## Texas Pilot
+
+.pull-left[
+The Texas Water Development Board maintains publicly available data on well tests statewide.
+
+- 1,733,190 individual wells with testing parameters which appear in &gt; 1,000 unique locations
+
+We Tested:
+
+- Uranium (N = 2,563)
+- Lead (N = 2,629)
+- Arsenic (N = 6,740)
+- Nitrate (N = 53,098)
+]
+
+.pull-right[
+![](Figures/texas_wells.png)
+
+Locations of wells with public testing data
+]
+
+
+???
+Our challenge was then to find a different state that had a sufficient amount of Uranium data available and to test different input parameters to determine if we could yield a similar modeling result.
+
+---
+
+.pull-left[
+## Results
+
+- Nitrate: R&lt;sup&gt;2&lt;/sup&gt;= .79 / RMSE = 19 mg/L
+- Arsenic: R&lt;sup&gt;2&lt;/sup&gt;= .74 / RMSE = 9.2 ug/L
+- Lead: R&lt;sup&gt;2&lt;/sup&gt; = .81 / RMSE = 5.2 ug/L
+- Uranium: R&lt;sup&gt;2&lt;/sup&gt; = .88 / RMSE = 6.8 ug/L
+]
+
+.pull-right[
+
+&lt;br&gt;&lt;br&gt;
+
+- Uranium outperformed the California model using more accesible, national datasets
+
+- Nitrate, Lead and Arsenis all returned favorible results with high modelling power.
+
+]
+
+???
+
+We found that we were able to outperform the California analysis using Texas input data with more accessible national datasets.
+
+---
+## Lead Predicted vs. Measured
+&lt;div class="figure"&gt;
+&lt;img src="Figures/lead_modeled_map.png" alt="Measured vs. Modeled Lead [ug/L]" width="800" /&gt;
+&lt;p class="caption"&gt;Measured vs. Modeled Lead [ug/L]&lt;/p&gt;
+&lt;/div&gt;
+
+---
+## Lead Statewide Predictions
+
+&lt;div class="figure"&gt;
+&lt;img src="Figures/lead_statewide_map.png" alt="Statewide Modeled Lead [ug/L]" width="800" /&gt;
+&lt;p class="caption"&gt;Statewide Modeled Lead [ug/L]&lt;/p&gt;
+&lt;/div&gt;
+
+
+???
+For statewide predictions we created a mesh of points across the state at 2 mile intervals and created 1 mile buffers around each point to extract soil and NLCD properties
+
+---
+## Estimating Groundwater Risk of Leaking Underground Storage Tanks Plume Length and Persistence, NGWA (Lead Author)
+
+### Background:
+
+.pull-left[
+
+- 550,000 Underground Storage Tanks (200,000 facilities)
+
+- 64,000 Known Leaking Underground Storage Tank Cleanups Remaining at Present
+
+- 210k active USTs are within a source water protection area
+
+- 64k USTs within surface water protection areas
+
+- 163k USTs within groundwater protection areas
+
+
+]
+
+.pull-right[
+![](Figures/tank_age.png)
+]
+
+???
+
+Leaking underground storage tanks are a persistent issue regarding public health, especially considering the potential for groundwater contamination and risk to drinking water systems. At present, there are 210,000 active underground storage tanks within a source water protection area, 64,000 of which are within surface water protection areas, and 163,000 of which are within groundwater protection areas. Using Field data from groundwater wells that is available temporally, will allow us to start deconstructing areas at higher risk and lead into building a vulnerability model. We have obtained several hundred thousand field measurements for petroleum hydrocarbons throughout California, and New Mexico and are pursuing more from states in the southeast. Much research has been done already regarding transport of petroleum hydrocarbons but it is still not well understood what geographic areas are more susceptible to contamination persisting longer and travelling farther, As it stands, petroleum hydrocarbons on soil can persist at toxic levels for up to thirty years. Understanding how these contaminants are able to move both under normal conditions and under the prescenece of extreme events such as extreme precipitation are essential to broadening our understanding of those who are at risk. We aim to build on the models I have presented here in this presentation and apply them spatially and temporally to looking at plume length as a function of landscape and climatic variables. MTBE has long since been disposed of in favor of ethanol additives to gasoline which presents a new problem, making petroleum hydrocarbons mor biologically available and leading to longer persistence times. In extreme events in particular, these contaminants can be mobilized into new areas, plume lengths extended and persistence in the environment prolonged. 
+
+Ethanol Increases bioavailability of gasoline components.
+---
+Disproportionate Environmental Burden of Underground Storage Tanks on EJ Communities (Lead Author)
+
+![](Figures/heatmap.png)
+
+???
+
+The final paper I will mention is still in the design phase but it is important and we have some preliminary results I would like to share. It is a priority to understand the burden of groundwater contamination accross the United States, especially if that burden is disproportianately effecting populations at risk. Our preliminary analysis has found that communities that are lower income or have a higher percent of minorities are disproportionately at risk to both underground storage facilities as a whole and those that are confirmed to be leaking. 
+
+---
+
+![](Figures/boxheat.png)
+
+
+---
+
+## Moving Forward
+
+### Thank You for your Attention!
+
+#### Discussion
+
+- How to Incorporate the specifics of what I have presented here into a cohesive dissertation
+
+- Keeping an eye on a model that is not overly specific to petroleum hydrocarbons
+
+- Keeping a Geographic Focus while staying scientifically stringent
+
+???
+My plan moving forward is continuing to focus on groundwater vulnerability and all that comes with it. My work at EPA right now is to focus on the implications of fuel tanks and their ability to contaminate groundwater and by extension, drinking water. 
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
