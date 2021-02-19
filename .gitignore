@@ -7,4 +7,7 @@
 /Data/EPA/
 /Data/nlcd/NLCD_2016_se.tif
 /Data/extractions/
+/Data/SoilGrids/
 /Planning
+/scripts/Analysis/Random_Forest/RF_Outputs/BestModel/
+/Data/Elevation/
