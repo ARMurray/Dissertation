@@ -4,11 +4,10 @@ library(raster)
 library(randomForest)
 library(caTools)
 library(data.table)
-library
 
 data <- read.csv(here::here("Data/Analysis/AllStorms_Combo.csv"))%>%
   drop_na()%>%
-  select(Rtrn_Lngth, Dom_LC,ppt_mm,ant_SM,Peak_SM)
+  dplyr::select(Rtrn_Lngth, Dom_LC,ppt_mm,ant_SM,Peak_SM)
 
 ## Add Soil Grids Info
 
